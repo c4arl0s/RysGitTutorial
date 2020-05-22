@@ -590,6 +590,11 @@ Switched to branch 'master'
 ![Screen Shot 2020-05-22 at 17 41 33](https://user-images.githubusercontent.com/24994818/82714291-8244ff80-9c53-11ea-9a67-7949b919670b.png)
 
 # 	* [Tag a Release]()
+
+```console
+$ git tag -a v1.0 -m "Stable Version of the website"
+```
+
 # 	* [Try a Crazy Experiment]()
 # 	* [Stage and Commit the Snapshot]()
 # 	* [Undo Committed Changes]()
