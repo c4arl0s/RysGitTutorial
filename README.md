@@ -447,6 +447,30 @@ $ git commit -m "Add navigation links"
 ![Screen Shot 2020-05-22 at 16 55 24](https://user-images.githubusercontent.com/24994818/82712156-0d6ec700-9c4d-11ea-8dd1-8f705f6996ae.png)
 
 # 	* [Explore the Repository]()
+
+```console
+git log --oneline
+```
+
+- output
+
+```console
+453c8a4 Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- Condensing output to a single line is a great way to get a high-level overview of a repository
+- Another useful configuration is to pass a filename to git log:
+
+```console
+1047951 t Add blue an orange html files
+```
+
+- This display only  the blue.html history.
+- Notice that the initial Create index page commit is missing, since blue.html did't exist in that snapshot.
+
+
 # 	* [Conclusion]()
 # 	* [Quick Reference]()
 # 3. [Undoing Changes]()
