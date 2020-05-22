@@ -560,6 +560,18 @@ HEAD is now at 1047951 t Add blue an orange html files
 ![Screen Shot 2020-05-22 at 17 19 07](https://user-images.githubusercontent.com/24994818/82713376-60964900-9c50-11ea-81a9-6f1b73ca260d.png)
 
 # 	* [View an Older Version]()
+
+```console
+$ git checkout 6a442fc
+```
+
+- output
+
+```console
+Previous HEAD position was 1047951 t Add blue an orange html files
+HEAD is now at 6a442fc Create index page for the message
+```
+
 # 	* [Return to current version]()()
 # 	* [Tag a Release]()
 # 	* [Try a Crazy Experiment]()
