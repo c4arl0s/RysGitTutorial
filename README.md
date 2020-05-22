@@ -304,6 +304,14 @@ Date:   Fri May 22 12:54:21 2020 -0500
 ```
 
 # 	* [Configure Git]()
+
+```console
+git config --global user.name "your name"
+git config --global user.email your.email@example.com
+```
+
+[read book if you want more information]
+
 # 	* [Create New HTML files]()
 # 	* [Stage the New Files]()
 # 	* [Commit The new Files]()
