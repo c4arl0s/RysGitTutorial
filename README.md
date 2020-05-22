@@ -179,7 +179,7 @@ Ry's Git Tutorial
 	* [Quick Reference]()
 
 
-# 1. [Introduction]()
+# 1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#1-introduction)
 
 - Git is a version control system (VCS) created for a single task: managing changes to your files.
 
@@ -189,6 +189,9 @@ Ry's Git Tutorial
 # 	* [Get Ready]()
 
 # 2. [The basics]()
+
+- This module explores the fundamental Git workflow: creating a repository, staging and committing snapshots, configuring options, and viewing the state of a repository.
+
 # 	* [Create the example Site]()
 # 	* [Initialize the Git Repository]()
 # 	* [View the repository status]()
