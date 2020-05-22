@@ -225,7 +225,33 @@ cd /Users/carlossantiagocruz/SWIFT-PROGRAMMING/RysGitTutorial
 git init
 ```
 
+- output
+
+```console
+Initialized empty Git repository in /Users/carlossantiagocruz/Documents/SWIFT-PROGRAMMING/RysGitTutorialRepository/.git/
+```
+
 # 	* [View the repository status]()
+
+```console
+git status
+```
+
+```console
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+- Git does not automatically track files because there are often project files that we don't want to keep under revision control.
+
+
 # 	* [Stage a snapshot]()
 # 	* [Commit the Snapshot]()
 # 	* [View the repository History]()
