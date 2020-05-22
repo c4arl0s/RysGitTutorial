@@ -193,6 +193,26 @@ Ry's Git Tutorial
 - This module explores the fundamental Git workflow: creating a repository, staging and committing snapshots, configuring options, and viewing the state of a repository.
 
 # 	* [Create the example Site]()
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Colorful Website</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #07F">A Colorful Website</h1>
+  <p>This is a website about color!</p>    
+  
+  <h2 style="color: #C00">News</h2>
+  <ul>
+    <li>Nothing going on (yet)</li>
+  </ul>
+</body>
+</html>
+```
+
 # 	* [Initialize the Git Repository]()
 # 	* [View the repository status]()
 # 	* [Stage a snapshot]()
