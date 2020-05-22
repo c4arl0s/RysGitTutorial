@@ -313,6 +313,41 @@ git config --global user.email your.email@example.com
 [read book if you want more information]
 
 # 	* [Create New HTML files]()
+
+- orange.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Orange Page</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #F90">The Orange Page</h1>
+  <p>Orange is so great it has a
+  <span style="color: #F90">fruit</span> named after it.</p>
+</body>
+</html>
+
+```
+
+- blue.html
+
+```console
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Blue Page</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #00F">The Blue Page</h1>
+  <p>Blue is the color of the sky.</p>
+</body>
+</html>
+```
+
 # 	* [Stage the New Files]()
 # 	* [Commit The new Files]()
 # 	* [Modify the HTML Pages]()
