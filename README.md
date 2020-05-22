@@ -2,7 +2,7 @@
 
 Ry's Git Tutorial
 
-1. [Introduction]()
+1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#1-introduction)
 	* [A Brief History of Revision Control]()
 	* [The birth of Git]()
 	* [Installation]()
@@ -180,10 +180,14 @@ Ry's Git Tutorial
 
 
 # 1. [Introduction]()
+
+- Git is a version control system (VCS) created for a single task: managing changes to your files.
+
 # 	* [A Brief History of Revision Control]()
 # 	* [The birth of Git]()
 # 	* [Installation]()
 # 	* [Get Ready]()
+
 # 2. [The basics]()
 # 	* [Create the example Site]()
 # 	* [Initialize the Git Repository]()
