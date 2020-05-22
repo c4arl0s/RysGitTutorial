@@ -472,7 +472,36 @@ git log --oneline
 
 
 # 	* [Conclusion]()
+
+![Screen Shot 2020-05-22 at 17 01 45](https://user-images.githubusercontent.com/24994818/82712586-f086c380-9c4d-11ea-9896-d302b0345e8a.png)
+
 # 	* [Quick Reference]()
+
+```console
+git init
+```
+
+```console
+git status
+```
+
+```console
+git add fileName
+```
+
+```console
+git commit
+```
+
+```console
+git log
+```
+
+```console
+git config --global user.name "nameOfTheUser"
+```
+
+
 # 3. [Undoing Changes]()
 # 	* [Display Commit Checksums]()
 # 	* [View an Old Version]()
