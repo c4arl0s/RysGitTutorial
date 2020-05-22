@@ -12,17 +12,17 @@ Ry's Git Tutorial
 	* [Initialize the Git Repository](https://github.com/c4arl0s/RysGitTutorial#-initialize-the-git-repository)
 	* [View the repository status](https://github.com/c4arl0s/RysGitTutorial#-view-the-repository-status)
 	* [Stage a snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-a-snapshot)
-	* [Commit the Snapshot]()
-	* [View the repository History]()
-	* [Configure Git]()
-	* [Create New HTML files]()
-	* [Stage the New Files]()
-	* [Commit The new Files]()
-	* [Modify the HTML Pages]()
-	* [Stage and Commit the Snapshot]()
-	* [Explore the Repository]()
-	* [Conclusion]()
-	* [Quick Reference]()
+	* [Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [View the repository History](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Configure Git](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Create New HTML files](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Stage the New Files](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Commit The new Files](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Modify the HTML Pages](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Explore the Repository](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial/blob/master)
 3. [Undoing Changes]()
 	* [Display Commit Checksums]()
 	* [View an Old Version]()
@@ -287,7 +287,7 @@ git commit
 ```
 ![Screen Shot 2020-05-22 at 12 55 58](https://user-images.githubusercontent.com/24994818/82695901-9b39ba80-9c2b-11ea-9542-d3499c0dc735.png)
 
-# 	* [View the repository History]()
+# 	* [View the repository History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git log
@@ -303,7 +303,7 @@ Date:   Fri May 22 12:54:21 2020 -0500
     Create index page for the message
 ```
 
-# 	* [Configure Git]()
+# 	* [Configure Git](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git config --global user.name "your name"
@@ -312,7 +312,7 @@ git config --global user.email your.email@example.com
 
 [read book if you want more information]
 
-# 	* [Create New HTML files]()
+# 	* [Create New HTML files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - orange.html
 
@@ -348,7 +348,31 @@ git config --global user.email your.email@example.com
 </html>
 ```
 
-# 	* [Stage the New Files]()
+# 	* [Stage the New Files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+git add orange.html blue.html
+```
+
+```console
+git status
+```
+
+- output
+
+```console
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   blue.html
+	new file:   orange.html
+
+```
+
+![Screen Shot 2020-05-22 at 13 21 50](https://user-images.githubusercontent.com/24994818/82697808-3d0ed680-9c2f-11ea-9c17-f8f3009351dd.png)
+
+
+
 # 	* [Commit The new Files]()
 # 	* [Modify the HTML Pages]()
 # 	* [Stage and Commit the Snapshot]()
