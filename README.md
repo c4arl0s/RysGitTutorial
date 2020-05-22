@@ -12,30 +12,30 @@ Ry's Git Tutorial
 	* [Initialize the Git Repository](https://github.com/c4arl0s/RysGitTutorial#-initialize-the-git-repository)
 	* [View the repository status](https://github.com/c4arl0s/RysGitTutorial#-view-the-repository-status)
 	* [Stage a snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-a-snapshot)
-	* [Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [View the repository History](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Configure Git](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Create New HTML files](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Stage the New Files](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Commit The new Files](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Modify the HTML Pages](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Explore the Repository](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-3. [Undoing Changes]()
-	* [Display Commit Checksums]()
-	* [View an Old Version]()
-	* [View an Older Version]()
-	* [Return to current version]()()
-	* [Tag a Release]()
-	* [Try a Crazy Experiment]()
-	* [Stage and Commit the Snapshot]()
-	* [Undo Committed Changes]()
-	* [Start a Smaller Experiment]()
-	* [Undo Uncommitted Changes]()
-	* [Conclusion]()
-	* [Quick References]()
+	* [Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#-commit-the-snapshot)
+	* [View the repository History](https://github.com/c4arl0s/RysGitTutorial#-view-the-repository-history)
+	* [Configure Git](https://github.com/c4arl0s/RysGitTutorial#-configure-git)
+	* [Create New HTML files](https://github.com/c4arl0s/RysGitTutorial#-create-new-html-files)
+	* [Stage the New Files](https://github.com/c4arl0s/RysGitTutorial#-stage-the-new-files)
+	* [Commit The new Files](https://github.com/c4arl0s/RysGitTutorial#-commit-the-new-files)
+	* [Modify the HTML Pages](https://github.com/c4arl0s/RysGitTutorial#-modify-the-html-pages)
+	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-and-commit-the-snapshot)
+	* [Explore the Repository](https://github.com/c4arl0s/RysGitTutorial#-explore-the-repository)
+	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion)
+	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference)
+3. [Undoing Changes](https://github.com/c4arl0s/RysGitTutorial#3-undoing-changes)
+	* [Display Commit Checksums](https://github.com/c4arl0s/RysGitTutorial#-display-commit-checksums)
+	* [View an Old Version](https://github.com/c4arl0s/RysGitTutorial#-view-an-old-version)
+	* [View an Older Version](https://github.com/c4arl0s/RysGitTutorial#-view-an-older-version)
+	* [Return to current version](https://github.com/c4arl0s/RysGitTutorial#-return-to-current-version)
+	* [Tag a Release](https://github.com/c4arl0s/RysGitTutorial#-tag-a-release)
+	* [Try a Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-try-a-crazy-experiment)
+	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-and-commit-the-snapshot-1)
+	* [Undo Committed Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-committed-changes)
+	* [Start a Smaller Experiment](https://github.com/c4arl0s/RysGitTutorial#-start-a-smaller-experiment)
+	* [Undo Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-uncommitted-changes)
+	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-1)
+	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#-quick-references)
 4. [Branches I]()
 	* [View existing Branches]()
 	* [Checkout the Crazy Experiment]()
@@ -371,7 +371,7 @@ Changes to be committed:
 
 ![Screen Shot 2020-05-22 at 13 21 50](https://user-images.githubusercontent.com/24994818/82697808-3d0ed680-9c2f-11ea-9c17-f8f3009351dd.png)
 
-# 	* [Commit The new Files]()
+# 	* [Commit The new Files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git commit -m "add blue and orangle html file"
@@ -379,7 +379,7 @@ git commit -m "add blue and orangle html file"
 
 ![Screen Shot 2020-05-22 at 13 47 10](https://user-images.githubusercontent.com/24994818/82699708-c1af2400-9c32-11ea-800a-1b578fcbcac5.png)
 
-# 	* [Modify the HTML Pages]()
+# 	* [Modify the HTML Pages](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - add this at the end of index.html
 
@@ -398,7 +398,7 @@ git commit -m "add blue and orangle html file"
 <p><a href="index.html">Return to home page</a></p>
 ```
 
-# 	* [Stage and Commit the Snapshot]()
+# 	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git status
@@ -446,7 +446,7 @@ $ git commit -m "Add navigation links"
 
 ![Screen Shot 2020-05-22 at 16 55 24](https://user-images.githubusercontent.com/24994818/82712156-0d6ec700-9c4d-11ea-8dd1-8f705f6996ae.png)
 
-# 	* [Explore the Repository]()
+# 	* [Explore the Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git log --oneline
@@ -471,11 +471,11 @@ git log --oneline
 - Notice that the initial Create index page commit is missing, since blue.html did't exist in that snapshot.
 
 
-# 	* [Conclusion]()
+# 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ![Screen Shot 2020-05-22 at 17 01 45](https://user-images.githubusercontent.com/24994818/82712586-f086c380-9c4d-11ea-9896-d302b0345e8a.png)
 
-# 	* [Quick Reference]()
+# 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git init
@@ -502,14 +502,14 @@ git config --global user.name "nameOfTheUser"
 ```
 
 
-# 3. [Undoing Changes]()
+# 3. [Undoing Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - In the last module, we learned how to record versions of a project into a Git repositoru.
 - The whole point of maintaining these "safe" copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
 
 - To this end, storing "safe" versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
 
-# 	* [Display Commit Checksums]()
+# 	* [Display Commit Checksums](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - Quick review
 
@@ -528,7 +528,37 @@ git log --oneline
 - git only outputs the first seven characters of the checksum.
 - These first few characters effectively serve as a unique ID for each commit.
 
-# 	* [View an Old Version]()
+# 	* [View an Old Version](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+git checkout 1047951
+```
+
+- output
+
+```console
+Note: switching to '1047951'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 1047951 t Add blue an orange html files
+```
+
+![Screen Shot 2020-05-22 at 17 19 07](https://user-images.githubusercontent.com/24994818/82713376-60964900-9c50-11ea-81a9-6f1b73ca260d.png)
+
 # 	* [View an Older Version]()
 # 	* [Return to current version]()()
 # 	* [Tag a Release]()
