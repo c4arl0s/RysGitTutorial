@@ -214,6 +214,17 @@ Ry's Git Tutorial
 ```
 
 # 	* [Initialize the Git Repository]()
+
+```console
+cd /Users/carlossantiagocruz/SWIFT-PROGRAMMING/RysGitTutorial
+```
+
+- then initialize
+
+```console
+git init
+```
+
 # 	* [View the repository status]()
 # 	* [Stage a snapshot]()
 # 	* [Commit the Snapshot]()
