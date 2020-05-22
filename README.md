@@ -371,9 +371,14 @@ Changes to be committed:
 
 ![Screen Shot 2020-05-22 at 13 21 50](https://user-images.githubusercontent.com/24994818/82697808-3d0ed680-9c2f-11ea-9c17-f8f3009351dd.png)
 
-
-
 # 	* [Commit The new Files]()
+
+```console
+git commit -m "add blue and orangle html file"
+```
+
+![Screen Shot 2020-05-22 at 13 47 10](https://user-images.githubusercontent.com/24994818/82699708-c1af2400-9c32-11ea-800a-1b578fcbcac5.png)
+
 # 	* [Modify the HTML Pages]()
 # 	* [Stage and Commit the Snapshot]()
 # 	* [Explore the Repository]()
