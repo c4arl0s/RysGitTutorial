@@ -287,7 +287,22 @@ git commit
 ```
 ![Screen Shot 2020-05-22 at 12 55 58](https://user-images.githubusercontent.com/24994818/82695901-9b39ba80-9c2b-11ea-9542-d3499c0dc735.png)
 
-	# 	* [View the repository History]()
+# 	* [View the repository History]()
+
+```console
+git log
+```
+
+- output
+
+```console
+commit 6a442fcc4ab51362713f09ed5eadc7af767db833
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 12:54:21 2020 -0500
+
+    Create index page for the message
+```
+
 # 	* [Configure Git]()
 # 	* [Create New HTML files]()
 # 	* [Stage the New Files]()
