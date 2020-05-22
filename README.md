@@ -503,6 +503,12 @@ git config --global user.name "nameOfTheUser"
 
 
 # 3. [Undoing Changes]()
+
+- In the last module, we learned how to record versions of a project into a Git repositoru.
+- The whole point of maintaining these "safe" copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
+
+- To this end, storing "safe" versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
+
 # 	* [Display Commit Checksums]()
 # 	* [View an Old Version]()
 # 	* [View an Older Version]()
