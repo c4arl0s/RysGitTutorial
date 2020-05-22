@@ -572,7 +572,23 @@ Previous HEAD position was 1047951 t Add blue an orange html files
 HEAD is now at 6a442fc Create index page for the message
 ```
 
-# 	* [Return to current version]()()
+![Screen Shot 2020-05-22 at 17 37 35](https://user-images.githubusercontent.com/24994818/82714202-427e1800-9c53-11ea-8dbe-92ec1f95695b.png)
+
+# 	* [Return to current version]()
+
+```console
+git checkout master
+```
+
+- output
+
+```console
+Previous HEAD position was 6a442fc Create index page for the message
+Switched to branch 'master'
+```
+
+![Screen Shot 2020-05-22 at 17 41 33](https://user-images.githubusercontent.com/24994818/82714291-8244ff80-9c53-11ea-9a67-7949b919670b.png)
+
 # 	* [Tag a Release]()
 # 	* [Try a Crazy Experiment]()
 # 	* [Stage and Commit the Snapshot]()
