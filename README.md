@@ -510,6 +510,24 @@ git config --global user.name "nameOfTheUser"
 - To this end, storing "safe" versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
 
 # 	* [Display Commit Checksums]()
+
+- Quick review
+
+```console
+git log --oneline
+```
+
+- output
+
+```console
+453c8a4 Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- git only outputs the first seven characters of the checksum.
+- These first few characters effectively serve as a unique ID for each commit.
+
 # 	* [View an Old Version]()
 # 	* [View an Older Version]()
 # 	* [Return to current version]()()
