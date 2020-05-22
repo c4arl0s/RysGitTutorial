@@ -3,15 +3,15 @@
 Ry's Git Tutorial
 
 1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#1-introduction)
-	* [A Brief History of Revision Control]()
-	* [The birth of Git]()
-	* [Installation]()
-	* [Get Ready]()
-2. [The basics]()
-	* [Create the example Site]()
-	* [Initialize the Git Repository]()
-	* [View the repository status]()
-	* [Stage a snapshot]()
+	* [A Brief History of Revision Control](https://github.com/c4arl0s/RysGitTutorial#-a-brief-history-of-revision-control)
+	* [The birth of Git](https://github.com/c4arl0s/RysGitTutorial#-the-birth-of-git)
+	* [Installation](https://github.com/c4arl0s/RysGitTutorial#-installation)
+	* [Get Ready](https://github.com/c4arl0s/RysGitTutorial#-get-ready)
+2. [The basics](https://github.com/c4arl0s/RysGitTutorial#2-the-basics)
+	* [Create the example Site](https://github.com/c4arl0s/RysGitTutorial#-create-the-example-site)
+	* [Initialize the Git Repository](https://github.com/c4arl0s/RysGitTutorial#-initialize-the-git-repository)
+	* [View the repository status](https://github.com/c4arl0s/RysGitTutorial#-view-the-repository-status)
+	* [Stage a snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-a-snapshot)
 	* [Commit the Snapshot]()
 	* [View the repository History]()
 	* [Configure Git]()
@@ -251,8 +251,35 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 - Git does not automatically track files because there are often project files that we don't want to keep under revision control.
 
-
 # 	* [Stage a snapshot]()
+
+- tell git to start tracking index.html
+
+```console
+git add index.html
+```
+
+```console
+git status
+```
+
+- output
+
+```console
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   index.html
+
+```
+
+- A snapshot represents the state of your project at a given point in time.
+- Git's term for creating a snapshot is called staging
+- Staging give us the opportunity to group related changes into distinct snapshots.
+
 # 	* [Commit the Snapshot]()
 # 	* [View the repository History]()
 # 	* [Configure Git]()
