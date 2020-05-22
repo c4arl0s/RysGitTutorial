@@ -380,6 +380,24 @@ git commit -m "add blue and orangle html file"
 ![Screen Shot 2020-05-22 at 13 47 10](https://user-images.githubusercontent.com/24994818/82699708-c1af2400-9c32-11ea-800a-1b578fcbcac5.png)
 
 # 	* [Modify the HTML Pages]()
+
+- add this at the end of index.html
+
+```html
+<h2>Navigation</h2>
+<ul>
+  <li style="color: #F90">
+    <a href="orange.html">The Orange Page</a>
+  </li>
+  <li style="color: #00F">
+```
+
+- add this at the end of orange.html
+
+```html
+<p><a href="index.html">Return to home page</a></p>
+```
+
 # 	* [Stage and Commit the Snapshot]()
 # 	* [Explore the Repository]()
 # 	* [Conclusion]()
