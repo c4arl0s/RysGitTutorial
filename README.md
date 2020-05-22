@@ -399,6 +399,53 @@ git commit -m "add blue and orangle html file"
 ```
 
 # 	* [Stage and Commit the Snapshot]()
+
+```console
+git status
+```
+
+- output
+
+```
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+	modified:   orange.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+-
+
+```console
+$ git add index.html orange.html blue.html 
+```
+
+- status
+
+```console
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	modified:   orange.html
+
+```
+
+- commit 
+
+```console
+$ git commit -m "Add navigation links"
+[master 453c8a4] Add navigation links
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+```
+
+- Note that the red circle, which represent the current commit, automatically moves forward every time we commit a new snapshot.
+
+![Screen Shot 2020-05-22 at 16 55 24](https://user-images.githubusercontent.com/24994818/82712156-0d6ec700-9c4d-11ea-8dd1-8f705f6996ae.png)
+
 # 	* [Explore the Repository]()
 # 	* [Conclusion]()
 # 	* [Quick Reference]()
