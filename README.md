@@ -179,20 +179,20 @@ Ry's Git Tutorial
 	* [Quick Reference]()
 
 
-# 1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#1-introduction)
+# 1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - Git is a version control system (VCS) created for a single task: managing changes to your files.
 
-# 	* [A Brief History of Revision Control]()
-# 	* [The birth of Git]()
-# 	* [Installation]()
-# 	* [Get Ready]()
+# 	* [A Brief History of Revision Control](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# 	* [The birth of Git](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# 	* [Installation](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# 	* [Get Ready](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
-# 2. [The basics]()
+# 2. [The basics](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - This module explores the fundamental Git workflow: creating a repository, staging and committing snapshots, configuring options, and viewing the state of a repository.
 
-# 	* [Create the example Site]()
+# 	* [Create the example Site](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```html
 <!DOCTYPE html>
@@ -213,7 +213,7 @@ Ry's Git Tutorial
 </html>
 ```
 
-# 	* [Initialize the Git Repository]()
+# 	* [Initialize the Git Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 cd /Users/carlossantiagocruz/SWIFT-PROGRAMMING/RysGitTutorial
@@ -231,7 +231,7 @@ git init
 Initialized empty Git repository in /Users/carlossantiagocruz/Documents/SWIFT-PROGRAMMING/RysGitTutorialRepository/.git/
 ```
 
-# 	* [View the repository status]()
+# 	* [View the repository status](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
 git status
@@ -251,7 +251,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 - Git does not automatically track files because there are often project files that we don't want to keep under revision control.
 
-# 	* [Stage a snapshot]()
+# 	* [Stage a snapshot](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 - tell git to start tracking index.html
 
@@ -280,8 +280,14 @@ Changes to be committed:
 - Git's term for creating a snapshot is called staging
 - Staging give us the opportunity to group related changes into distinct snapshots.
 
-# 	* [Commit the Snapshot]()
-# 	* [View the repository History]()
+# 	* [Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+git commit
+```
+![Screen Shot 2020-05-22 at 12 55 58](https://user-images.githubusercontent.com/24994818/82695901-9b39ba80-9c2b-11ea-9542-d3499c0dc735.png)
+
+	# 	* [View the repository History]()
 # 	* [Configure Git]()
 # 	* [Create New HTML files]()
 # 	* [Stage the New Files]()
