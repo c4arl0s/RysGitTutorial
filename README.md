@@ -879,7 +879,8 @@ git reset --hard / git clean -f
 - Lets start our exploration by listing the existingg branches for our project
 
 ```console
-git branch
+$ git branch
+* master
 ```
 
 - This will display our one and only branch: * master.
@@ -890,8 +891,49 @@ git branch
 
 - Notice that since there is only one working directory for each project, only one branch can be checked out at a time.
 
-
 # 	* [Checkout the Crazy Experiment]()
+
+- The previous module left out some details about ho to checking out previous commits actually works.
+- We are now ready to tackle this topic in depth.
+- First, we need the checksums of our committed snapshots.
+
+```console
+$ git log --oneline
+3553479 (HEAD -> master) Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- Check out the crazy experiment from the last module, remembering to change 
+
+```console
+git checkout 12e24f0
+```
+
+- This command returns a message that says we are in a **detached HEAD state** and that the **HEAD** is git's internal way of indicating the snapshot that is currently checked out.
+
+```console
+HEAD detached at 12e24f0
+nothing to commit, working tree clean
+```
+
+- This means the red circle in each of our history diagrams actually represets Git's HEAD.
+- The followin figure shows the state of our repository before and after we checked out and old commit.
+
+![Screen Shot 2020-05-23 at 8 25 18](https://user-images.githubusercontent.com/24994818/82731820-f7094f80-9cce-11ea-99d3-31959c7ce556.png)
+
+- As shown in the "before" diagram, the **HEAD** normally resides on the tip of a development branch, But when we checked out the previous commit, the **HEAD** moved to the middle of the branch.
+- We can no longer say we are on the **master** branch since it contains more recent snapshots than the **HEAD**.
+- This is reflected in the **git branch** output, which tells us that we are currently on (no branch)
+
+```console
+$ git branch
+* (HEAD detached at 12e24f0)
+  master
+```
+
 # 	* [Create a New Branch]()
 # 	* [Make a Rainbow]()
 # 	* [Stage and Commit the Rainbow]()
