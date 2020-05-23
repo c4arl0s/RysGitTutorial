@@ -998,6 +998,71 @@ Switched to branch 'crazy'
 ```
 
 # 	* [Stage and Commit the Rainbow]()
+
+- Hopefully, you are relatively familiar with staging and committing snapshots by now:
+
+```console
+git add crazy.html
+```
+
+```console
+$ git status
+On branch crazy
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   crazy.html
+```
+
+```console
+git commit -m "add a rainbow to crazy.html"
+```
+
+![Screen Shot 2020-05-23 at 9 01 30](https://user-images.githubusercontent.com/24994818/82732641-03dc7200-9cd4-11ea-8d05-6d3d19922e60.png)
+
+- Also notice that the **HEAD** (designated by the red circle) automatically moved forward to the new commit, which is intutively what we would expect when developing a project.
+- The above diagram represents the complete state of our repository, but **git log** only displays the history of the current branch:
+
+```console
+git log
+commit e1bc77119319d8b38ff46dbddd968f669cc37a4c
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 23 09:01:08 2020 -0500
+
+    add a rainbow to crazy.html
+
+commit 12e24f0c4e03b3c991b287230548d8bdad3882d7
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 20:34:06 2020 -0500
+
+    Add a crazzy experiment
+
+commit 453c8a4db079c3d235e3470754a79a22ea0f0afd
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 16:53:53 2020 -0500
+
+    Add navigation links
+
+commit 1047951bab2636a3bc90682e48d9fb32644da036
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 13:45:14 2020 -0500
+
+    t Add blue an orange html files
+
+commit 6a442fcc4ab51362713f09ed5eadc7af767db833
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 12:54:21 2020 -0500
+
+    Create index page for the message
+```
+
+- Note that the history **before** the fork is considered part of the new branch (marked with asterisks above).
+- That is to say, the crazy history spans all the way back to the first commit.
+
+![Screen Shot 2020-05-23 at 9 08 05](https://user-images.githubusercontent.com/24994818/82732774-f07dd680-9cd4-11ea-8454-50261fc15be0.png)
+
+- The project as a whole now has a complex history, however, each individual branch still has a linear history (snapshots occur one after another).
+- This means that we can interact with branches in the exact same way as we learned in the first two modules.
+
 # 	* [Rename the Rainbow]()
 # 	* [Return to the Master Branch]()
 # 	* [Create a CSS Branch]()
