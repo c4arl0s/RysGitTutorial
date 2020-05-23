@@ -818,6 +818,12 @@ Removing dummy.html
 
 - This will remove all untracked files. With dummy.html gone, git status should now tell us that we have a "clean" working directory, meaning our project matches the most recent commit.
 
+```console
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
 - **Be careful** with **git reset** and **git clean**. Both operate on the working directory, not on the committed snapshots.
 - Unlike **git revert**, they **permanently undo changes, so make sure you really want to trash what you are working on before you use them.
 
@@ -854,6 +860,20 @@ git reset --hard / git clean -f
 
 
 # 4. [Branches I]()
+
+- Branches are the final component of Git version control.
+- This gives us four core elements to work with throughout the rest of this tutorial:
+
+	* The working directory
+	* The staged Snapshot
+	* Committed Snapshots
+	* Development Branches
+
+- In Git, a branch is an independent line of development.
+- First, Branches present an error-proof method for incorporating changes from an experiment.
+- Second, they let you store all of your experiments in a single directory, which makes it much easier to keep track of them and to share them with others.
+- Branches also lend themselves to several standardized workflows for both individual and colavorative development, which will b explored in the latter half of the tutorial.
+
 # 	* [View existing Branches]()
 # 	* [Checkout the Crazy Experiment]()
 # 	* [Create a New Branch]()
