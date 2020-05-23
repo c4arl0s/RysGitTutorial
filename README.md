@@ -690,8 +690,51 @@ git checkout master
 Previous HEAD position was 453c8a4 Add navigation links
 Switched to branch 'master'
 ```
-
 # 	* [Undo Committed Changes]()
+
+- We are ready to restore our stable tag by removing the most recent commit.
+- Make sure to change the 12e24f0 to the ID to the crazy experiment's commit before running the next command:
+
+```console
+git revert 12e24f0
+```
+
+- This will show you the vim editor with the default message "Revert "Add a crazzy experiment"
+- Save and close
+
+```console
+$ git revert 12e24f0
+Removing crazy.html
+[master 3553479] Revert "Add a crazzy experiment"
+ 1 file changed, 14 deletions(-)
+ delete mode 100644 crazy.html
+```
+
+- git log
+
+```console
+git log --oneline
+```
+
+- output
+
+```console
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- Notice that instead of deleting the "crazzy experiment" commit, Git figures out how to undo the changes it contains, the tacks on another commit with the resulting content.
+- So, our fifth commit and our third commit represent the exact same snapshot, as shown below.
+- Again, Git is designed to never lose history: the fourth snapshot is still accessible, just in case we want to continue developing it.
+
+![Screen Shot 2020-05-22 at 21 15 21](https://user-images.githubusercontent.com/24994818/82719550-605a7580-9c71-11ea-9926-618e5053ab4c.png)
+
+- When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to.
+- It helps to think of this command as saying "undo this commit" rather than "restore this version"
+
 # 	* [Start a Smaller Experiment]()
 # 	* [Undo Uncommitted Changes]()
 # 	* [Conclusion]()
