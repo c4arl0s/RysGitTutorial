@@ -875,6 +875,22 @@ git reset --hard / git clean -f
 - Branches also lend themselves to several standardized workflows for both individual and colavorative development, which will b explored in the latter half of the tutorial.
 
 # 	* [View existing Branches]()
+
+- Lets start our exploration by listing the existingg branches for our project
+
+```console
+git branch
+```
+
+- This will display our one and only branch: * master.
+- The master branch is Git's default branch, and the asterisk next to ir tell us that it is currently checked out.
+- This means that the most recent snapshot in the master branch resides in the working directory.
+
+![Screen Shot 2020-05-23 at 8 09 49](https://user-images.githubusercontent.com/24994818/82731472-cde7bf80-9ccc-11ea-9029-32deb45c901f.png)
+
+- Notice that since there is only one working directory for each project, only one branch can be checked out at a time.
+
+
 # 	* [Checkout the Crazy Experiment]()
 # 	* [Create a New Branch]()
 # 	* [Make a Rainbow]()
