@@ -935,6 +935,39 @@ $ git branch
 ```
 
 # 	* [Create a New Branch]()
+
+- We can not add new commits when we are not on a branch, so let's create one now.
+- This will take our current working directory and fork it into a new branch.
+
+```console
+git branch crazy
+```
+
+- print all branches
+
+```console
+$ git branch
+* (HEAD detached at 12e24f0)
+  crazy
+  master
+```
+
+- Note that git branch is a versatile command that can be used to either list branches or create them. 
+- However, the above command only creates the crazy branch -It does not check it out.
+
+```console
+git checkout crazy
+Switched to branch 'crazy'
+```
+
+- We are now free to experiment in the working directory without disturbing anything in the **master** branch.
+- The **crazy** branch is a completely isolated development environment that can be visualized as the following:
+
+![Screen Shot 2020-05-23 at 8 47 17](https://user-images.githubusercontent.com/24994818/82732309-08a02680-9cd2-11ea-9a98-de50000acc64.png)
+
+- Right now, the crazy branch, **HEAD**, and working directory are the exact same as the fourth commit.
+- But as soon as we add another snapshot, we will see a fork in our project history.
+
 # 	* [Make a Rainbow]()
 # 	* [Stage and Commit the Rainbow]()
 # 	* [Rename the Rainbow]()
