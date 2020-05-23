@@ -759,6 +759,69 @@ git log --oneline
 - In the next section, we are going to abandon this uncommitted experiment. But since the git revert command requires a commit ID to undo, we can't use the method discussed above.
 
 # 	* [Undo Uncommitted Changes]()
+
+- Before we start undoing things, let's take a look at the status of our repository
+
+```console
+git status
+```
+
+- output
+
+```console
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	dummy.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+- We have a tracked file and an untracked file that need to be changed. First, we will take care of index.html
+
+```console
+git reset --hard
+```
+
+- output
+
+```console
+HEAD is now at 3553479 Revert "Add a crazzy experiment"
+```
+
+- This changes all tracked files to match the most recent commit. Note that the --hard flag is what actually updates the file.
+- Running git reset without any flags will simply unstage index.html, leaving its contents as is.
+
+```console
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	dummy.html
+```
+
+- In either case, git reset only operates on the working directory and the staging area, so our git log history remains unchanged.
+
+* Next, let's remove the dummy.html file.
+* Of course, we could manually delete it, but using Git to reset changes eliminates human errors when working with several files in large teams.
+- Run the following commands,
+
+```console
+$ git clean -f
+Removing dummy.html
+```
+
+- This will remove all untracked files. With dummy.html gone, git status should now tell us that we have a "clean" working directory, meaning our project matches the most recent commit.
+
+- **Be careful** with **git reset** and **git clean**. Both operate on the working directory, not on the committed snapshots.
+- Unlike **git revert**, they **permanently undo changes, so make sure you really want to trash what you are working on before you use them.
+
+	
 # 	* [Conclusion]()
 # 	* [Quick References]()
 # 4. [Branches I]()
