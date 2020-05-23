@@ -823,7 +823,36 @@ Removing dummy.html
 
 	
 # 	* [Conclusion]()
+
+![Screen Shot 2020-05-23 at 7 46 49](https://user-images.githubusercontent.com/24994818/82731017-94618500-9cc9-11ea-9d20-5bb40446c1b3.png)
+
 # 	* [Quick References]()
+
+```console
+git checkout commitID
+```
+
+```console
+git tag -a tagName -m "description"
+```
+
+```console
+git revert commitID
+```
+
+```console
+git reset --hard
+```
+
+```console
+git clean -f
+```
+
+```console
+git reset --hard / git clean -f
+```
+
+
 # 4. [Branches I]()
 # 	* [View existing Branches]()
 # 	* [Checkout the Crazy Experiment]()
