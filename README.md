@@ -1132,8 +1132,32 @@ e1bc771 add a rainbow to crazy.html
 ![Screen Shot 2020-05-23 at 11 01 37](https://user-images.githubusercontent.com/24994818/82735083-cc29f600-9ce4-11ea-89b2-22cc74585e12.png)
 
 - Remember that the crazy branch does not include any commits in master after the fork.
-
+	
 # 	* [Return to the Master Branch]()
+
+- lets switch back to the master branch:
+
+```console
+git checkout master
+git branch
+```
+
+```console
+git log --oneline
+3553479 (HEAD -> master) Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- After the checkout, crazy.html does not exist in the working directory, and the commits from the last few steps don't appear in the history. These two branches became completely independent development enviroments after they forked.
+- You can think of them as separate project folders that you switch between with git checkout.
+- They do, however, share their first four commits.
+
+![Screen Shot 2020-05-23 at 11 37 52](https://user-images.githubusercontent.com/24994818/82735782-e0bcbd00-9ce9-11ea-9ccc-c6b53df0324c.png)
+
+
 # 	* [Create a CSS Branch]()
 # 	* [Add a CSS Stylesheet]()
 # 	* [Link the Stylesheet]()
