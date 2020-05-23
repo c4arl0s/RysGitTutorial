@@ -736,6 +736,28 @@ git log --oneline
 - It helps to think of this command as saying "undo this commit" rather than "restore this version"
 
 # 	* [Start a Smaller Experiment]()
+
+- Let's try a smaller experiment this time.
+- Create dummy.html and leave it as a blank file.
+- Then, add a link in the "Navigation Section" of index.html so that it resembles the following.
+
+```html
+<h2>Navigation</h2>
+<ul>
+  <li style="color: #F90">
+    <a href="orange.html">The Orange Page</a>
+  </li>
+  <li style="color: #00F">
+	<a href="blue.html">The Blue Page</a>
+ </li>
+ <li>
+  <a href="dummy.html">The Dummy Page</a>
+  </li>
+</ul>
+```
+
+- In the next section, we are going to abandon this uncommitted experiment. But since the git revert command requires a commit ID to undo, we can't use the method discussed above.
+
 # 	* [Undo Uncommitted Changes]()
 # 	* [Conclusion]()
 # 	* [Quick References]()
