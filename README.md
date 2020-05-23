@@ -595,8 +595,77 @@ Switched to branch 'master'
 $ git tag -a v1.0 -m "Stable Version of the website"
 ```
 
+- print all tags
+
+```console
+$ git tag
+v1.0
+```
 # 	* [Try a Crazy Experiment]()
+
+- create crazy.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Crazy Experiment</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>A Crazy Experiment</h1>
+  <p>We're trying out a <span style="color: #F0F">crazy</span>
+  <span style="color: #06C">experiment</span>!
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
 # 	* [Stage and Commit the Snapshot]()
+
+```console
+$ git add crazy.html 
+```
+
+- commit
+
+```console
+$ git commit -m "Add a crazzy experiment"
+[master 12e24f0] Add a crazzy experiment
+ 1 file changed, 14 insertions(+)
+ create mode 100644 crazy.html
+```
+
+- status
+
+```console
+commit 12e24f0c4e03b3c991b287230548d8bdad3882d7
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 20:34:06 2020 -0500
+
+    Add a crazzy experiment
+
+commit 453c8a4db079c3d235e3470754a79a22ea0f0afd
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 16:53:53 2020 -0500
+
+    Add navigation links
+
+commit 1047951bab2636a3bc90682e48d9fb32644da036
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 13:45:14 2020 -0500
+
+    t Add blue an orange html files
+
+commit 6a442fcc4ab51362713f09ed5eadc7af767db833
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 12:54:21 2020 -0500
+
+    Create index page for the message
+
+```
+
 # 	* [Undo Committed Changes]()
 # 	* [Start a Smaller Experiment]()
 # 	* [Undo Uncommitted Changes]()
