@@ -1064,6 +1064,75 @@ Date:   Fri May 22 12:54:21 2020 -0500
 - This means that we can interact with branches in the exact same way as we learned in the first two modules.
 
 # 	* [Rename the Rainbow]()
+
+- Let's add one more snapshot to the crazy branch.
+- Rename **crazy.html to **rainbow.html, 
+
+```console
+mv crazy.html rainbow.html
+
+- then use the following Git commands to update the repository
+
+```console
+git status
+On branch crazy
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    crazy.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	rainbow.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```console
+git rm crazy.html
+rm 'crazy.html'
+```
+
+- the git rm command tells Git to stop tacking crazy.html (and delete it if necesarry), and git add starts tracking rainbow.html.
+
+```console
+git add rainbow.html
+```
+
+```console
+git status
+On branch crazy
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    crazy.html -> rainbow.html
+```
+
+- The renamed: crazy.html -> rainbow.html message in the final status output show us that Git is smart enough to figure out when we are renaming a file.
+
+- Our snapshot is staged and ready to be commited:
+
+```console
+git commit -m "Rename craz.html to rainbow.html"
+crazy 95a36a7] Rename crazy.html to rainbow.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename crazy.html => rainbow.html (100%)
+```
+
+```console
+$ git log --oneline
+95a36a7 (HEAD -> crazy) Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+- After this addition, our complete repository history looks like the following
+
+![Screen Shot 2020-05-23 at 11 01 37](https://user-images.githubusercontent.com/24994818/82735083-cc29f600-9ce4-11ea-89b2-22cc74585e12.png)
+
+- Remember that the crazy branch does not include any commits in master after the fork.
+
 # 	* [Return to the Master Branch]()
 # 	* [Create a CSS Branch]()
 # 	* [Add a CSS Stylesheet]()
