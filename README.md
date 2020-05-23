@@ -31,6 +31,7 @@ Ry's Git Tutorial
 	* [Tag a Release](https://github.com/c4arl0s/RysGitTutorial#-tag-a-release)
 	* [Try a Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-try-a-crazy-experiment)
 	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-and-commit-the-snapshot-1)
+ 	* [View the Stable Commit]()
 	* [Undo Committed Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-committed-changes)
 	* [Start a Smaller Experiment](https://github.com/c4arl0s/RysGitTutorial#-start-a-smaller-experiment)
 	* [Undo Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-uncommitted-changes)
@@ -664,6 +665,30 @@ Date:   Fri May 22 12:54:21 2020 -0500
 
     Create index page for the message
 
+```
+# 	* [View the Stable Commit]()
+
+```console
+git checkout v1.0
+```
+
+- output
+
+```console
+HEAD is now at 453c8a4 Add navigation links
+```
+
+- go back to master
+
+```console
+git checkout master
+```
+
+- output
+
+```console
+Previous HEAD position was 453c8a4 Add navigation links
+Switched to branch 'master'
 ```
 
 # 	* [Undo Committed Changes]()
