@@ -969,6 +969,34 @@ Switched to branch 'crazy'
 - But as soon as we add another snapshot, we will see a fork in our project history.
 
 # 	* [Make a Rainbow]()
+
+- We will continue developing our crazy experiment by changing **crazy.html** to the following.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Crazy Experiment</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>A Crazy Experiment</h1>
+	<p>Look! A Rainbow!</p>
+
+<ul>
+    <li style="color: red">Red</li>
+    <li style="color: orange">Orange</li>
+    <li style="color: yellow">Yellow</li>
+    <li style="color: green">Green</li>
+    <li style="color: blue">Blue</li>
+    <li style="color: indigo">Indigo</li>
+    <li style="color: violet">Violet</li>
+</ul>
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
 # 	* [Stage and Commit the Rainbow]()
 # 	* [Rename the Rainbow]()
 # 	* [Return to the Master Branch]()
