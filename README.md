@@ -1210,6 +1210,53 @@ git commit -m "Add CSS stylesheet"
 ```
 
 # 	* [Link the Stylesheet]()
+
+- We still need to tell the HTML pages to use the formatting in style.css.
+- Add the following text on a separate line after the <title> element in index.html, blue.html and orange.html (remember that rainbow.html only exist in the crazy branch).
+- You should be able to see the CSS formatting by opening index.html in a web browser.
+
+```html
+<link rel="stylesheet" href="style.css" />
+```
+
+- Commit the changes
+
+```console
+$ git add index.html blue.html orange.html 
+```
+
+```console
+git status
+On branch css
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   blue.html
+	modified:   index.html
+	modified:   orange.html
+
+```
+
+```console
+$ git commit -m "link HTML pages to stylesheet"
+[css 1a27d0e] link HTML pages to stylesheet
+ 3 files changed, 3 insertions(+)
+```
+
+```console
+$ git log --oneline
+1a27d0e (HEAD -> css) link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+3553479 (master) Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- This results in a repository history looks like:
+
+![Screen Shot 2020-05-24 at 8 44 44](https://user-images.githubusercontent.com/24994818/82755691-e1f9f280-9d9a-11ea-9b4c-d44f0d352cae.png)
+
 # 	* [Return to the Master Branch (again)]()
 # 	* [Merge the CSS Branch]()
 # 	* [Delete the CSS Branch]()
