@@ -1180,6 +1180,35 @@ Switched to branch 'css'
 ![Screen Shot 2020-05-24 at 8 44 44](https://user-images.githubusercontent.com/24994818/82755691-e1f9f280-9d9a-11ea-9b4c-d44f0d352cae.png)
 
 # 	* [Add a CSS Stylesheet]()
+
+- Next, create a file called **style.css** with the following content.
+- This CSS is used to apply formatting to the HTML in our other files.
+
+```css
+body {
+  padding: 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #111;
+}
+
+p, ul {
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-left: 20px;
+}
+```
+
+- Commit the stylesheet in th usual fashion
+
+```console
+git add style.css
+git status
+git commit -m "Add CSS stylesheet"
+```
+
 # 	* [Link the Stylesheet]()
 # 	* [Return to the Master Branch (again)]()
 # 	* [Merge the CSS Branch]()
