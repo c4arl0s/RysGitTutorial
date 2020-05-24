@@ -1348,6 +1348,41 @@ When the history of two branches diverges, a dedicated commit is required to com
 
 
 # 	* [Continue the Crazy Experiment]()
+
+Let`s start by checking out the crazy branch.
+
+```console
+git branch
+  crazy
+* master
+```
+
+```console
+$ git checkout crazy
+Switched to branch 'crazy'
+```
+
+```console
+$ git log --oneline
+95a36a7 (HEAD -> crazy) Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+The crazy branch is a **longer-running** type of topic branch called a **feature branch**.
+This is fitting, as it was created with the intention of developing a **specific feature**. It is also a term tht makes Git's contribution to the development workflow readly apparaent: **branches enable you to focus on developing one clearly defined feature at a time**
+
+This brings us to my **rule-thumb for using git branches**:
+
+1. Create a new branch for each mayor addition to your project.
+2. Don't create a branch if you cannot give it a specific name.
+
+Following these simple guidelines will have a dramatic impact on your programming efficiency.
+
+
 # 	* [Merge the CSS Updates]()
 # 	* [Style the Rainbow Page]()
 # 	* [Link to the Rainbow Page]()
