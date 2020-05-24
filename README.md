@@ -1433,6 +1433,54 @@ The name comes from the internal method used to create the merge commit. Git loo
 This kind of branch interaction is a big part of what makes Git such a powerful development tool. We can not only create independent lines of development, but we can alsosharee information between them by tying together their stories with a 3-way merge.
 
 # 	* [Style the Rainbow Page]()
+
+Now that we have access to the CSS updates from master, we can continue developing our crazy experiment.
+Link the CSS stylesheet to rainbow.html by adding the following HTML on the line after **title** element
+
+```html
+<link rel="stylesheet" href="style.css" />
+```
+
+- Stage and commit the update, then check that it is reflected in the history
+
+```console
+git status
+On branch crazy
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   rainbow.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```console
+$ git commit -a -m "add CSS stylesheet to rainbow.html"
+[crazy 6a43f42] add CSS stylesheet to rainbow.html
+ 1 file changed, 1 insertion(+)
+```
+
+```console
+git log --oneline
+6a43f42 (HEAD -> crazy) add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e (master) link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+Notice that we skipped the staging step this time aroun.
+Instead of using **git add**, we passed the -a flag to git commit.
+This convenient parameter tells Git to automatically include all tracked files in the staged snapshot.
+Combined with the -m flag, we can stage and commit snapshots with a single command.
+However, be careful not to include unintended files when using the -a flag.
+
 # 	* [Link to the Rainbow Page]()
 # 	* [Fork an Alternative Rainbow]()
 # 	* [Change the Rainbow]()
