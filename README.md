@@ -1384,6 +1384,54 @@ Following these simple guidelines will have a dramatic impact on your programmin
 
 
 # 	* [Merge the CSS Updates]()
+
+Note that CSS formatting we merged into **master*Ç* is nowhere to be found.
+This presents a bit of a problem if we want to experiment to reflect these updates.
+Conveniently, Git let us merge changes into **any branch** (not just the master branch).
+So, we can pull the updates in with the familiar **git merge** command.
+Remember that merging only affects the checked-out branch.
+
+```console
+git merge maste
+```
+
+- editing
+
+```vim
+Merge branch 'master' into crazy
+""
+""
+""
+```
+
+```console
+$ git merge master
+Merge made by the 'recursive' strategy.
+ blue.html   |  1 +
+ index.html  |  1 +
+ orange.html |  1 +
+ style.css   | 14 ++++++++++++++
+ 4 files changed, 17 insertions(+)
+ create mode 100644 style.css
+```
+
+As of Git 1.7.1.0, this will open your editor and prompt you for a message explaining why the commit was necessary.
+You can use the default **Merge** branch **master** into crazy. When you save and close the file, you will notice an extra commit in your project history. Recall that our first merge didn't add any new commits; it is just **"fast-forwarded" the tip of the master branch. This was not the case for our new merge, which is shown below.
+
+![Screen Shot 2020-05-24 at 11 50 02](https://user-images.githubusercontent.com/24994818/82759729-c7cd0e00-9db4-11ea-9b4b-8e97fc80512e.png)
+
+Take a moment to examine why the current merge could not be **fast-forward one**. 
+How Could Git have walked the crazy pointer over the tip of the master branch ?
+It is not possible without backtracking, which kind of defeats the idea of **"fast-forwarding"**
+We are left with a new way to combine brancges: **the 3-way merge**
+
+A 3-way merge occurs when you try to merge two branches whose history has diverged. It creates an extra merge commit to function as a link between the two branches.
+As a result, it has two parent commits. The above figure visualizes this with two arros originating from the tip of crazy. It is like saying **"this commit comes from both the crazy branch and from master"**. After the merge, the crazy branch has access to both its history an the master history.
+
+The name comes from the internal method used to create the merge commit. Git looks at **three** commits (numbered in the above figure) to generate the final state of the merge.
+
+This kind of branch interaction is a big part of what makes Git such a powerful development tool. We can not only create independent lines of development, but we can alsosharee information between them by tying together their stories with a 3-way merge.
+
 # 	* [Style the Rainbow Page]()
 # 	* [Link to the Rainbow Page]()
 # 	* [Fork an Alternative Rainbow]()
