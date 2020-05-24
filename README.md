@@ -1285,6 +1285,18 @@ $ git log --oneline
 - As expected, there is no mention of the CSS addition in the history of master, but we are about to change that.
 
 # 	* [Merge the CSS Branch]()
+
+- Use the git **merge** command to take the snapshots from the **css** branch and add them to the **master** branch.
+
+![Screen Shot 2020-05-24 at 9 38 10](https://user-images.githubusercontent.com/24994818/82756851-508e7e80-9da2-11ea-8c28-66833b9b5a21.png)
+
+- Instead of re-creating the commits in css and adding them to the history of master, Git reuses the existing snapshots and simply moves the tip of **master** to match the tip of **css**.
+- This kind of merge is called a **fast-forward merge**, since Git is **"fast-forwarding"** through the new commits in the **css** branch.
+
+
+- After the merge, both branches have the exact same history, which makes them redundan.
+- Unless we wanted to keep developing on the css branch, we are free to get rid of it.
+
 # 	* [Delete the CSS Branch]()
 # 	* [Conclusion]()
 # 	* [Quick Reference]()
