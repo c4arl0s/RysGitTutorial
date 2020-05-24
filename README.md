@@ -1298,6 +1298,28 @@ $ git log --oneline
 - Unless we wanted to keep developing on the css branch, we are free to get rid of it.
 
 # 	* [Delete the CSS Branch]()
+
+- We can safely delete a branch by passing the -d flag to git branch.
+
+```console
+git branch -d css
+Deleted branch css (was 1a27d0e).
+```
+
+- Since **css** and **master** represent the same branch, our history looks the same, though the **css** branch has been removed.
+- I have also put the master branch's commits in a straight line in the following visualization, making it easier to track during the upcomming modules.
+
+```console
+git branch
+  crazy
+* master
+```
+
+![Screen Shot 2020-05-24 at 11 12 51](https://user-images.githubusercontent.com/24994818/82758981-8be37a00-9daf-11ea-93a4-35e65b332800.png)
+
+- Deleting branches is a relatively **"safe"** operation in the sense that Git will warn you if you are deleting a unmerged branch.
+- This is just another example of Git's commitment to never losing your work.
+
 # 	* [Conclusion]()
 # 	* [Quick Reference]()
 # 5. [Branches II]()
