@@ -1336,6 +1336,17 @@ git rm fileName
 ```
 
 # 5. [Branches II]()
+
+Now that you have covered the mechanics behind Git Branches, we can discuss the practical impact that they have on the software development process.
+Instead of introducing new commands, this module covers how the typical Git user applies this workfow to real projects, as well as some of the problems that arise in a branched enviroment.
+
+To git, a branch is a branch, but it is often useful to assign special meaning to different branches. For example, we have been using **master** as the stable branch for our example project, and we have also used a temporary branch to add some CSS formatting.
+Temporary branches like the latter are called **topic branches** becaue they exis to develop a certain topic branches later in this module.
+
+Amid our exploration of Git branches, we will also discover that some merges cannot **"fast-forwarded"**
+When the history of two branches diverges, a dedicated commit is required to combine the branches. This situation may also give rise to a merge conflict, which must be manually resolved before anything can be committed to the repository.
+
+
 # 	* [Continue the Crazy Experiment]()
 # 	* [Merge the CSS Updates]()
 # 	* [Style the Rainbow Page]()
