@@ -1258,6 +1258,32 @@ $ git log --oneline
 ![Screen Shot 2020-05-24 at 8 44 44](https://user-images.githubusercontent.com/24994818/82755691-e1f9f280-9d9a-11ea-9b4c-d44f0d352cae.png)
 
 # 	* [Return to the Master Branch (again)]()
+
+- The css branch let us create and test our formatting without threatening the stability of the **master branch**. But, noew we need to merge these changes into the main project. Before we attemp the merge, we need to return to the master branch.
+
+```console
+git checkout master
+Switched to branch 'master'
+```
+
+- Verify that style.css does not exist and that HTML pages are not linked to it.
+- Our repository history remains unchanged, but the working directory now matches the snapshot pointer to by the **master branch**.
+
+![Screen Shot 2020-05-24 at 9 27 38](https://user-images.githubusercontent.com/24994818/82756619-d6a9c580-9da0-11ea-9445-a23d899e9189.png)
+
+- take a look at the **git log --oneline** output as well.
+
+```console
+$ git log --oneline
+3553479 (HEAD -> master) Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+- As expected, there is no mention of the CSS addition in the history of master, but we are about to change that.
+
 # 	* [Merge the CSS Branch]()
 # 	* [Delete the CSS Branch]()
 # 	* [Conclusion]()
