@@ -1321,7 +1321,20 @@ git branch
 - This is just another example of Git's commitment to never losing your work.
 
 # 	* [Conclusion]()
+
+Creating a new branch is really just a way to keep this high-level overview in mind during your every day development.
+
 # 	* [Quick Reference]()
+
+```console
+git branch
+git branch branchName
+git checkout branchName
+git merge branchName
+git branch -d brachName
+git rm fileName
+```
+
 # 5. [Branches II]()
 # 	* [Continue the Crazy Experiment]()
 # 	* [Merge the CSS Updates]()
