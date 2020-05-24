@@ -1157,8 +1157,28 @@ git log --oneline
 
 ![Screen Shot 2020-05-23 at 11 37 52](https://user-images.githubusercontent.com/24994818/82735782-e0bcbd00-9ce9-11ea-9ccc-c6b53df0324c.png)
 
-
 # 	* [Create a CSS Branch]()
+
+- We are going to put our crazy experiment on the backburner for now and turn our attention to formatting the HTML pages with a cascading stylesheet (CSS).
+- Again, if you are not comfortable with HTML and CSS, the content of the upcoming files is not nearly as important as the Git commands used to manage them.
+
+- Let's create and check out a new branch called css.
+
+```console
+git branch css
+```
+
+- switche to css branch
+
+```cosnsole
+git checkout css
+Switched to branch 'css'
+```
+
+- The new branch points to the currently checked out snapshot, which happens to coincide wih the **master branch**
+
+![Screen Shot 2020-05-24 at 8 44 44](https://user-images.githubusercontent.com/24994818/82755691-e1f9f280-9d9a-11ea-9b4c-d44f0d352cae.png)
+
 # 	* [Add a CSS Stylesheet]()
 # 	* [Link the Stylesheet]()
 # 	* [Return to the Master Branch (again)]()
