@@ -1612,7 +1612,7 @@ Switched to branch 'master'
 
 ```console
 git branch news-hotfix
-'''
+```
 
 ```console
 git checkout news-hotfix
@@ -1675,6 +1675,44 @@ $ git commit -m "Add 1st news item"
 Text these additions in a browser to make sure that the links work, it is typo free, etc. Ifeverything looks good, we can "publish" the changes by merging them into the stable master branch. Isolating this in a separate branch is not really necessary for our trivial example, but in the real world, this would give you the opportunity to run build tests without touching your stable project.
 
 # 	* [Publish the News Hotfix]()
+
+Remember that to merge into the **master** branch, we first need to check it out.
+
+```console
+git checkout master
+Switched to branch 'master'
+```
+
+```console
+$ git merge news-hotfix
+Updating 1a27d0e..049c9d9
+Fast-forward
+ index.html  |  2 +-
+ news-1.html | 16 ++++++++++++++++
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 news-1.html
+```
+
+Since **master** now contains the news update, we can delete the **hotfix** branch:
+
+```console
+$ git branch -d news-hotfix
+Deleted branch news-hotfix (was 049c9d9).
+```
+
+```console
+$ git branch
+  crazy
+  crazy-alt
+* master
+```
+
+The following diagram reflects our repository's history before and after the merge. Can you figure out why was this a fast-forward merge instead of a 3-way merge?
+
+![Screen Shot 2020-05-25 at 9 40 01](https://user-images.githubusercontent.com/24994818/82822643-bb57bc80-9e6b-11ea-9d72-eb5c7f1d250c.png)
+
+Also notice that we have another fork in our history (the commit before **master** branches in two directions), which means we should expect to see another merge commit in the near future.
+
 # 	* [Complete the Crazy Experiment]()
 # 	* [Publish the Crazy Experiment]()
 # 	* [Resolve the Merge Conflicts]()
