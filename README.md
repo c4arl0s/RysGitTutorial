@@ -1212,7 +1212,7 @@ git commit -m "Add CSS stylesheet"
 # 	* [Link the Stylesheet]()
 
 - We still need to tell the HTML pages to use the formatting in style.css.
-- Add the following text on a separate line after the **<title>** element in index.html, blue.html and orange.html (remember that rainbow.html only exist in the crazy branch).
+- Add the following text on a separate line after the **<title>** element in **index.html**, **blue.html** and **orange.html** (remember that rainbow.html only exist in the crazy branch).
 - You should be able to see the CSS formatting by opening index.html in a web browser.
 
 ```html
@@ -1764,6 +1764,54 @@ b9f2b14 Merge branch 'master' into crazy
 ```
 
 # 	* [Publish the Crazy Experiment]()
+
+We are finally ready to merge our **crazy** branch into **master**:
+
+```console
+git checkout master
+Switched to branch 'master'
+```
+
+```console
+$ git merge crazy
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+This is our first **merge conflict**. Conflicts occur when we try to merge branches that have edited the same content. Git does not know how to combine the two changes, so it stops to ask us what to do. We can see exactly what went wrong with the familiar **git status** command.
+
+```console
+git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	new file:   rainbow.html
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   index.html
+```
+
+We are looking at the staged snapshot of a merge commit. We never saw this with the first 3-way merge because we didn't have any conflicts to resolve. But now, Git stopped to let us modify files and resolve the confict before committing the snapshot. The "Unmerged paths" section contains files that hve conflict.
+
+Open up index.html and find the section that looks like:
+
+```console
+<<<<<<< HEAD
+	  <li><a href="news-1.html">Blue Is The New Hue</a></li>
+=======
+		<li><a href="rainbow.html">Our New Rainbow</a></li>
+>>>>>>> crazy
+```
+
+Git went ahead and modified the conflicted file to show us exactly which lines are afflicted. The format of the above text show us the difference between the two versions of the file. 
+
+- The section **labeled** <<<<<<< HEAD show us the version in the current branch, while the part after the ======= shows the version in the crazy branch.
+
 # 	* [Resolve the Merge Conflicts]()
 # 	* [Cleanup the feature Branches]()
 # 	* [Conclusion]()
