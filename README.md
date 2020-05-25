@@ -1212,7 +1212,7 @@ git commit -m "Add CSS stylesheet"
 # 	* [Link the Stylesheet]()
 
 - We still need to tell the HTML pages to use the formatting in style.css.
-- Add the following text on a separate line after the <title> element in index.html, blue.html and orange.html (remember that rainbow.html only exist in the crazy branch).
+- Add the following text on a separate line after the **<title>** element in index.html, blue.html and orange.html (remember that rainbow.html only exist in the crazy branch).
 - You should be able to see the CSS formatting by opening index.html in a web browser.
 
 ```html
@@ -1714,6 +1714,55 @@ The following diagram reflects our repository's history before and after the mer
 Also notice that we have another fork in our history (the commit before **master** branches in two directions), which means we should expect to see another merge commit in the near future.
 
 # 	* [Complete the Crazy Experiment]()
+
+Ok, lets finish up our crazy experiment with one more commit.
+
+```console
+git checkout crazy
+Switched to branch 'crazy'
+```
+
+Note that the news article is nowhere to be found, as should be expected (this branch is completely isolated development environment).
+
+We will finish up our crazy experiment by adding a news item for it on the home page. Change the news list in **index.html** to the following:
+
+```html
+<h2 style="color: #C00">News</h2>
+<ul>
+  <li><a href="rainbow.html">Our New Rainbow</a></li>
+</ul>
+```
+
+Astute readers have probably observed that this directly conflicts with what we changed in the news-hotfix branch.
+**We should not manually add in the other news item** because it has no relationship with the current branch. In addition, there would be no way to make sure the links works because news-1.html does not exist in this branch. This may seem trivial, but imagine the errors that could be introduced had news-hotfix made dozens of differente changes.
+
+We will simply stage and commit the snapshot as if there were no conflicts:
+
+```console
+$ git commit -a -m "Add news item for rainbow"
+[crazy ebb4171] Add news item for rainbow
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+Look at those experimental commits (marked with asterisks below)!
+
+```console
+$ git log --oneline
+* ebb4171 (HEAD -> crazy) Add news item for rainbow
+* 4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+* 95a36a7 Rename crazy.html to rainbow.html
+* e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+* 12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
 # 	* [Publish the Crazy Experiment]()
 # 	* [Resolve the Merge Conflicts]()
 # 	* [Cleanup the feature Branches]()
