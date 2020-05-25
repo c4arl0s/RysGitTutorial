@@ -1598,6 +1598,82 @@ The resulting project history is show below, with the first four commits ommitte
 
 
 # 	* [Emergency Update]()
+
+Our boss called in with some breaking news ! He needs us to update the site immediately, but what do we do with our rainbow.html developments? Well, the beauty of Git branches is that we can just leave them where they are and add the breaking news to master.
+
+We will use what is called a **hotfix branch** to create and test the news updates. In contrast to our relatively long-running feature branch (crazy), hotfix branches are used to quickly patch a production release.
+
+For example: you would use a hotfix branch to fix a time-sensitive bug in a public software project. This distinction is useful for demostrating when it is appropiate to create a new branch, but it is purely conceptual **- a branch is a branch according to Git**
+
+```console
+git checkout master
+Switched to branch 'master'
+```
+
+```console
+git branch news-hotfix
+'''
+
+```console
+git checkout news-hotfix
+Switched to branch 'news-hotfix'
+```
+
+Change the "News" list in **index.html** to match the following.
+
+```html
+	<ul>
+	  <li><a href="news-1.html">Blue Is The New Hue</a></li>
+  </ul>
+```
+
+And, create a new HTML page called **news-1.html** with the following content.
+
+```console
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Blue Is The New Hue</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #079">Blue Is The New Hue</h1>
+  <p>European designers have just announced that
+  <span style="color: #079">Blue</span> will be this year's
+  hot color.</p>
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+We can't use **git commit -a** to automatically stage **news-1.html** because it is an **untracked file** (as shown in **git status**).
+So, let's use an explicit **git add**:
+
+```console
+$ git add index.html news-1.html 
+```
+
+```console
+git status
+On branch news-hotfix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   news-1.html
+
+```
+
+```console
+$ git commit -m "Add 1st news item"
+[news-hotfix 049c9d9] Add 1st news item
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 news-1.html
+```
+
+Text these additions in a browser to make sure that the links work, it is typo free, etc. Ifeverything looks good, we can "publish" the changes by merging them into the stable master branch. Isolating this in a separate branch is not really necessary for our trivial example, but in the real world, this would give you the opportunity to run build tests without touching your stable project.
+
 # 	* [Publish the News Hotfix]()
 # 	* [Complete the Crazy Experiment]()
 # 	* [Publish the Crazy Experiment]()
