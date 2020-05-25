@@ -1707,7 +1707,7 @@ $ git branch
 * master
 ```
 
-The following diagram reflects our repository's history before and after the merge. Can you figure out why was this a fast-forward merge instead of a 3-way merge?
+The following diagram reflects our repository's history before and after the merge. Can you figure out why was this a **fast-forward** merge instead of a **3-way merge**?
 
 ![Screen Shot 2020-05-25 at 9 40 01](https://user-images.githubusercontent.com/24994818/82822643-bb57bc80-9e6b-11ea-9d72-eb5c7f1d250c.png)
 
@@ -1733,8 +1733,8 @@ We will finish up our crazy experiment by adding a news item for it on the home 
 </ul>
 ```
 
-Astute readers have probably observed that this directly conflicts with what we changed in the news-hotfix branch.
-**We should not manually add in the other news item** because it has no relationship with the current branch. In addition, there would be no way to make sure the links works because news-1.html does not exist in this branch. This may seem trivial, but imagine the errors that could be introduced had news-hotfix made dozens of differente changes.
+Astute readers have probably observed that this directly conflicts with what we changed in the **news-hotfix** branch.
+**We should not manually add in the other news item** because it has no relationship with the current branch. In addition, there would be no way to make sure the links works because **news-1.html** does not exist in this branch. This may seem trivial, but imagine the errors that could be introduced had **news-hotfix** made dozens of different changes.
 
 We will simply stage and commit the snapshot as if there were no conflicts:
 
@@ -1796,7 +1796,7 @@ Unmerged paths:
 	both modified:   index.html
 ```
 
-We are looking at the staged snapshot of a merge commit. We never saw this with the first 3-way merge because we didn't have any conflicts to resolve. But now, Git stopped to let us modify files and resolve the confict before committing the snapshot. The "Unmerged paths" section contains files that hve conflict.
+We are looking at the staged snapshot of a merge commit. We never saw this with the first 3-way merge because we didn't have any conflicts to resolve. But now, Git stopped to let us modify files and resolve the conflict before committing the snapshot. The **"Unmerged paths"** section contains files that have conflict..
 
 Open up index.html and find the section that looks like:
 
@@ -1810,9 +1810,51 @@ Open up index.html and find the section that looks like:
 
 Git went ahead and modified the conflicted file to show us exactly which lines are afflicted. The format of the above text show us the difference between the two versions of the file. 
 
-- The section **labeled** <<<<<<< HEAD show us the version in the current branch, while the part after the ======= shows the version in the crazy branch.
+- The section **labeled** <<<<<<< HEAD show us the version in the current branch, while the part after the ======= shows the version in the **crazy** branch.
 
 # 	* [Resolve the Merge Conflicts]()
+
+We can change the affected lines to whatever we want in order to resolve the conflict. Edit the news section of **index.html** to keep changes from both versions:
+
+```console
+<h2 style="color: #C00">News</h2>
+<ul>
+  <li><a href="news-1.html">Blue Is The New Hue</a></li>
+  <li><a href="rainbow.html">Our New Rainbow</a></li>
+</ul>
+```
+
+The <<<<<<<, =======, and >>>>>>> markers are only used to show us the conflict and should be deleted. Next, we need to tell Git that we are done resolving the conflict:
+
+```console
+git add index.html
+```
+
+```console
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   index.html
+	new file:   rainbow.html
+```
+
+That's right, all you have to do is **add index.html to the staged snapshot to mark it as resolved. Finally, complete the 3-way merge:
+
+```console
+git commit 
+[master f79223d] Merge branch 'crazy'
+```
+
+We didn't ue the -m flag to specify a message beacuse Git already gives us a default message for merge commits. It also gives us a **"Conflict"** list, which can be particularly handy when trying to figure out where something went wrong in a project. Save and close the file to create the merge commit.
+
+The final state of our project looks like the following.
+
+![Screen Shot 2020-05-25 at 18 50 28](https://user-images.githubusercontent.com/24994818/82848331-af461c00-9eb8-11ea-881c-3d0868d16c01.png)
+
+
 # 	* [Cleanup the feature Branches]()
 # 	* [Conclusion]()
 # 	* [Quick Reference]()
