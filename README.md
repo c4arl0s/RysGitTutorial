@@ -37,37 +37,37 @@ Ry's Git Tutorial
 	* [Undo Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-uncommitted-changes)
 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-1)
 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#-quick-references)
-4. [Branches I]()
-	* [View existing Branches]()
-	* [Checkout the Crazy Experiment]()
-	* [Create a New Branch]()
-	* [Make a Rainbow]()
-	* [Stage and Commit the Rainbow]()
-	* [Rename the Rainbow]()
-	* [Return to the Master Branch]()
-	* [Create a CSS Branch]()
-	* [Add a CSS Stylesheet]()
-	* [Link the Stylesheet]()
-	* [Return to the Master Branch (again)]()
-	* [Merge the CSS Branch]()
-	* [Delete the CSS Branch]()
-	* [Conclusion]()
-	* [Quick Reference]()
-5. [Branches II]()
-	* [Continue the Crazy Experiment]()
-	* [Merge the CSS Updates]()
-	* [Style the Rainbow Page]()
-	* [Link to the Rainbow Page]()
-	* [Fork an Alternative Rainbow]()
-	* [Change the Rainbow]()
-	* [Emergency Update]()
-	* [Publish the News Hotfix]()
-	* [Complete the Crazy Experiment]()
-	* [Publish the Crazy Experiment]()
-	* [Resolve the Merge Conflicts]()
-	* [Cleanup the feature Branches]()
-	* [Conclusion]()
-	* [Quick Reference]()
+4. [Branches I](https://github.com/c4arl0s/RysGitTutorial#4-branches-i)
+	* [View existing Branches](https://github.com/c4arl0s/RysGitTutorial#-view-existing-branches)
+	* [Checkout the Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-checkout-the-crazy-experiment)
+	* [Create a New Branch](https://github.com/c4arl0s/RysGitTutorial#-create-a-new-branch)
+	* [Make a Rainbow](https://github.com/c4arl0s/RysGitTutorial#-make-a-rainbow)
+	* [Stage and Commit the Rainbow](https://github.com/c4arl0s/RysGitTutorial#-stage-and-commit-the-rainbow)
+	* [Rename the Rainbow](https://github.com/c4arl0s/RysGitTutorial#-rename-the-rainbow)
+	* [Return to the Master Branch](https://github.com/c4arl0s/RysGitTutorial#-return-to-the-master-branch)
+	* [Create a CSS Branch](https://github.com/c4arl0s/RysGitTutorial#-create-a-css-branch)
+	* [Add a CSS Stylesheet](https://github.com/c4arl0s/RysGitTutorial#-add-a-css-stylesheet)
+	* [Link the Stylesheet](https://github.com/c4arl0s/RysGitTutorial#-link-the-stylesheet)
+	* [Return to the Master Branch (again)](https://github.com/c4arl0s/RysGitTutorial#-return-to-the-master-branch-again)
+	* [Merge the CSS Branch](https://github.com/c4arl0s/RysGitTutorial#-merge-the-css-branch)
+	* [Delete the CSS Branch](https://github.com/c4arl0s/RysGitTutorial#-delete-the-css-branch)
+	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-2)
+	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-1)
+5. [Branches II](https://github.com/c4arl0s/RysGitTutorial#5-branches-ii)
+	* [Continue the Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-continue-the-crazy-experiment)
+	* [Merge the CSS Updates](https://github.com/c4arl0s/RysGitTutorial#-merge-the-css-updates)
+	* [Style the Rainbow Page](https://github.com/c4arl0s/RysGitTutorial#-style-the-rainbow-page)
+	* [Link to the Rainbow Page](https://github.com/c4arl0s/RysGitTutorial#-link-to-the-rainbow-page)
+	* [Fork an Alternative Rainbow](https://github.com/c4arl0s/RysGitTutorial#-fork-an-alternative-rainbow)
+	* [Change the Rainbow](https://github.com/c4arl0s/RysGitTutorial#-change-the-rainbow)
+	* [Emergency Update](https://github.com/c4arl0s/RysGitTutorial#-emergency-update)
+	* [Publish the News Hotfix](https://github.com/c4arl0s/RysGitTutorial#-publish-the-news-hotfix)
+	* [Complete the Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-complete-the-crazy-experiment)
+	* [Publish the Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-publish-the-crazy-experiment)
+	* [Resolve the Merge Conflicts](https://github.com/c4arl0s/RysGitTutorial#-resolve-the-merge-conflicts)
+	* [Cleanup the feature Branches](https://github.com/c4arl0s/RysGitTutorial#-cleanup-the-feature-branches)
+	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-3)
+	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-2)
 6. [Rebasing]()	
 	* [Create an About Section]()
 	* [Add an About Page]()
@@ -1482,6 +1482,49 @@ Combined with the -m flag, we can stage and commit snapshots with a single comma
 However, be careful not to include unintended files when using the -a flag.
 
 # 	* [Link to the Rainbow Page]()
+
+We still need to add  navigation link to the home page.
+Change the "Navigation sectio of index.html to the following.
+
+```html
+<h2>Navigation</h2>
+<ul>
+  <li style="color: #F90">
+    <a href="orange.html">The Orange Page</a>
+  </li>
+  <li style="color: #00F">
+    <a href="blue.html">The Blue Page</a>
+  </li>
+  <li>
+    <a href="rainbow.html">The Rainbow Page</a>
+  </li>
+</ul>
+```
+
+As usual, stage and commit the snapshots.
+
+```console
+$ git commit -a -m "Link index.html to rainbow.html"
+[crazy 4310454] Link index.html to rainbow.html
+ 1 file changed, 3 insertions(+)
+```
+
+```console
+$ git log --oneline
+4310454 (HEAD -> crazy) Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e (master) link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
 # 	* [Fork an Alternative Rainbow]()
 # 	* [Change the Rainbow]()
 # 	* [Emergency Update]()
