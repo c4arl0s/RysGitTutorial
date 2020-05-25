@@ -1544,11 +1544,59 @@ When **git branch** creates a branch, it uses the current **HEAD** as the starti
 This meeans that we begin with the same files as crazy (if we called **git branch** from **master**, we would have to re-create rainbow.html).
 After creating th new branch, our repository's history looks like:
 
-![Screen Shot 2020-05-25 at 8 26 51](https://user-images.githubusercontent.com/24994818/82816850-8181b880-9e61-11ea-8f1e-0019d14a9538.png)
 
 ![Screen Shot 2020-05-25 at 8 26 51](https://user-images.githubusercontent.com/24994818/82816850-8181b880-9e61-11ea-8f1e-0019d14a9538.png)
 
 # 	* [Change the Rainbow]()
+
+Change the colorful list in rainbow.html from:
+
+```html
+  <li style="color: red">Red</li>
+  <li style="color: orange">Orange</li>
+  <li style="color: yellow">Yellow</li>
+  <li style="color: green">Green</li>
+  <li style="color: blue">Blue</li>
+  <li style="color: indigo">Indigo</li>
+  <li style="color: violet">Violet</li>”
+```
+
+to the following:
+
+```html
+<div style="background-color: red"></div>
+<div style="background-color: orange"></div>
+<div style="background-color: yellow"></div>
+<div style="background-color: green"></div>
+<div style="background-color: blue"></div>
+<div style="background-color: indigo"></div>
+<div style="background-color: violet"></div>
+```
+
+Then, add some CSS formatting to **head** on the line after the **meta** element
+
+```html
+	<style>
+  div {
+    width: 300px;
+    height: 50px;
+		 }
+	 </style>
+```
+
+If you open rainbow.html in a browser, you should now see colorful blocks in place of the colorful text. Don't forget to commit the changes:
+
+```console
+$ git commit -a -m "Make a REAL rainbow"
+[crazy-alt d247771] Make a REAL rainbow
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+```
+
+The resulting project history is show below, with the first four commits ommitted for the sake of presentation.
+
+![Screen Shot 2020-05-25 at 8 49 40](https://user-images.githubusercontent.com/24994818/82818699-b5aaa880-9e64-11ea-9eff-305ed0bca27d.png)
+
+
 # 	* [Emergency Update]()
 # 	* [Publish the News Hotfix]()
 # 	* [Complete the Crazy Experiment]()
