@@ -1526,6 +1526,28 @@ e1bc771 add a rainbow to crazy.html
 ```
 
 # 	* [Fork an Alternative Rainbow]()
+
+Next, we are going to brainstorm an alternative to the current rainbow.html page.
+This is a perfect time to create another topic branch:
+
+```console
+git branch crazy-alt
+```
+
+```console
+$ git checkout crazy-alt
+Switched to branch 'crazy-alt'
+```
+
+Remember, we can do whatever we want here without worrying about either crazy o master.
+When **git branch** creates a branch, it uses the current **HEAD** as the starting point for the new branch.
+This meeans that we begin with the same files as crazy (if we called **git branch** from **master**, we would have to re-create rainbow.html).
+After creating th new branch, our repository's history looks like:
+
+![Screen Shot 2020-05-25 at 8 26 51](https://user-images.githubusercontent.com/24994818/82816850-8181b880-9e61-11ea-8f1e-0019d14a9538.png)
+
+![Screen Shot 2020-05-25 at 8 26 51](https://user-images.githubusercontent.com/24994818/82816850-8181b880-9e61-11ea-8f1e-0019d14a9538.png)
+
 # 	* [Change the Rainbow]()
 # 	* [Emergency Update]()
 # 	* [Publish the News Hotfix]()
