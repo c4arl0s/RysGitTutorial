@@ -1151,7 +1151,7 @@ git log --oneline
 6a442fc Create index page for the message
 ```
 
-- After the checkout, crazy.html does not exist in the working directory, and the commits from the last few steps don't appear in the history. These two branches became completely independent development enviroments after they forked.
+- After the checkout, crazy.html does not exist in the working directory, and the commits from the last few steps don't appear in the history. These two branches became completely independent development enviroment after they forked.
 - You can think of them as separate project folders that you switch between with git checkout.
 - They do, however, share their first four commits.
 
@@ -1168,14 +1168,14 @@ git log --oneline
 git branch css
 ```
 
-- switche to css branch
+- switch to css branch
 
 ```cosnsole
 git checkout css
 Switched to branch 'css'
 ```
 
-- The new branch points to the currently checked out snapshot, which happens to coincide wih the **master branch**
+- The new branch points to the currently checked out snapshot, which happens to coincide with the **master branch**
 
 ![Screen Shot 2020-05-24 at 8 44 44](https://user-images.githubusercontent.com/24994818/82755691-e1f9f280-9d9a-11ea-9b4c-d44f0d352cae.png)
 
@@ -1201,7 +1201,7 @@ ul {
 }
 ```
 
-- Commit the stylesheet in th usual fashion
+- Commit the stylesheet in the usual fashion
 
 ```console
 git add style.css
@@ -1259,7 +1259,7 @@ $ git log --oneline
 
 # 	* [Return to the Master Branch (again)]()
 
-- The css branch let us create and test our formatting without threatening the stability of the **master branch**. But, noew we need to merge these changes into the main project. Before we attemp the merge, we need to return to the master branch.
+- The css branch let us create and test our formatting without threatening the stability of the **master branch**. But, new we need to merge these changes into the main project. Before we attempt the merge, we need to return to the master branch.
 
 ```console
 git checkout master
@@ -1294,7 +1294,7 @@ $ git log --oneline
 - This kind of merge is called a **fast-forward merge**, since Git is **"fast-forwarding"** through the new commits in the **css** branch.
 
 
-- After the merge, both branches have the exact same history, which makes them redundan.
+- After the merge, both branches have the exact same history, which makes them redundant.
 - Unless we wanted to keep developing on the css branch, we are free to get rid of it.
 
 # 	* [Delete the CSS Branch]()
@@ -1307,7 +1307,7 @@ Deleted branch css (was 1a27d0e).
 ```
 
 - Since **css** and **master** represent the same branch, our history looks the same, though the **css** branch has been removed.
-- I have also put the master branch's commits in a straight line in the following visualization, making it easier to track during the upcomming modules.
+- I have also put the master branch's commits in a straight line in the following visualization, making it easier to track during the upcoming modules.
 
 ```console
 git branch
@@ -1854,9 +1854,43 @@ The final state of our project looks like the following.
 
 ![Screen Shot 2020-05-25 at 18 50 28](https://user-images.githubusercontent.com/24994818/82848331-af461c00-9eb8-11ea-881c-3d0868d16c01.png)
 
-
 # 	* [Cleanup the feature Branches]()
+
+Since our crazy experiment has been successfully merged, we can get rid of our feature branches.
+
+```console
+$ git branch -d crazy
+Deleted branch crazy (was ebb4171).
+```
+
+```console
+$ git branch -d crazy-alt
+error: The branch 'crazy-alt' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D crazy-alt'.
+```
+
+As noted in the last module, the **git branch -d** command will not let you delete a branch that contains unmerged changes. But, we really do want to scrap the alternative experiment, so we will follow the error message's instructions for overriding this behavior:
+
+```console
+$ git branch -D crazy-alt
+Deleted branch crazy-alt (was d247771).
+```
+
+Because we never merged **crazy-alt** into **master**, it is lost forever. However, the **crazy** branch is still accessible through its commits, which are now reachable via the **master** branch. That is to say, it is still part of the structure of the repository's history, even though we deleted our reference to it.
+
+![Screen Shot 2020-05-25 at 19 38 28](https://user-images.githubusercontent.com/24994818/82849830-58901080-9ebf-11ea-9338-d8384871beac.png)
+
+Fast-forward merges are not reflected in the project history. This is the tangible distinction between fast-forward merges and 3-way merges. The next module will discuss the appropiate usage of both and the potential complications of a non-linear history.
+
 # 	* [Conclusion]()
+
+This module demonstrate the three most common uses of Git Branches:
+
+- To develop long-running features (crazy)
+- To apply quick updates (news-hotfix)
+- To record the evolution of a project (master)
+
+
 # 	* [Quick Reference]()
 # 6. [Rebasing]()	
 # 	* [Create an About Section]()
