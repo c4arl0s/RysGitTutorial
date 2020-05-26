@@ -2115,6 +2115,33 @@ $ git commit -m "Add article for 2nd news item"
 ```
 
 # 	* [Publish News Hotfix]()
+
+We are ready to merge the news update back into **master**
+
+```console
+$ git checkout master
+Switched to branch 'master'
+```
+
+```console
+$ git merge news-hotfix
+Updating f79223d..74afd90
+Fast-forward
+ index.html  |  1 +
+ news-2.html | 17 +++++++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 news-2.html
+```
+
+```console
+$ git branch -d news-hotfix
+Deleted branch news-hotfix (was 74afd90).
+```
+
+The **master** branch has not been altered since we created news-hotfix, so Git can perform a fast-forward merge. Our repository now looks like the following.
+
+
+
 # 	* [Rebase the about Branch]()
 # 	* [Add a Personal Bio]()
 # 	* [Add Dummy Page for Mary]()
