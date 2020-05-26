@@ -1892,6 +1892,16 @@ This module demonstrate the three most common uses of Git Branches:
 
 
 # 	* [Quick Reference]()
+
+```console
+git commit -a -m "messageToCommit"
+```
+
+```console
+git branch -D branchName
+```
+
+
 # 6. [Rebasing]()	
 # 	* [Create an About Section]()
 # 	* [Add an About Page]()
