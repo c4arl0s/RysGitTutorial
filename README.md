@@ -1939,6 +1939,41 @@ To explore Git's rebasing capabilities, we will need to build up our example pro
 
 
 # 	* [Create an About Section]()
+
+We will begin by creating an about page for the website. Remember, we should be doing all of our work in isolated branches so that we don't cause any unintended changes to the stable version of the project.
+
+```console
+git branch about
+```
+
+```console
+$ git checkout about
+Switched to branch 'about'
+```
+
+The next few steps break this feature into several unnecessarily small commits so that we can see the effects of a rebase.
+
+First, make a new directory in your repository called about. Then, create the empty file about/index.html. Stage and commit a snapshot.
+
+```console
+mkdir about
+```
+
+```console
+git add about
+```
+
+```console
+git status
+```
+
+```console
+$ git commit -m "Add empty page in about section"
+[about 27b0924] Add empty page in about section
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 about/index.html
+```
+
 # 	* [Add an About Page]()
 # 	* [Another emergency update!]()
 # 	* [Publish News Hotfix]()
