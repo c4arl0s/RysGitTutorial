@@ -1901,8 +1901,43 @@ git commit -a -m "messageToCommit"
 git branch -D branchName
 ```
 
-
 # 6. [Rebasing]()	
+
+Let's start this module by taking an in-depth look at our history. The six commits asterisked below are part of the same train thought. 
+
+We even developed them in their own feature branch. However, they show up interspersed with commits from other branches, along with a superfluous merge commit (b9f2b14).
+In other words, our repository's history is kind of messy:
+
+```console
+$ git log --oneline
+f79223d (HEAD -> master) Merge branch 'crazy'
+* ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+* 4310454 Link index.html to rainbow.html
+* 6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+* 95a36a7 Rename crazy.html to rainbow.html
+* e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+* 12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+Fortunately, Git includes a tool to help us clean up our commits: **git rebase**. 
+**Rebasing lets us move branches around by changing the commit that they are based on.** 
+Conceptually, this is what it allows us to do:
+
+![Screen Shot 2020-05-26 at 11 15 18](https://user-images.githubusercontent.com/24994818/82924636-3a1f2900-9f42-11ea-8f9a-fb7163b73a5e.png)
+
+After rebasing, the feature branch has a new parent commit, which is the same commit pointed to by **master**. Instead of joining the branches with a merge commit, rebasing integrates the feature branch by building on top of **master**. The result is a perfectly linear history that reads more like a story than the hodgepodge of unrelated edits shown above.
+
+To explore Git's rebasing capabilities, we will need to build up our example project so that we have something to work with. Then, we will go back and rewrite history using **git rebase**
+
+
 # 	* [Create an About Section]()
 # 	* [Add an About Page]()
 # 	* [Another emergency update!]()
