@@ -2256,8 +2256,28 @@ Remember that thanks to the rebase, **about** rests on top of **master**. So, Al
 
 # 	* [Add Dummy Page for Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
+Once again, the next two snapshots are unneccessarily trivil. However, we will use an **interactive rebase** to combine them into a single commit later on. That's right, **git rebase** not only lets you move branches around, it enables you to manipulate individual commits as you do so.
 
+Create a new empty file in the about section about/mary.html
 
+```console
+$ vim about/mary.html
+```
+
+```console
+$ git status
+On branch about
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   about/mary.html
+```
+
+```console
+$ git commit -m "Add empty HTML page for Mary's bio"
+[about 5f022e1] Add empty HTML page for Mary's bio
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 about/mary.html
+```
 
 # 	* [Link to the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clean up the Commit History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
