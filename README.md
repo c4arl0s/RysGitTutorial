@@ -2023,6 +2023,97 @@ After a few commits on this branch, our history looks like the following.
 ![Screen Shot 2020-05-26 at 11 41 12](https://user-images.githubusercontent.com/24994818/82927109-d1d24680-9f45-11ea-92c9-98439ff3652c.png)
 
 # 	* [Another emergency update!]()
+
+Our boss just gave us some more breaking news ! Again, we will use a hotfix branch to update the site without affecting our about page developments. Make sure to base the updates on **master**, not the **about** branch.
+
+```console
+git checkout master
+Switched to branch 'master'
+```
+
+```console
+$ git branch news-hotfix
+```
+
+```console
+git checkout
+```
+
+```console
+git checkout news-hotfix
+Switched to branch 'news-hotfix'
+```
+
+```console
+$ git branch
+  about
+  master
+* news-hotfix
+```
+
+Commit a snapshot:
+
+```console
+$ git status
+On branch news-hotfix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+```
+
+```console
+git commit -a -m "Add 2nd news item to index page"
+[news-hotfix 5142364] Add 2nd news item to index page
+ 1 file changed, 1 insertion(+)
+```
+
+Then, create a new page called news-2.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Red Rebellion</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #C03">A Red Rebellion</h1>    
+  <p>Earlier today, several American design firms
+  announced that they have completely rejected the use
+  of blue in any commercial ventures. They have
+  opted instead for <span style="color: #C03">Red</span>.</p>
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+Stage and commit another snapshot:
+
+```console
+git add news-2.html
+```
+
+```console
+$ git status
+On branch news-hotfix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   news-2.html
+```
+
+```console
+$ git commit -m "Add article for 2nd news item"
+[news-hotfix 74afd90] Add article for 2nd news item
+ 1 file changed, 17 insertions(+)
+ create mode 100644 news-2.html
+```
+
 # 	* [Publish News Hotfix]()
 # 	* [Rebase the about Branch]()
 # 	* [Add a Personal Bio]()
