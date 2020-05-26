@@ -2189,7 +2189,76 @@ The rebase took the entire **about** branch and plopped it onto the tip of the *
 After the rebase, **about** is a linear extension of the **master** branch, enabling us to do a **fast-forward** merge later on. **Rebasing** also allowed us to integrate the most up-to-date version of **master** without a merge commit.
 
 # 	* [Add a Personal Bio](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+With our news hotfix out of the way, we can now continue work on our about section. Create the file about/me.html with the following contents:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Me</title>
+  <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>About Me</h1>
+  <p>I'm a big nerd.</p>
+
+  <h2>Interests</h2>
+  <ul>
+    <li>Computers</li>
+    <li>Mathematics</li>
+    <li>Typography</li>
+  </ul>
+
+  <p><a href="index.html">Return to about page</a></p>
+</body>
+</html>
+```
+
+```console
+git add about/me.html
+```
+
+```console
+git commit -m "Add HTML page for personal bio"
+[about fbe3d49] Add HTML page for personal bio
+ 1 file changed, 21 insertions(+)
+ create mode 100644 about/me.html
+```
+
+```console
+$git log --oneline
+fbe3d49 Add HTML page for personal bio
+ebfbefc Add contents to about page
+edff70e Add empty page in about section
+74afd90 Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+Remember that thanks to the rebase, **about** rests on top of **master**. So, All of our **about** section commits are grouped together, which would not be the case had we merged instead of rebase. This also eliminates an unnecessary fork in our project history.
+
+
 # 	* [Add Dummy Page for Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+
+
+
 # 	* [Link to the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clean up the Commit History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Stop to Amend a Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
