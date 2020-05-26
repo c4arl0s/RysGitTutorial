@@ -2280,6 +2280,54 @@ $ git commit -m "Add empty HTML page for Mary's bio"
 ```
 
 # 	* [Link to the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Then, add a link to the about page in index.html so that its "Navigation" section looks like the following:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Colorful Website</title>
+	<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #07F">A Colorful Website</h1>
+  <p>This is a website about color!</p>    
+  
+  <h2 style="color: #C00">News</h2>
+  <ul>
+	  <li><a href="news-1.html">Blue Is The New Hue</a></li>
+		<li><a href="rainbow.html">Our New Rainbow</a></li>
+    <li><a href="news-2.html">A Red Rebellion</a></li>
+  </ul>
+</body>
+</html>
+<h2>Navigation</h2>
+<ul>
+	<li>
+    <a href="about/index.html">About Us</a>
+  </li>
+  <li style="color: #F90">
+    <a href="orange.html">The Orange Page</a>
+  </li>
+  <li style="color: #00F">
+<a href="blue.html">The Blue Page</a>
+  </li>
+	<li>
+    <a href="rainbow.html">The Rainbow Page</a>
+  </li>
+</ul>
+```
+
+Don't forget to commit the change:
+
+```console
+$ git commit -a -m "Add link to about section in home page"
+[about ce9d652] Add link to about section in home page
+ 1 file changed, 3 insertions(+)
+```
+
 # 	* [Clean up the Commit History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Stop to Amend a Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Continue the Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
