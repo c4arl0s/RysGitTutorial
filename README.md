@@ -1975,6 +1975,53 @@ $ git commit -m "Add empty page in about section"
 ```
 
 # 	* [Add an About Page]()
+
+Next, we will add some HTML to about/index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Us</title>
+  <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>About Us</h1>
+  <p>We're a small, colorful website with just two employees:</p>
+  <ul>
+    <li><a href="me.html">Me: The Developer</a></li>
+    <li><a href="mary.html">Mary: The Graphic Designer</a></li>
+  </ul>
+    
+  <p><a href="../index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+Stage and commit the snapshot
+
+```console
+$ git status
+On branch about
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   about/index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```console
+git commit -a -m "Add contents to about page"
+[about c94fb42] Add contents to about page
+ 1 file changed, 19 insertions(+)
+```
+
+After a few commits on this branch, our history looks like the following.
+
+![Screen Shot 2020-05-26 at 11 41 12](https://user-images.githubusercontent.com/24994818/82927109-d1d24680-9f45-11ea-92c9-98439ff3652c.png)
+
 # 	* [Another emergency update!]()
 # 	* [Publish News Hotfix]()
 # 	* [Rebase the about Branch]()
