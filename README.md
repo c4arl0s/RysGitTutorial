@@ -2329,6 +2329,97 @@ $ git commit -a -m "Add link to about section in home page"
 ```
 
 # 	* [Clean up the Commit History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Before we merge into the **master** branch, we should make sure we have a clean, meaningful history in our feature branch. By **rebasing interactively**, we can choose **how** each commit is transferred to the new base. Specify an interactive rebase by passing the -i flag to the rebase command:
+
+```console
+git rebase -i master
+```
+
+then get inside editor vi
+
+```vim
+pick edff70e Add empty page in about section
+pick ebfbefc Add contents to about page
+pick fbe3d49 Add HTML page for personal bio
+pick 5f022e1 Add empty HTML page for Mary's bio
+pick ce9d652 Add link to about section in home page
+
+# Rebase 74afd90..ce9d652 onto 5f022e1 (5 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+then, a successfully message appears after the command.
+
+```console
+$ git rebase -i master
+Successfully rebased and updated refs/heads/about.
+```
+
+Then, begin rebase by saving and closing the editor. The following list describes the **rebasing** process in-depth and tells you what you need to change along the way.
+
+1. Git moves the edff70e commit to the tip of **master**
+2. Git combines the snapshots of  
+-
+-
+
+You can see the result of all this activity with **git log --oneline**
+
+```console
+$ git log --oneline
+ce9d652 (HEAD -> about) Add link to about section in home page
+5f022e1 Add empty HTML page for Mary's bio
+fbe3d49 Add HTML page for personal bio
+ebfbefc Add contents to about page
+edff70e Add empty page in about section
+74afd90 (master) Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+As well in the diagram before
+
+![Screen Shot 2020-05-26 at 19 09 34](https://user-images.githubusercontent.com/24994818/82961997-8723ef00-9f84-11ea-8324-be7e1496069e.png)
+
+**Interactive rebasing** gives you complete control over your project history, but this can also be very dangerous. For example, if you were to delete a line from the rebase listing, the associated commit would not be transferred to the new base, and its content would be lost forever. In a future module, we will also see how rewriting history can get you in trouble with the public Git repositories.
+
 # 	* [Stop to Amend a Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Continue the Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
