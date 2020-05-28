@@ -2486,6 +2486,103 @@ Start by running another interactive rebasing session. Note that we have still b
 
 ```console
 $ git rebase -i master
+```
+
+Specify the **edit** command for the second commit, as shown below:
+
+```vim
+pick f4bb8c3 Create the about page
+edit c5c692e Begin creating bio pages
+pick def4be5 Add link to about section in home page
+```
+
+When Git starts to move the second commit to the new base, it will stoo to do some "amending" (enmendar, rectificar). This gives you the opportunity to alter the staged snapshot before committing it.
+
+![Screen Shot 2020-05-28 at 18 43 50](https://user-images.githubusercontent.com/24994818/83205087-368ecc00-a113-11ea-926a-d29bb89f572b.png)
+
+We will leave a helpful note for Mary, whom we will meet in the **Remotes** module. Open up **about/mary.html** and add the following.
+
+```vim
+[Mary, please update the bio!]
+```
+
+When you save and close
+
+```console
+$ git rebase -i master
+Stopped at c5c692e...  Begin creating bio pages
+You can amend the commit now, with
+
+  git commit --amend 
+
+Once you are satisfied with your changes, run
+
+  git rebase --continue
+```
+
+then open the file and add the required message
+
+```console
+$ vim about/mary.html
+```
+
+now, that your changes are ready.
+
+```console
+$ git add about/mary.html 
+```
+
+```console
+$ git status
+interactive rebase in progress; onto 74afd90
+Last commands done (2 commands done):
+   pick f4bb8c3 Create the about page
+   edit c5c692e Begin creating bio pages
+Next command to do (1 remaining command):
+   pick def4be5 Add link to about section in home page
+  (use "git rebase --edit-todo" to view and edit)
+You are currently editing a commit while rebasing branch 'about' on '74afd90'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   about/mary.html
+```
+
+```console
+$ git commit --amend
+[detached HEAD 71153c2] Begin creating bio pages (added message to mary)
+ Date: Tue May 26 17:52:52 2020 -0500
+ 2 files changed, 22 insertions(+)
+ create mode 100644 about/mary.html
+ create mode 100644 about/me.html
+```
+
+```console
+$ git log --oneline
+71153c2 (HEAD) Begin creating bio pages (added message to mary)
+f4bb8c3 Create the about page
+74afd90 (master) Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+You can use the default message created by **git commit**. The new **--amend** flag tell Git to **replace** the existing commit with the staged snapshot instead of creating a new one. This is also very useful for existing premature commits that often occur during normal development.
 
 
 # 	* [Continue the Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
