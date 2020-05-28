@@ -223,7 +223,7 @@ cd /Users/carlossantiagocruz/SWIFT-PROGRAMMING/RysGitTutorial
 - then initialize
 
 ```console
-git init
+$ git init
 ```
 
 - output
@@ -235,7 +235,7 @@ Initialized empty Git repository in /Users/carlossantiagocruz/Documents/SWIFT-PR
 # 	* [View the repository status](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git status
+$ git status
 ```
 
 ```console
@@ -257,11 +257,11 @@ nothing added to commit but untracked files present (use "git add" to track)
 - tell git to start tracking index.html
 
 ```console
-git add index.html
+$ git add index.html
 ```
 
 ```console
-git status
+$ git status
 ```
 
 - output
@@ -284,14 +284,14 @@ Changes to be committed:
 # 	* [Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git commit
+$ git commit
 ```
 ![Screen Shot 2020-05-22 at 12 55 58](https://user-images.githubusercontent.com/24994818/82695901-9b39ba80-9c2b-11ea-9542-d3499c0dc735.png)
 
 # 	* [View the repository History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git log
+$ git log
 ```
 
 - output
@@ -307,8 +307,8 @@ Date:   Fri May 22 12:54:21 2020 -0500
 # 	* [Configure Git](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git config --global user.name "your name"
-git config --global user.email your.email@example.com
+$ git config --global user.name "your name"
+$ git config --global user.email your.email@example.com
 ```
 
 [read book if you want more information]
@@ -352,11 +352,11 @@ git config --global user.email your.email@example.com
 # 	* [Stage the New Files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git add orange.html blue.html
+$ git add orange.html blue.html
 ```
 
 ```console
-git status
+$ git status
 ```
 
 - output
@@ -375,7 +375,7 @@ Changes to be committed:
 # 	* [Commit The new Files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git commit -m "add blue and orangle html file"
+$ git commit -m "add blue and orangle html file"
 ```
 
 ![Screen Shot 2020-05-22 at 13 47 10](https://user-images.githubusercontent.com/24994818/82699708-c1af2400-9c32-11ea-800a-1b578fcbcac5.png)
@@ -402,7 +402,7 @@ git commit -m "add blue and orangle html file"
 # 	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git status
+$ git status
 ```
 
 - output
@@ -450,7 +450,7 @@ $ git commit -m "Add navigation links"
 # 	* [Explore the Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git log --oneline
+$ git log --oneline
 ```
 
 - output
@@ -479,27 +479,27 @@ git log --oneline
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git init
+$ git init
 ```
 
 ```console
-git status
+$ git status
 ```
 
 ```console
-git add fileName
+$ git add fileName
 ```
 
 ```console
-git commit
+$ git commit
 ```
 
 ```console
-git log
+$ git log
 ```
 
 ```console
-git config --global user.name "nameOfTheUser"
+$ git config --global user.name "nameOfTheUser"
 ```
 
 
@@ -515,7 +515,7 @@ git config --global user.name "nameOfTheUser"
 - Quick review
 
 ```console
-git log --oneline
+$ git log --oneline
 ```
 
 - output
@@ -532,7 +532,7 @@ git log --oneline
 # 	* [View an Old Version](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git checkout 1047951
+$ git checkout 1047951
 ```
 
 - output
@@ -578,7 +578,7 @@ HEAD is now at 6a442fc Create index page for the message
 # 	* [Return to current version]()
 
 ```console
-git checkout master
+$ git checkout master
 ```
 
 - output
@@ -669,7 +669,7 @@ Date:   Fri May 22 12:54:21 2020 -0500
 # 	* [View the Stable Commit]()
 
 ```console
-git checkout v1.0
+$ git checkout v1.0
 ```
 
 - output
@@ -681,7 +681,7 @@ HEAD is now at 453c8a4 Add navigation links
 - go back to master
 
 ```console
-git checkout master
+$ git checkout master
 ```
 
 - output
@@ -696,7 +696,7 @@ Switched to branch 'master'
 - Make sure to change the 12e24f0 to the ID to the crazy experiment's commit before running the next command:
 
 ```console
-git revert 12e24f0
+$ git revert 12e24f0
 ```
 
 - This will show you the vim editor with the default message "Revert "Add a crazzy experiment"
@@ -713,7 +713,7 @@ Removing crazy.html
 - git log
 
 ```console
-git log --oneline
+$ git log --oneline
 ```
 
 - output
@@ -763,7 +763,7 @@ git log --oneline
 - Before we start undoing things, let's take a look at the status of our repository
 
 ```console
-git status
+$ git status
 ```
 
 - output
@@ -785,7 +785,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - We have a tracked file and an untracked file that need to be changed. First, we will take care of index.html
 
 ```console
-git reset --hard
+$ git reset --hard
 ```
 
 - output
@@ -835,27 +835,27 @@ nothing to commit, working tree clean
 # 	* [Quick References]()
 
 ```console
-git checkout commitID
+$ git checkout commitID
 ```
 
 ```console
-git tag -a tagName -m "description"
+$ git tag -a tagName -m "description"
 ```
 
 ```console
-git revert commitID
+$ git revert commitID
 ```
 
 ```console
-git reset --hard
+$ git reset --hard
 ```
 
 ```console
-git clean -f
+$ git clean -f
 ```
 
 ```console
-git reset --hard / git clean -f
+$ git reset --hard / git clean -f
 ```
 
 
@@ -909,7 +909,7 @@ $ git log --oneline
 - Check out the crazy experiment from the last module, remembering to change 
 
 ```console
-git checkout 12e24f0
+$ git checkout 12e24f0
 ```
 
 - This command returns a message that says we are in a **detached HEAD state** and that the **HEAD** is git's internal way of indicating the snapshot that is currently checked out.
@@ -940,7 +940,7 @@ $ git branch
 - This will take our current working directory and fork it into a new branch.
 
 ```console
-git branch crazy
+$ git branch crazy
 ```
 
 - print all branches
@@ -956,7 +956,7 @@ $ git branch
 - However, the above command only creates the crazy branch -It does not check it out.
 
 ```console
-git checkout crazy
+$ git checkout crazy
 Switched to branch 'crazy'
 ```
 
@@ -1002,7 +1002,7 @@ Switched to branch 'crazy'
 - Hopefully, you are relatively familiar with staging and committing snapshots by now:
 
 ```console
-git add crazy.html
+$ git add crazy.html
 ```
 
 ```console
@@ -1014,7 +1014,7 @@ Changes to be committed:
 ```
 
 ```console
-git commit -m "add a rainbow to crazy.html"
+$ git commit -m "add a rainbow to crazy.html"
 ```
 
 ![Screen Shot 2020-05-23 at 9 01 30](https://user-images.githubusercontent.com/24994818/82732641-03dc7200-9cd4-11ea-8d05-6d3d19922e60.png)
@@ -1023,7 +1023,7 @@ git commit -m "add a rainbow to crazy.html"
 - The above diagram represents the complete state of our repository, but **git log** only displays the history of the current branch:
 
 ```console
-git log
+$ git log
 commit e1bc77119319d8b38ff46dbddd968f669cc37a4c
 Author: c4arl0s <c.santiago.cruz@gmail.com>
 Date:   Sat May 23 09:01:08 2020 -0500
@@ -1074,7 +1074,7 @@ mv crazy.html rainbow.html
 - then use the following Git commands to update the repository
 
 ```console
-git status
+$ git status
 On branch crazy
 Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
@@ -1089,18 +1089,18 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ```console
-git rm crazy.html
+$ git rm crazy.html
 rm 'crazy.html'
 ```
 
 - the git rm command tells Git to stop tacking crazy.html (and delete it if necesarry), and git add starts tracking rainbow.html.
 
 ```console
-git add rainbow.html
+$ git add rainbow.html
 ```
 
 ```console
-git status
+$ git status
 On branch crazy
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
@@ -1112,7 +1112,7 @@ Changes to be committed:
 - Our snapshot is staged and ready to be commited:
 
 ```console
-git commit -m "Rename craz.html to rainbow.html"
+$ git commit -m "Rename craz.html to rainbow.html"
 crazy 95a36a7] Rename crazy.html to rainbow.html
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename crazy.html => rainbow.html (100%)
@@ -1138,12 +1138,12 @@ e1bc771 add a rainbow to crazy.html
 - lets switch back to the master branch:
 
 ```console
-git checkout master
-git branch
+$ git checkout master
+$ git branch
 ```
 
 ```console
-git log --oneline
+$ git log --oneline
 3553479 (HEAD -> master) Revert "Add a crazzy experiment"
 12e24f0 Add a crazzy experiment
 453c8a4 (tag: v1.0) Add navigation links
@@ -1165,13 +1165,13 @@ git log --oneline
 - Let's create and check out a new branch called css.
 
 ```console
-git branch css
+$ git branch css
 ```
 
 - switch to css branch
 
 ```cosnsole
-git checkout css
+$ git checkout css
 Switched to branch 'css'
 ```
 
@@ -1204,9 +1204,9 @@ ul {
 - Commit the stylesheet in the usual fashion
 
 ```console
-git add style.css
-git status
-git commit -m "Add CSS stylesheet"
+$ git add style.css
+$ git status
+$ git commit -m "Add CSS stylesheet"
 ```
 
 # 	* [Link the Stylesheet]()
@@ -1226,7 +1226,7 @@ $ git add index.html blue.html orange.html
 ```
 
 ```console
-git status
+$ git status
 On branch css
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
@@ -1262,7 +1262,7 @@ $ git log --oneline
 - The css branch let us create and test our formatting without threatening the stability of the **master branch**. But, new we need to merge these changes into the main project. Before we attempt the merge, we need to return to the master branch.
 
 ```console
-git checkout master
+$ git checkout master
 Switched to branch 'master'
 ```
 
@@ -1302,7 +1302,7 @@ $ git log --oneline
 - We can safely delete a branch by passing the -d flag to git branch.
 
 ```console
-git branch -d css
+$ git branch -d css
 Deleted branch css (was 1a27d0e).
 ```
 
@@ -1310,7 +1310,7 @@ Deleted branch css (was 1a27d0e).
 - I have also put the master branch's commits in a straight line in the following visualization, making it easier to track during the upcoming modules.
 
 ```console
-git branch
+$ git branch
   crazy
 * master
 ```
@@ -1327,12 +1327,12 @@ Creating a new branch is really just a way to keep this high-level overview in m
 # 	* [Quick Reference]()
 
 ```console
-git branch
-git branch branchName
-git checkout branchName
-git merge branchName
-git branch -d brachName
-git rm fileName
+$ git branch
+$ git branch branchName
+$ git checkout branchName
+$ git merge branchName
+$ git branch -d brachName
+$ git rm fileName
 ```
 
 # 5. [Branches II]()
@@ -1352,7 +1352,7 @@ When the history of two branches diverges, a dedicated commit is required to com
 Let`s start by checking out the crazy branch.
 
 ```console
-git branch
+$ git branch
   crazy
 * master
 ```
@@ -1392,7 +1392,7 @@ So, we can pull the updates in with the familiar **git merge** command.
 Remember that merging only affects the checked-out branch.
 
 ```console
-git merge maste
+$ git merge maste
 ```
 
 - editing
@@ -1444,7 +1444,7 @@ Link the CSS stylesheet to rainbow.html by adding the following HTML on the line
 - Stage and commit the update, then check that it is reflected in the history
 
 ```console
-git status
+$ git status
 On branch crazy
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -1461,7 +1461,7 @@ $ git commit -a -m "add CSS stylesheet to rainbow.html"
 ```
 
 ```console
-git log --oneline
+$ git log --oneline
 6a43f42 (HEAD -> crazy) add CSS stylesheet to rainbow.html
 b9f2b14 Merge branch 'master' into crazy
 1a27d0e (master) link HTML pages to stylesheet
@@ -1531,7 +1531,7 @@ Next, we are going to brainstorm an alternative to the current rainbow.html page
 This is a perfect time to create another topic branch:
 
 ```console
-git branch crazy-alt
+$ git branch crazy-alt
 ```
 
 ```console
@@ -1606,16 +1606,16 @@ We will use what is called a **hotfix branch** to create and test the news updat
 For example: you would use a hotfix branch to fix a time-sensitive bug in a public software project. This distinction is useful for demostrating when it is appropiate to create a new branch, but it is purely conceptual **- a branch is a branch according to Git**
 
 ```console
-git checkout master
+$ git checkout master
 Switched to branch 'master'
 ```
 
 ```console
-git branch news-hotfix
+$ git branch news-hotfix
 ```
 
 ```console
-git checkout news-hotfix
+$ git checkout news-hotfix
 Switched to branch 'news-hotfix'
 ```
 
@@ -1656,7 +1656,7 @@ $ git add index.html news-1.html
 ```
 
 ```console
-git status
+$ git status
 On branch news-hotfix
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
@@ -1679,7 +1679,7 @@ Text these additions in a browser to make sure that the links work, it is typo f
 Remember that to merge into the **master** branch, we first need to check it out.
 
 ```console
-git checkout master
+$ git checkout master
 Switched to branch 'master'
 ```
 
@@ -1718,7 +1718,7 @@ Also notice that we have another fork in our history (the commit before **master
 Ok, lets finish up our crazy experiment with one more commit.
 
 ```console
-git checkout crazy
+$ git checkout crazy
 Switched to branch 'crazy'
 ```
 
@@ -1768,7 +1768,7 @@ b9f2b14 Merge branch 'master' into crazy
 We are finally ready to merge our **crazy** branch into **master**:
 
 ```console
-git checkout master
+$ git checkout master
 Switched to branch 'master'
 ```
 
@@ -1782,7 +1782,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 This is our first **merge conflict**. Conflicts occur when we try to merge branches that have edited the same content. Git does not know how to combine the two changes, so it stops to ask us what to do. We can see exactly what went wrong with the familiar **git status** command.
 
 ```console
-git status
+$ git status
 On branch master
 You have unmerged paths.
   (fix conflicts and run "git commit")
@@ -1808,7 +1808,7 @@ Open up index.html and find the section that looks like:
 >>>>>>> crazy
 ```
 
-Git went ahead and modified the conflicted file to show us exactly which lines are afflicted. The format of the above text show us the difference between the two versions of the file. 
+$ git went ahead and modified the conflicted file to show us exactly which lines are afflicted. The format of the above text show us the difference between the two versions of the file. 
 
 - The section **labeled** <<<<<<< HEAD show us the version in the current branch, while the part after the ======= shows the version in the **crazy** branch.
 
@@ -1827,7 +1827,7 @@ We can change the affected lines to whatever we want in order to resolve the con
 The <<<<<<<, =======, and >>>>>>> markers are only used to show us the conflict and should be deleted. Next, we need to tell Git that we are done resolving the conflict:
 
 ```console
-git add index.html
+$ git add index.html
 ```
 
 ```console
@@ -1844,7 +1844,7 @@ Changes to be committed:
 That's right, all you have to do is **add index.html to the staged snapshot to mark it as resolved. Finally, complete the 3-way merge:
 
 ```console
-git commit 
+$ git commit 
 [master f79223d] Merge branch 'crazy'
 ```
 
@@ -1894,11 +1894,11 @@ This module demonstrate the three most common uses of Git Branches:
 # 	* [Quick Reference]()
 
 ```console
-git commit -a -m "messageToCommit"
+$ git commit -a -m "messageToCommit"
 ```
 
 ```console
-git branch -D branchName
+$ git branch -D branchName
 ```
 
 # 6. [Rebasing]()	
@@ -1943,7 +1943,7 @@ To explore Git's rebasing capabilities, we will need to build up our example pro
 We will begin by creating an about page for the website. Remember, we should be doing all of our work in isolated branches so that we don't cause any unintended changes to the stable version of the project.
 
 ```console
-git branch about
+$ git branch about
 ```
 
 ```console
@@ -1960,11 +1960,11 @@ mkdir about
 ```
 
 ```console
-git add about
+$ git add about
 ```
 
 ```console
-git status
+$ git status
 ```
 
 ```console
@@ -2013,7 +2013,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ```console
-git commit -a -m "Add contents to about page"
+$ git commit -a -m "Add contents to about page"
 [about c94fb42] Add contents to about page
  1 file changed, 19 insertions(+)
 ```
@@ -2027,7 +2027,7 @@ After a few commits on this branch, our history looks like the following.
 Our boss just gave us some more breaking news ! Again, we will use a hotfix branch to update the site without affecting our about page developments. Make sure to base the updates on **master**, not the **about** branch.
 
 ```console
-git checkout master
+$ git checkout master
 Switched to branch 'master'
 ```
 
@@ -2036,11 +2036,11 @@ $ git branch news-hotfix
 ```
 
 ```console
-git checkout
+$ git checkout
 ```
 
 ```console
-git checkout news-hotfix
+$ git checkout news-hotfix
 Switched to branch 'news-hotfix'
 ```
 
@@ -2066,7 +2066,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ```console
-git commit -a -m "Add 2nd news item to index page"
+$ git commit -a -m "Add 2nd news item to index page"
 [news-hotfix 5142364] Add 2nd news item to index page
  1 file changed, 1 insertion(+)
 ```
@@ -2096,7 +2096,7 @@ Then, create a new page called news-2.html
 Stage and commit another snapshot:
 
 ```console
-git add news-2.html
+$ git add news-2.html
 ```
 
 ```console
@@ -2147,7 +2147,7 @@ The **master** branch has not been altered since we created news-hotfix, so Git 
 This puts us in the exact position as we were in before our first 3-way merge. We want to pull changes from **master** into a feature branch, only this time we will do it with a rebase instead of a merge.
 
 ```console
-git checkout about
+$ git checkout about
 Switched to branch 'about'
 ```
 
@@ -2217,18 +2217,18 @@ With our news hotfix out of the way, we can now continue work on our about secti
 ```
 
 ```console
-git add about/me.html
+$ git add about/me.html
 ```
 
 ```console
-git commit -m "Add HTML page for personal bio"
+$ git commit -m "Add HTML page for personal bio"
 [about fbe3d49] Add HTML page for personal bio
  1 file changed, 21 insertions(+)
  create mode 100644 about/me.html
 ```
 
 ```console
-$git log --oneline
+$ git log --oneline
 fbe3d49 Add HTML page for personal bio
 ebfbefc Add contents to about page
 edff70e Add empty page in about section
@@ -2333,16 +2333,28 @@ $ git commit -a -m "Add link to about section in home page"
 Before we merge into the **master** branch, we should make sure we have a clean, meaningful history in our feature branch. By **rebasing interactively**, we can choose **how** each commit is transferred to the new base. Specify an interactive rebase by passing the -i flag to the rebase command:
 
 ```console
-git rebase -i master
+$ git rebase -i master
+```
+
+This should open up a text editor populated with all of the commits introduced in the **about** branch, listed from the oldest to newest. The listing defines exactly how Git will transfer the commits to the new base. Leaving it as is will do a normal **git rebase**, but if we move the lines around, we can change the order in which commits are applied.
+
+In addition, we can replace the **pick** command before each line to **edit it** or **combine it** with other commits. All of the available commands are shown in the comment section of the rebase listing, but right now, we only need the **squash** command. This will condensate our unnecessarily small commits into a single, meaningful snapshot. Change your listing to match the following:
+
+```console
+pick edff70e Add empty page in about section
+squash ebfbefc Add contents to about page
+pick fbe3d49 Add HTML page for personal bio
+squash 5f022e1 Add empty HTML page for Mary's bio
+pick ce9d652 Add link to about section in home page
 ```
 
 then get inside editor vi
 
 ```vim
 pick edff70e Add empty page in about section
-pick ebfbefc Add contents to about page
+squash ebfbefc Add contents to about page
 pick fbe3d49 Add HTML page for personal bio
-pick 5f022e1 Add empty HTML page for Mary's bio
+squash 5f022e1 Add empty HTML page for Mary's bio
 pick ce9d652 Add link to about section in home page
 
 # Rebase 74afd90..ce9d652 onto 5f022e1 (5 commands)
@@ -2372,19 +2384,68 @@ pick ce9d652 Add link to about section in home page
 # Note that empty commits are commented out
 ```
 
-then, a successfully message appears after the command.
+After you edit, save and quit, it will appear the following 2 commit message:
+
+```vim
+# This is a combination of 2 commits.
+# This is the 1st commit message:
+
+Add empty page in about section
+
+# This is the commit message #2:
+
+Add contents to about page
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Tue May 26 11:32:08 2020 -0500
+#
+# interactive rebase in progress; onto 74afd90
+# Last commands done (2 commands done):
+#    pick edff70e Add empty page in about section
+#    squash ebfbefc Add contents to about page
+# Next commands to do (3 remaining commands):
+#    pick fbe3d49 Add HTML page for personal bio
+#    squash 5f022e1 Add empty HTML page for Mary's bio
+# You are currently rebasing branch 'about' on '74afd90'.
+#
+# Changes to be committed:
+#	new file:   about/index.html
+#
+```
+
+after the two message:
 
 ```console
 $ git rebase -i master
+[detached HEAD 97a4a22] Add empty page in about section
+ Date: Tue May 26 11:32:08 2020 -0500
+ 1 file changed, 19 insertions(+)
+ create mode 100644 about/index.html
+[detached HEAD 1260437] Add HTML page for personal bio
+ Date: Tue May 26 17:52:52 2020 -0500
+ 2 files changed, 21 insertions(+)
+ create mode 100644 about/mary.html
+ create mode 100644 about/me.html
 Successfully rebased and updated refs/heads/about.
 ```
 
-Then, begin rebase by saving and closing the editor. The following list describes the **rebasing** process in-depth and tells you what you need to change along the way.
+The following list describes the rebasing process in-depth and tells you what you need to change along the way.
+
+```vim
+pick edff70e Add empty page in about section
+squash ebfbefc Add contents to about page
+pick fbe3d49 Add HTML page for personal bio
+squash w5f022e1 Add empty HTML page for Mary's bio
+pick ce9d652 Add link to about section in home page
+```
 
 1. Git moves the edff70e commit to the tip of **master**
-2. Git combines the snapshots of  
--
--
+2. Git combines the snapshots of ebfbefc and 5f022e1 
+3. Git stops to ask you what commit message to use for the combined snapshot. It automatically includes the messages of both commits, but you can delete that and simplify it to just **Create the about page**. Save and exit the text editor to continue.
+4. Git repeats this process for commits  ce9d652 and 5f022e1.  Use **Begin creating bio pages** for the message.
+5. Git adds the final commit ce9d652 on top of the commits created in the previous steps.
 
 You can see the result of all this activity with **git log --oneline**
 
@@ -2421,6 +2482,15 @@ As well in the diagram before
 **Interactive rebasing** gives you complete control over your project history, but this can also be very dangerous. For example, if you were to delete a line from the rebase listing, the associated commit would not be transferred to the new base, and its content would be lost forever. In a future module, we will also see how rewriting history can get you in trouble with the public Git repositories.
 
 # 	* [Stop to Amend a Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+The previous rebase only stopped us to edit the messages of each commit.
+We can take this one step further and alter a **snapshot** during the rebase.
+Start by running another interactive rebasing session. Note that we have still been using **master** as the new base because it selects the desired commits from the **about** branch.
+
+```console
+$ git rebase -i master
+
+
 # 	* [Continue the Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
