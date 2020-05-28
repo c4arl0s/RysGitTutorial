@@ -2450,12 +2450,9 @@ pick ce9d652 Add link to about section in home page
 You can see the result of all this activity with **git log --oneline**
 
 ```console
-$ git log --oneline
-ce9d652 (HEAD -> about) Add link to about section in home page
-5f022e1 Add empty HTML page for Mary's bio
-fbe3d49 Add HTML page for personal bio
-ebfbefc Add contents to about page
-edff70e Add empty page in about section
+def4be5 (HEAD -> about) Add link to about section in home page
+c5c692e Begin creating bio pages
+f4bb8c3 Create the about page
 74afd90 (master) Add article for 2nd news item
 5142364 Add 2nd news item to index page
 f79223d Merge branch 'crazy'
