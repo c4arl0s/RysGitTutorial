@@ -2586,6 +2586,38 @@ You can use the default message created by **git commit**. The new **--amend** f
 
 
 # 	* [Continue the Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Remember that we are in the middle of a rebase, and Git still has one more commit that it needs to re-play. Tell Git that we are ready to move on with the **continue** flag:
+
+```console
+git rebase --continue
+Successfully rebased and updated refs/heads/about.
+```
+
+```console
+git log --oneline
+20b9d5d (HEAD -> about) Add link to about section in home page
+71153c2 Begin creating bio pages (added message to mary)
+f4bb8c3 Create the about page
+74afd90 (master) Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
 # 	* [Publish the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
