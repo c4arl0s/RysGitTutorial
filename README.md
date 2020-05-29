@@ -2713,6 +2713,34 @@ $ git merge --no-ff branchName
 The next module will get a little bit more involved in our project history. We will try fixing mistakes via complex rebases end even learn how to recover deleted commits.
 
 # 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+git rebase newBase
+```
+
+```console
+git rebase -i newBase
+```
+
+```console
+git commit --amend
+```
+
+```console
+git rebase --continue
+```
+
+```console
+git rebase abort
+```
+
+```console
+git merge --no-ff branchName
+```
+
+Force a merge commit even if Git could do a fast-forward merge.
+
+
 # 7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create the Red Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create the Yellow Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
