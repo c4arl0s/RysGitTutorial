@@ -2619,6 +2619,83 @@ e1bc771 add a rainbow to crazy.html
 ```
 
 # 	* [Publish the About Section](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+The point of all this interactive rebasing is to generate a **meaningful** history that we can merge back into **master**. And, since we have rebased **about** onto the tip of **master**, Git will be able to perform a **fast-forward** merge instead of using a merge commit to join the two branches.
+
+```console
+git checkout master
+```
+
+```console
+$ git log --oneline
+74afd90 (HEAD -> master) Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+ 
+```console
+$ git merge about
+Updating 74afd90..20b9d5d
+Fast-forward
+ about/index.html | 19 +++++++++++++++++++
+ about/mary.html  |  1 +
+ about/me.html    | 21 +++++++++++++++++++++
+ index.html       |  3 +++
+ 4 files changed, 44 insertions(+)
+ create mode 100644 about/index.html
+ create mode 100644 about/mary.html
+ create mode 100644 about/me.html
+```
+
+```console
+$ git log --oneline
+20b9d5d (HEAD -> master, about) Add link to about section in home page
+71153c2 Begin creating bio pages (added message to mary)
+f4bb8c3 Create the about page
+74afd90 Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+Don't forget to delete the obsolete **about** branch.
+
+```console
+git branch -d about
+Deleted branch about (was 20b9d5d).
+```
+
+Our final history is shown in the figure below. As you can see, a linear history is much easier to comprehend that the back-and-forth merging of the previous module. But on the other hand, we don't have the slightest notion of **how** we got to our current state.
+
+![Screen Shot 2020-05-29 at 11 06 55](https://user-images.githubusercontent.com/24994818/83280605-89609600-a19c-11ea-9686-133d7863dc33.png)
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
