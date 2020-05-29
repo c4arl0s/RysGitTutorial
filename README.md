@@ -2697,6 +2697,21 @@ Our final history is shown in the figure below. As you can see, a linear history
 ![Screen Shot 2020-05-29 at 11 06 55](https://user-images.githubusercontent.com/24994818/83280605-89609600-a19c-11ea-9686-133d7863dc33.png)
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+**Rebasing enables fast-forward merges** by moving a branch to the tip of another branch. It effectively eliminates the need for merge commits, resulting in a completely linear history. To an outside observer, it will seem as though you created every part of your project in a neatly (pulcramente) planned sequence, even though you may have explored various alternatives or developed unrelated features in parallel. Rebasing gives you the power to choose exactly what gets stored in you repositories.
+
+This can actually be a bit of a controversial topic within the Git community. Some believe that the benefits discussed in this module are not worth the hassle (molestia) of rewriting history. They take a more "pure" approach to Git by saying that your history should reflect **exactly** what you have done, ensuring that no information is ever lost. Furthermore, an advance configuration o **git log** can display a linear history from a highly-branched repository.
+
+But, others contend that merge commits should be **meaningful**. Instead of merging at arbitrary points just to access updates, they claim that merge commits should represent a symbolic joining of two branches. In particular, large software projects (such as the Linux Kernel) typically advocate interactive rebasing to keep the repository as clean and straightforward as possible.
+
+The use of **git rebase** is entirely up to you. Customizing the evolution of your project can b very beneficial, but it might not be worth the trouble when you can accomplish close to the same functionality using merges exclusively. As a related note, you can use the following command to force a merge commit when Git would normally do a **fast-forward** merge.
+
+```console
+$ git merge --no-ff branchName
+```
+
+The next module will get a little bit more involved in our project history. We will try fixing mistakes via complex rebases end even learn how to recover deleted commits.
+
 # 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create the Red Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
