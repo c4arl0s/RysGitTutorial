@@ -2971,6 +2971,150 @@ You may recall from [Undoing Changes]() that we used **git reset --hard** to und
 But, this time we use the **--mixed** flag to preserve the working directory, which contains the changes we want to separate. That is to say, the **HEAD** moved, but the working directory  remained unchanged. Of course, this results in a repository with uncommitted modifications. We now have the opportunity to add the **red.html** and **yellow.html** files to distinct commits.
 
 # 	* [Split the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Let's start with the red page. Since we only want to commit content that involves the red page, we will have to manually go in and remove the yellow page's link from the "Navigation" section. In index.html, change this section to match the following.
+
+```html
+<h2>Navigation</h2>
+<ul>
+  <li>
+    <a href="about/index.html">About Us</a>
+  </li>
+  <li style="color: #F90">
+    <a href="orange.html">The Orange Page</a>
+  </li>
+  <li style="color: #00F">
+    <a href="blue.html">The Blue Page</a>
+  </li>
+  <li>
+    <a href="rainbow.html">The Rainbow Page</a>
+  </li>
+  <li style="color: #C00">
+    <a href="red.html">The Red Page</a>
+  </li>
+</ul>
+``` 
+
+Now, we can group the red page' updates into an independent commit.
+
+```console
+git add red.html index.html
+```
+
+```console
+$ git status
+interactive rebase in progress; onto 20b9d5d
+Last command done (1 command done):
+   edit 4a5bfc9 add new HTML Pages
+Next command to do (1 remaining command):
+   pick 49fd8bf Add green page
+  (use "git rebase --edit-todo" to view and edit)
+You are currently editing a commit while rebasing branch 'new-pages' on '20b9d5d'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   red.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	yellow.html
+```
+
+```console
+$ git commit -m "Add red page"
+[detached HEAD cb8d72b] Add red page
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 red.html
+```
+
+Next up is the yellow page. Go ahead and add it back to the "Navigation" section in index.html
+
+```console
+$ vim index.html 
+```
+
+```html
+<li style="color: #FF0">
+  <a href="yellow.html">The Yellow Page</a>
+</li>
+```
+
+And again, stage and commit the snapshot
+
+```console
+$ git add yellow.html index.html 
+```
+
+```console
+interactive rebase in progress; onto 20b9d5d
+Last command done (1 command done):
+   edit 4a5bfc9 add new HTML Pages
+Next command to do (1 remaining command):
+   pick 49fd8bf Add green page
+  (use "git rebase --edit-todo" to view and edit)
+You are currently editing a commit while rebasing branch 'new-pages' on '20b9d5d'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   yellow.html
+```
+
+```console
+$ git commit -m "Add yellow page"
+[detached HEAD 1b2f067] Add yellow page
+ 2 files changed, 17 insertions(+)
+ create mode 100644 yellow.html
+```
+
+We have successfully split up the contents of a single commit into two new snapshots, as shown below.
+
+![Screen Shot 2020-05-30 at 17 47 36](https://user-images.githubusercontent.com/24994818/83340445-acbf3a00-a29d-11ea-90c6-c8615da2042f.png)
+
+But, do not forget that the rebase still needs to transfer the green page:
+
+```console
+$ git rebase --continue
+Successfully rebased and updated refs/heads/new-pages.
+```
+
+To summarize, we removed the **"bad"** commit from the current branch with **git reset**, keeping the contained HTML files intact with the **--mixed** flag. Then, we committed them in separate snapshots with the usual **git add** and **git commit** commands. The point to remember is that during a rebase you can **add**, **delete**, and **edit** commits to your heart's content, and the entire result will be moved to the new base.
+
+let's show
+
+```console
+$ git log --oneline
+d417237 (HEAD -> new-pages) Add green page
+1b2f067 Add yellow page
+cb8d72b Add red page
+20b9d5d (master) Add link to about section in home page
+71153c2 Begin creating bio pages (added message to mary)
+f4bb8c3 Create the about page
+74afd90 Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+
 # 	* [Remove the last Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Open the Reflog](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Revive the Lost Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
