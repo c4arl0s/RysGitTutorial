@@ -3,6 +3,22 @@
 Ry's Git Tutorial
 
 1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#1-introduction)
+2. [The basics](https://github.com/c4arl0s/RysGitTutorial#2-the-basics)
+3. [Undoing Changes](https://github.com/c4arl0s/RysGitTutorial#3-undoing-changes)
+4. [Branches I](https://github.com/c4arl0s/RysGitTutorial#4-branches-i)
+5. [Branches II](https://github.com/c4arl0s/RysGitTutorial#5-branches-ii)
+6. [Rebasing](https://github.com/c4arl0s/RysGitTutorial#6-rebasing)	
+7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#7-rewriting-history)
+8. [Remotes](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+10. [Distributed Workflows]()
+11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+
+Ry's Git Tutorial
+
+1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#1-introduction)
 	* [A Brief History of Revision Control](https://github.com/c4arl0s/RysGitTutorial#-a-brief-history-of-revision-control)
 	* [The birth of Git](https://github.com/c4arl0s/RysGitTutorial#-the-birth-of-git)
 	* [Installation](https://github.com/c4arl0s/RysGitTutorial#-installation)
@@ -83,21 +99,21 @@ Ry's Git Tutorial
 	* [Publish the About Section](https://github.com/c4arl0s/RysGitTutorial#-publish-the-about-section)
 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-4)
 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#-quick-references-1)
-7. [Rewriting History]()
-	* [Create the Red Page]()
-	* [Create the Yellow Page]()
-	* [Link and Commit the New Pages]()
-	* [Create and commit the Green Page]()
-	* [Begin an Interactive Rebase]()
-	* [Undo the Generic Commit]()
-	* [Split the Generic Commit]()
-	* [Remove the last Commit]()
-	* [Open the Reflog]()
-	* [Revive the Lost Commit]()
-	* [Filter the Log History]()
-	* [Merge in the Revived Branch]()
-	* [Conclusion]()
-	* [Quick Reference]()
+7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#7-rewriting-history)
+	* [Create the Red Page](https://github.com/c4arl0s/RysGitTutorial#-create-the-red-page)
+	* [Create the Yellow Page](https://github.com/c4arl0s/RysGitTutorial#-create-the-yellow-page)
+	* [Link and Commit the New Pages](https://github.com/c4arl0s/RysGitTutorial#-link-and-commit-the-new-pages)
+	* [Create and commit the Green Page](https://github.com/c4arl0s/RysGitTutorial#-create-and-commit-the-green-page)
+	* [Begin an Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#-begin-an-interactive-rebase)
+	* [Undo the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#-undo-the-generic-commit)
+	* [Split the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#-split-the-generic-commit)
+	* [Remove the last Commit](https://github.com/c4arl0s/RysGitTutorial#-remove-the-last-commit)
+	* [Open the Reflog](https://github.com/c4arl0s/RysGitTutorial#-open-the-reflog)
+	* [Revive the Lost Commit](https://github.com/c4arl0s/RysGitTutorial#-revive-the-lost-commit)
+	* [Filter the Log History](https://github.com/c4arl0s/RysGitTutorial#-filter-the-log-history)
+	* [Merge in the Revived Branch](https://github.com/c4arl0s/RysGitTutorial#-merge-in-the-revived-branch)
+	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-5)
+	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-3)
 8. [Remotes]()
 	* [Clone the Repository (Mary)]()
 	* [Configure The Repository (Mary)]()
@@ -2930,6 +2946,30 @@ pick 49fd8bf Add green page
 ```
 
 # 	* [Undo the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+First, let's take a look at where we are with **git log --oneline**:
+
+```console
+4a5bfc9 (HEAD) add new HTML Pages
+20b9d5d (master) Add link to about section in home page
+```
+
+When Git encountered the **edit** command in the rebase configuration, it stopped to let us edit the commit. As a result, the green page commit does not appear in our history yet. This should be familiar from the previous module. But instead of **amending** the current commit, we are going to completely remove it:
+
+```console
+$ git reset --mixed HEAD~1
+Unstaged changes after reset:
+M	index.html
+```
+
+The **git reset** command moves the checked out snapshot to a new commit, and the **HEAD~1** parameter tells it **to reset** to the commit that occurs immediately before the current HEAD (likewise, **HEAD~2** would refer to **second commit before HEAD**). In this particular case, **HEAD~1** happens to coincide with **master**. The effect on our repository can be visualized as:
+
+![Screen Shot 2020-05-30 at 13 36 49](https://user-images.githubusercontent.com/24994818/83336663-d0bd5400-a27a-11ea-9bd6-28b787c51e19.png)
+
+You may recall from [Undoing Changes]() that we used **git reset --hard** to undo uncommitted changes to our project. The **--hard** flag told Git to make the working directory look exactly like the most recent commit, giving us the intended effect of removing uncommitted changes.
+
+But, this time we use the **--mixed** flag to preserve the working directory, which contains the changes we want to separate. That is to say, the **HEAD** moved, but the working directory  remained unchanged. Of course, this results in a repository with uncommitted modifications. We now have the opportunity to add the **red.html** and **yellow.html** files to distinct commits.
+
 # 	* [Split the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Remove the last Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Open the Reflog](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
@@ -2968,7 +3008,7 @@ pick 49fd8bf Add green page
 # 	* [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
-# 10. Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push to a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
