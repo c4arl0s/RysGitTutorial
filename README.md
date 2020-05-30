@@ -2590,12 +2590,12 @@ You can use the default message created by **git commit**. The new **--amend** f
 Remember that we are in the middle of a rebase, and Git still has one more commit that it needs to re-play. Tell Git that we are ready to move on with the **continue** flag:
 
 ```console
-git rebase --continue
+$ git rebase --continue
 Successfully rebased and updated refs/heads/about.
 ```
 
 ```console
-git log --oneline
+$ git log --oneline
 20b9d5d (HEAD -> about) Add link to about section in home page
 71153c2 Begin creating bio pages (added message to mary)
 f4bb8c3 Create the about page
@@ -2623,7 +2623,7 @@ e1bc771 add a rainbow to crazy.html
 The point of all this interactive rebasing is to generate a **meaningful** history that we can merge back into **master**. And, since we have rebased **about** onto the tip of **master**, Git will be able to perform a **fast-forward** merge instead of using a merge commit to join the two branches.
 
 ```console
-git checkout master
+$ git checkout master
 ```
 
 ```console
@@ -2688,7 +2688,7 @@ e1bc771 add a rainbow to crazy.html
 Don't forget to delete the obsolete **about** branch.
 
 ```console
-git branch -d about
+$ git branch -d about
 Deleted branch about (was 20b9d5d).
 ```
 
@@ -2715,33 +2715,38 @@ The next module will get a little bit more involved in our project history. We w
 # 	* [Quick References](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 ```console
-git rebase newBase
+$ git rebase newBase
 ```
 
 ```console
-git rebase -i newBase
+$ git rebase -i newBase
 ```
 
 ```console
-git commit --amend
+$ git commit --amend
 ```
 
 ```console
-git rebase --continue
+$ git rebase --continue
 ```
 
 ```console
-git rebase abort
+$ git rebase abort
 ```
 
 ```console
-git merge --no-ff branchName
+$ git merge --no-ff branchName
 ```
 
 Force a merge commit even if Git could do a fast-forward merge.
 
-
 # 7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+The previuous module on rebasing taught us how to move commits around and perform some basic edits while doing so, but now we are going to really get our hands dirty We Will learn **how to split up commits, revive lost snapshots, and completely rewrite a repository's history to our exact specifications**.
+
+Hopefully, this module will get you much more comfortable with the core Git components, as we will be inspecting and editing the internal makeup of our project.
+
+
 # 	* [Create the Red Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create the Yellow Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Link and Commit the New Pages](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
