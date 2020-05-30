@@ -2784,6 +2784,26 @@ Next, create the file **red.html** and add the following content:
 We will hold off on committing this page for the moment.
 
 # 	* [Create the Yellow Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Create a file called **yellow.html**, which should look like the following.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Yellow Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #FF0">The Yellow Page</h1>
+  <p>Yellow is the color of <span style="color: #FF0">the sun</span>!</p>
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
 # 	* [Link and Commit the New Pages](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create and commit the Green Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Begin an Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
