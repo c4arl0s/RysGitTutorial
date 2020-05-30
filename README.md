@@ -2746,8 +2746,43 @@ The previuous module on rebasing taught us how to move commits around and perfor
 
 Hopefully, this module will get you much more comfortable with the core Git components, as we will be inspecting and editing the internal makeup of our project.
 
-
 # 	* [Create the Red Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+First, let's create a new branch and add a few more HTML pages.
+
+```console
+$ git checkout -b new-pages
+Switched to a new branch 'new-pages'
+```
+
+```console
+$ git branch
+  master
+```
+
+Notice that we created a new branch and check it out in a single step by passing the -b flag to the **git checkout** command.
+
+Next, create the file **red.html** and add the following content:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Red Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #C00">The Red Page</h1>
+  <p>Red is the color of <span style="color: #C00">passion</span>!</p>
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+We will hold off on committing this page for the moment.
+
 # 	* [Create the Yellow Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Link and Commit the New Pages](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create and commit the Green Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
