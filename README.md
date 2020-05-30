@@ -2900,6 +2900,35 @@ $ git commit -m "Add green page"
 ```
 
 # 	* [Begin an Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+The commits introduced in our new-pages branch are:
+
+```console
+49fd8bf (HEAD -> new-pages) Add green page
+4a5bfc9 add new HTML Pages
+```
+
+But, we want these commits to look more like:
+
+```console
+49fd8bf Add green page
+XXXXXXX Add yellow page
+XXXXXXX Add red page
+```
+
+To achieve this, we can use the same interactive rebasing method covered in the previous module, only this time we will actually **create** commits in the middle of the rebasing procedure.
+
+```console
+git rebase -i master
+```
+
+Change the rebase listing to the following, then save the file and exit the editor to begin the rebase.
+
+```console
+edit 4a5bfc9 add new HTML Pages
+pick 49fd8bf Add green page
+```
+
 # 	* [Undo the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Split the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Remove the last Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
