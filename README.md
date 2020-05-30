@@ -2805,6 +2805,49 @@ Create a file called **yellow.html**, which should look like the following.
 ```
 
 # 	* [Link and Commit the New Pages](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Next, We will link both new pages to the home page. Add the following items to the "Navigation" section in index.html
+
+```html
+<li style="color: #C00">
+  <a href="red.html">The Red Page</a>
+</li>
+<li style="color: #FF0">
+  <a href="yellow.html">The Yellow Page</a>
+</li>
+```
+
+Then commit all of these changes in a single snapshot.
+
+```console
+$ git add red.html yellow.html index.html 
+```
+
+```console
+$ git status
+On branch new-pages
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   red.html
+	new file:   yellow.html
+```
+
+```console
+$ git commit -m "add new HTML Pages"
+[new-pages 4a5bfc9] add new HTML Pages
+ 3 files changed, 35 insertions(+), 1 deletion(-)
+ create mode 100644 red.html
+ create mode 100644 yellow.html
+```
+
+This is an example of a **bad commit**. It perform multiple unrelated tasks, and it has a relatively generic commit message. Thus far, we have not really specified when ti is appropriate to commit changes, but the general rules are essentially the same as for branch creation:
+
+1. Commit a snapshot for each significant addition to your project.
+2. Don't commit a snapshot if you cannot come up with a single, specific message for it.
+
+This will ensure that your project has a meaningful commit history, which gives you the ability to see exactly when and where a feature was added or a piece of functionality was broken. However, in practice, you will often wind up committing several changes in a single snapshot, since you will not always know what constitutes a **"well-defined"** addition as you are developing a project. Fortunately, Git, lets us go back and fix up these problem commits after the fact.
+
 # 	* [Create and commit the Green Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Begin an Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Undo the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
