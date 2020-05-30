@@ -2849,6 +2849,56 @@ This is an example of a **bad commit**. It perform multiple unrelated tasks, and
 This will ensure that your project has a meaningful commit history, which gives you the ability to see exactly when and where a feature was added or a piece of functionality was broken. However, in practice, you will often wind up committing several changes in a single snapshot, since you will not always know what constitutes a **"well-defined"** addition as you are developing a project. Fortunately, Git, lets us go back and fix up these problem commits after the fact.
 
 # 	* [Create and commit the Green Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Let's create one more page before splitting that "bad" commit: Add the following HTML to a file called **green.html**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Green Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #0C0">The Green Page</h1>
+  <p><span style="color: #0C0">Green</span> is the color of earth.</p>
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+Add a link to index.html in the "Navigation" section:
+
+```html
+<li style="color: #0C0">
+  <a href="green.html">The Green Page</a>
+</li>
+```
+
+And finally, stage the green page and commit the snapshot.
+
+```console
+$ git add green.html index.html 
+```
+
+```console
+$ git status
+On branch new-pages
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   green.html
+	modified:   index.html
+```
+
+```console
+$ git commit -m "Add green page"
+[new-pages 49fd8bf] Add green page
+ 2 files changed, 17 insertions(+)
+ create mode 100644 green.html
+```
+
 # 	* [Begin an Interactive Rebase](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Undo the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Split the Generic Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
