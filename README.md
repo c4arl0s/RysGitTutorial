@@ -3192,6 +3192,127 @@ The commit that we removed from the branch is now a **dangling commit**. Danglin
 
 
 # 	* [Open the Reflog](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Git uses something called the **reflog** to record every change you make to your repository. Let's take a look at what it contains:
+
+```console
+$ git reflog
+1b2f067 HEAD@{0}: reset: moving to HEAD~
+d417237 HEAD@{1}: rebase -i (finish): returning to refs/heads/new-pages
+d417237 HEAD@{2}: rebase -i (pick): Add green page
+1b2f067 HEAD@{3}: commit: Add yellow page
+cb8d72b HEAD@{4}: commit: Add red page
+20b9d5d HEAD@{5}: reset: moving to HEAD~1
+4a5bfc9 HEAD@{6}: rebase -i: fast-forward
+20b9d5d HEAD@{7}: rebase -i (start): checkout master
+49fd8bf HEAD@{8}: commit: Add green page
+4a5bfc9 HEAD@{9}: commit: add new HTML Pages
+20b9d5d HEAD@{10}: checkout: moving from master to new-pages
+20b9d5d HEAD@{11}: merge about: Fast-forward
+74afd90 HEAD@{12}: checkout: moving from about to master
+20b9d5d HEAD@{13}: rebase -i (finish): returning to refs/heads/about
+20b9d5d HEAD@{14}: rebase -i (pick): Add link to about section in home page
+71153c2 HEAD@{15}: commit (amend): Begin creating bio pages (added message to mary)
+c5c692e HEAD@{16}: rebase -i: fast-forward
+f4bb8c3 HEAD@{17}: rebase -i (start): checkout master
+def4be5 HEAD@{18}: rebase -i (finish): returning to refs/heads/about
+def4be5 HEAD@{19}: rebase -i (pick): Add link to about section in home page
+c5c692e HEAD@{20}: rebase -i (reword): Begin creating bio pages
+c0ae323 HEAD@{21}: rebase -i (reword): Add HTML page for personal bio
+f4bb8c3 HEAD@{22}: rebase -i (reword): Create the about page
+a6d6855 HEAD@{23}: rebase -i: fast-forward
+74afd90 HEAD@{24}: rebase -i (start): checkout master
+7d4c122 HEAD@{25}: rebase -i (finish): returning to refs/heads/about
+7d4c122 HEAD@{26}: rebase -i (pick): Add link to about section in home page
+5a3bbf7 HEAD@{27}: rebase -i (reword): Add HTML page for personal bio
+a6d6855 HEAD@{28}: rebase -i (reword): Add empty page in about section
+97a4a22 HEAD@{29}: rebase -i: fast-forward
+74afd90 HEAD@{30}: rebase -i (start): checkout master
+a72282b HEAD@{31}: rebase -i (finish): returning to refs/heads/about
+a72282b HEAD@{32}: rebase -i (start): checkout master
+a72282b HEAD@{33}: checkout: moving from master to about
+74afd90 HEAD@{34}: checkout: moving from about to master
+a72282b HEAD@{35}: rebase -i (finish): returning to refs/heads/about
+a72282b HEAD@{36}: rebase -i (start): checkout master
+a72282b HEAD@{37}: reset: moving to HEAD
+a72282b HEAD@{38}: rebase -i (finish): returning to refs/heads/about
+a72282b HEAD@{39}: rebase -i (start): checkout master
+a72282b HEAD@{40}: checkout: moving from master to about
+74afd90 HEAD@{41}: checkout: moving from about to master
+a72282b HEAD@{42}: rebase -i (finish): returning to refs/heads/about
+a72282b HEAD@{43}: rebase -i (pick): Add link to about section in home page
+1260437 HEAD@{44}: rebase -i (squash): Add HTML page for personal bio
+8de18d7 HEAD@{45}: rebase -i (pick): Add HTML page for personal bio
+97a4a22 HEAD@{46}: rebase -i (squash): Add empty page in about section
+edff70e HEAD@{47}: rebase -i (start): checkout master
+ce9d652 HEAD@{48}: checkout: moving from master to about
+74afd90 HEAD@{49}: checkout: moving from about to master
+ce9d652 HEAD@{50}: rebase -i (finish): returning to refs/heads/about
+ce9d652 HEAD@{51}: rebase -i (start): checkout master
+ce9d652 HEAD@{52}: rebase -i (finish): returning to refs/heads/about
+ce9d652 HEAD@{53}: rebase -i (start): checkout master
+ce9d652 HEAD@{54}: commit: Add link to about section in home page
+5f022e1 HEAD@{55}: commit: Add empty HTML page for Mary's bio
+fbe3d49 HEAD@{56}: commit: Add HTML page for personal bio
+ebfbefc HEAD@{57}: rebase finished: returning to refs/heads/about
+ebfbefc HEAD@{58}: rebase: Add contents to about page
+edff70e HEAD@{59}: rebase: Add empty page in about section
+74afd90 HEAD@{60}: rebase: checkout master
+c94fb42 HEAD@{61}: checkout: moving from master to about
+74afd90 HEAD@{62}: merge news-hotfix: Fast-forward
+f79223d HEAD@{63}: checkout: moving from news-hotfix to master
+74afd90 HEAD@{64}: commit: Add article for 2nd news item
+5142364 HEAD@{65}: commit: Add 2nd news item to index page
+f79223d HEAD@{66}: checkout: moving from master to news-hotfix
+f79223d HEAD@{67}: checkout: moving from about to master
+c94fb42 HEAD@{68}: commit: Add contents to about page
+27b0924 HEAD@{69}: commit: Add empty page in about section
+f79223d HEAD@{70}: checkout: moving from master to about
+f79223d HEAD@{71}: commit (merge): Merge branch 'crazy'
+049c9d9 HEAD@{72}: checkout: moving from crazy to master
+ebb4171 HEAD@{73}: commit: Add news item for rainbow
+4310454 HEAD@{74}: checkout: moving from master to crazy
+049c9d9 HEAD@{75}: merge news-hotfix: Fast-forward
+1a27d0e HEAD@{76}: checkout: moving from news-hotfix to master
+049c9d9 HEAD@{77}: commit: Add 1st news item
+1a27d0e HEAD@{78}: checkout: moving from master to news-hotfix
+1a27d0e HEAD@{79}: checkout: moving from crazy-alt to master
+d247771 HEAD@{80}: commit: Make a REAL rainbow
+4310454 HEAD@{81}: checkout: moving from crazy to crazy-alt
+4310454 HEAD@{82}: commit: Link index.html to rainbow.html
+6a43f42 HEAD@{83}: commit: add CSS stylesheet to rainbow.html
+b9f2b14 HEAD@{84}: merge master: Merge made by the 'recursive' strategy.
+95a36a7 HEAD@{85}: checkout: moving from master to crazy
+1a27d0e HEAD@{86}: merge css: Fast-forward
+3553479 HEAD@{87}: checkout: moving from css to master
+1a27d0e HEAD@{88}: commit: link HTML pages to stylesheet
+019e981 HEAD@{89}: commit: Add CSS stylesheet
+3553479 HEAD@{90}: checkout: moving from master to css
+3553479 HEAD@{91}: checkout: moving from crazy to master
+95a36a7 HEAD@{92}: commit: Rename crazy.html to rainbow.html
+e1bc771 HEAD@{93}: reset: moving to HEAD
+e1bc771 HEAD@{94}: commit: add a rainbow to crazy.html
+12e24f0 HEAD@{95}: checkout: moving from 12e24f0c4e03b3c991b287230548d8bdad3882d7 to crazy
+12e24f0 HEAD@{96}: checkout: moving from master to 12e24f0
+3553479 HEAD@{97}: reset: moving to HEAD
+3553479 HEAD@{98}: revert: Revert "Add a crazzy experiment"
+12e24f0 HEAD@{99}: checkout: moving from 453c8a4db079c3d235e3470754a79a22ea0f0afd to master
+453c8a4 HEAD@{100}: checkout: moving from master to v1.0
+12e24f0 HEAD@{101}: commit: Add a crazzy experiment
+453c8a4 HEAD@{102}: checkout: moving from 6a442fcc4ab51362713f09ed5eadc7af767db833 to master
+6a442fc HEAD@{103}: checkout: moving from 1047951bab2636a3bc90682e48d9fb32644da036 to 6a442fc
+1047951 HEAD@{104}: checkout: moving from master to 1047951
+453c8a4 HEAD@{105}: commit: Add navigation links
+1047951 HEAD@{106}: commit: t Add blue an orange html files
+6a442fc HEAD@{107}: commit (initial): Create index page for the message
+```
+
+The resulting output should look something like the following. Depending on your version of Git, the message might be slightly different. You can press space to scroll through the content or q to exit.
+
+The above listing reflects our last few actions. For example, the current HEAD, denoted by HEAD@{0}, resulted from reseting HEAD to HEAD~1. Four actions ago, the yellow page was applied during our rebase, as shown in HEAD@{3}.
+
+The **reflog** is a **chronological** listing of our history, without regard for the repository's branch structure. This lets us find **dangling commits** that would otherwise be lost from the project history.
+
 # 	* [Revive the Lost Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Filter the Log History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Merge in the Revived Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
