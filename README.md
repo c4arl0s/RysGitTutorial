@@ -3314,6 +3314,49 @@ The above listing reflects our last few actions. For example, the current HEAD, 
 The **reflog** is a **chronological** listing of our history, without regard for the repository's branch structure. This lets us find **dangling commits** that would otherwise be lost from the project history.
 
 # 	* [Revive the Lost Commit](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+At the beginning of each **reflog** entry, you will find a commit ID representing, the HEAD~ after that action. Check out the commit at **HEAD@{2}**, which should be where the rebase added the green page (change the ID below to the ID from your reflog)
+
+```console
+$ git checkout d417237
+Note: switching to 'd417237'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at d417237 Add green page
+```
+
+This puts us in a **detached HEAD state**, which means our HEAD is no longer on the tip of a branch. We are actually in the opposite situation as we were in [Undoing Changes]() when we checked our a commit **before** the branch tip. Now, we are looking at a commit **after** the tip of the branch, but we still have a detached **HEAD**:
+
+![Screen Shot 2020-06-01 at 17 49 41](https://user-images.githubusercontent.com/24994818/83462250-58988f00-a430-11ea-8d1d-c476cb41dcf4.png)
+
+To turn our dangling commit into a full-fledged branch, all we have to do is create one.
+
+```console
+$ git checkout -b green-page
+Switched to a new branch 'green-page'
+```
+
+We now have a branch that can be merged back into the project:
+
+![Screen Shot 2020-06-01 at 17 53 28](https://user-images.githubusercontent.com/24994818/83462430-d197e680-a430-11ea-815e-202f989519fc.png)
+
+The above diagram makes it easy to see that the **green-page** branch is a extension of **new-pages**, but how would we figure this out if we weren't drawing out the state of our repository every step of the way ?
+
+
 # 	* [Filter the Log History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Merge in the Revived Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
