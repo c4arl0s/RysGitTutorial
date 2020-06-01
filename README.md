@@ -3356,8 +3356,81 @@ We now have a branch that can be merged back into the project:
 
 The above diagram makes it easy to see that the **green-page** branch is a extension of **new-pages**, but how would we figure this out if we weren't drawing out the state of our repository every step of the way ?
 
-
 # 	* [Filter the Log History](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+To view the differences between branches, we can use Git's log-filtering syntax.
+
+```console
+$ git log new-pages..green-page
+commit d41723777cff192f4b4453fe6115a997e3aeb1a5 (HEAD -> green-page)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 13:19:55 2020 -0500
+
+    Add green page
+```
+
+This will display all commits contained in **green-page** that are not in the **new-pages** branch. The above command tells us the **green-page** contains one more snapshot than **new-pages**: our dangling commit (although, it is not really dangling any more since we created a branch for it).
+
+You can also use this syntax to limit the output of **git log**. For example, to display the ast 4 commits on the current branch, you could use.
+
+```console
+$ git log HEAD~4..HEAD
+commit d41723777cff192f4b4453fe6115a997e3aeb1a5 (HEAD -> green-page)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 13:19:55 2020 -0500
+
+    Add green page
+
+commit 1b2f067a2b67f40fc8a50b1d21d49469b3ff50d2 (new-pages)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:46:40 2020 -0500
+
+    Add yellow page
+
+commit cb8d72bc066d0a4f60110a9cbd7351421cfe463c
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:43:00 2020 -0500
+
+    Add red page
+
+commit 20b9d5d6d3bdb09d440f9067bc9b3bbdfa308446 (master)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 18:50:56 2020 -0500
+
+    Add link to about section in home page
+```
+
+However, this is a bit verbose for such a common task, so Git developers added the -n flag as an easier way to limit output.
+
+```console
+$ git log -n 4
+commit d41723777cff192f4b4453fe6115a997e3aeb1a5 (HEAD -> green-page)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 13:19:55 2020 -0500
+
+    Add green page
+
+commit 1b2f067a2b67f40fc8a50b1d21d49469b3ff50d2 (new-pages)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:46:40 2020 -0500
+
+    Add yellow page
+
+commit cb8d72bc066d0a4f60110a9cbd7351421cfe463c
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:43:00 2020 -0500
+
+    Add red page
+
+commit 20b9d5d6d3bdb09d440f9067bc9b3bbdfa308446 (master)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 18:50:56 2020 -0500
+
+    Add link to about section in home page
+```
+
+The -n 4 parameter tells Git to show only the last four commits from the current HEAD, making it the equivalent of the HEAD~4..HEAD syntax shown above. Similarly, -n 3, -n 2, and -n 1 would display three, two, and one commit, respectively. This feature becomes very useful once a repository grows beyond one screenful of history.
+
 # 	* [Merge in the Revived Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
