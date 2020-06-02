@@ -3548,6 +3548,18 @@ Deleted branch green-page (was d417237).
 ```
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+This module took an in-depth look at rebasing, resetting, and the reflog. We learned how to split old commits into one or more new commits, and how to revive "lost" commits. Hopefully, this has given you a better understanding of the interaction between the working directory, the stage, branches, and commited snapshots. We also explored some new options for displaying our commit history, which will become an important skill as our project grows.
+
+WE did a lot of work with the branch tips this module. It is important to realize that Git uses the tip of a branch to represent **entire branch**. That is to say, a branch is actually a pointer to a single commit- not a containter for a series of commits. This idea has been implicitly reflected in our diagrams:
+
+![Screen Shot 2020-06-02 at 13 45 55](https://user-images.githubusercontent.com/24994818/83557547-740aa500-a4d7-11ea-8458-145596a4191d.png)
+
+The history is represented by the parent of each commit (designated by arrows), not the branch itself. So, to request a new branch, all Git has to do is create a reference to the current commit. And, to add a snapshot to a branch, it just has to move the branch reference to the new commit. An understanding of Git's branch representation should make it easier to wrap your head around merging, rebasing, and other kinds of branch manipulation.
+
+We will revisit Git's internal representation of a repository in the final module of his tutorial. But now, we are finally ready to discuss multi-user development, which happens to rely entirely on Git branches.
+
+
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 8. [Remotes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clone the Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
