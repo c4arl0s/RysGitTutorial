@@ -3559,8 +3559,33 @@ The history is represented by the parent of each commit (designated by arrows), 
 
 We will revisit Git's internal representation of a repository in the final module of his tutorial. But now, we are finally ready to discuss multi-user development, which happens to rely entirely on Git branches.
 
-
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+$ git reflog
+```
+```console
+$ git reset --mixed HEAD~n
+```
+Move the HEAD backward n commits, but do not change the working directory
+
+```console
+$ git reset --hard HEAD~n
+```
+Move the HEAD backward n commits, and change the working directory to match.
+
+
+```console
+$ git log since..until
+```
+Display the commits reachable from until but not from since. These parameters can be either commit ID's o branch names.
+
+
+```console
+$ git log --stat
+```
+Include extra information about altered files in the log output.
+
 # 8. [Remotes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clone the Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Configure The Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
