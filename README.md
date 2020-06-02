@@ -3432,6 +3432,121 @@ Date:   Tue May 26 18:50:56 2020 -0500
 The -n 4 parameter tells Git to show only the last four commits from the current HEAD, making it the equivalent of the HEAD~4..HEAD syntax shown above. Similarly, -n 3, -n 2, and -n 1 would display three, two, and one commit, respectively. This feature becomes very useful once a repository grows beyond one screenful of history.
 
 # 	* [Merge in the Revived Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We have revived our lost commit, and now we are ready to merge everything back into the **master** branch. Before we do the merge, let's see exactly what we are merging:
+
+```console
+$ git checkout master
+Switched to branch 'master'
+```
+
+```console
+$ git log HEAD..green-page --stat
+commit d41723777cff192f4b4453fe6115a997e3aeb1a5
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 13:19:55 2020 -0500
+
+    Add green page
+
+ green.html | 14 ++++++++++++++
+ index.html |  3 +++
+ 2 files changed, 17 insertions(+)
+
+commit 1b2f067a2b67f40fc8a50b1d21d49469b3ff50d2
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:46:40 2020 -0500
+
+    Add yellow page
+
+ index.html  |  3 +++
+ yellow.html | 14 ++++++++++++++
+ 2 files changed, 17 insertions(+)
+
+commit cb8d72bc066d0a4f60110a9cbd7351421cfe463c
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:43:00 2020 -0500
+
+    Add red page
+
+ index.html |  5 ++++-
+ red.html   | 14 ++++++++++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+```
+
+The **$ git log HEAD..green-page** command shows us only those commits in **green-page** that are not in **master** (since master is the current branch, we can refer to it as HEAD). The new **--stat** flag includes information about which files have been changed in each commit. For example, the most recent commit tells us that 14 lines were added to the **green.html** file and 3 lines were added to **index.html**:
+
+```c
+commit d41723777cff192f4b4453fe6115a997e3aeb1a5
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 13:19:55 2020 -0500
+
+    Add green page
+
+ green.html | 14 ++++++++++++++
+ index.html |  3 +++
+ 2 files changed, 17 insertions(+)
+```
+
+If we didn't already know what was in this new commit, the log output would tell us which files we needed to look at. But, we authored all these changes, so we can skip right to the merge.
+
+```console
+$ git merge green-page
+Updating 20b9d5d..d417237
+Fast-forward
+ green.html  | 14 ++++++++++++++
+ index.html  | 11 ++++++++++-
+ red.html    | 14 ++++++++++++++
+ yellow.html | 14 ++++++++++++++
+ 4 files changed, 52 insertions(+), 1 deletion(-)
+ create mode 100644 green.html
+ create mode 100644 red.html
+ create mode 100644 yellow.html
+```
+
+The following diagram shows us the state our repository after the merge.
+
+![Screen Shot 2020-06-02 at 13 33 12](https://user-images.githubusercontent.com/24994818/83556525-af0bd900-a4d5-11ea-9407-23d61d12ff52.png)
+
+```console
+d417237 Add green page
+1b2f067 Add yellow page
+cb8d72b Add red page
+20b9d5d Add link to about section in home page
+71153c2 Begin creating bio pages (added message to mary)
+f4bb8c3 Create the about page
+74afd90 Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
+Note that the green-page branch already contains all the history of **new-pages**, which is why we merged the former instead of the latter. It this was not the case, Git would complain when we try to run the following command:
+
+```console
+$ git branch -d new-pages
+Deleted branch new-pages (was 1b2f067).
+```
+
+We can go ahead and delete the green 
+
+```console
+$ git branch -d green-page
+Deleted branch green-page (was d417237).
+```
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 8. [Remotes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
