@@ -3598,8 +3598,77 @@ This means we can adapt our merging and rebasing skills to make Git fantastic co
 
 For several parts of this module, we are going to pretend to be Mary, the graphic designer for our website. Mary's actions are clearly denoted by including her name in the heading of each step.
 
-
 # 	* [Clone the Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+First, Mary needs her own copy of the repository to work with. The **Distributed Workflows** module will discuss network-based remotes, but right new we are just going to store them on the local filesystem.
+
+```console
+cd /Users/carlossantiagocruz/iOS/RysGitTutorialRepository
+```
+
+```console
+cd ..
+```
+
+```console
+$ git clone RysGitTutorialRepository/ RysGitTutorialMarysRepository
+Cloning into 'RysGitTutorialMarysRepository'...
+done.
+```
+
+```console
+$ cd RysGitTutorialMarysRepository/
+Wed Jun 03 ~/iOS/RysGitTutorialMarysRepository 
+$ ls
+about        green.html   news-1.html  orange.html  red.html     yellow.html
+blue.html    index.html   news-2.html  rainbow.html style.css
+```
+
+The first two lines navigate the command shell to the directory **above** RysGitTutorialMarysRepository. Make sure to change to the actual path to your repository. The **git clone** command copies our repository into RysGitTutorialMarysRepository, which will reside in the same directory as my git repository. Then, we navigate to the Mary's repository so we can start pretending to be Mary.
+
+First show all directories involved
+
+```console
+$ ls RysGitTutorial*
+RysGitTutorialRepository:
+blue.html    orange.html  style.css    news-1.html  rainbow.html news-2.html  about        green.html   index.html   red.html     yellow.html
+
+RysGitTutorial:
+LICENSE   README.md
+
+RysGitTutorialMarysRepository:
+about        blue.html    green.html   index.html   news-1.html  news-2.html  orange.html  rainbow.html red.html     style.css    yellow.html
+```
+
+Run **git log** verify that Mary's repository is in fact a copy of our original repository.
+
+```console
+$ git log --oneline
+d417237 (HEAD -> master, origin/master, origin/HEAD) Add green page
+1b2f067 Add yellow page
+cb8d72b Add red page
+20b9d5d Add link to about section in home page
+71153c2 Begin creating bio pages (added message to mary)
+f4bb8c3 Create the about page
+74afd90 Add article for 2nd news item
+5142364 Add 2nd news item to index page
+f79223d Merge branch 'crazy'
+ebb4171 Add news item for rainbow
+049c9d9 Add 1st news item
+4310454 Link index.html to rainbow.html
+6a43f42 add CSS stylesheet to rainbow.html
+b9f2b14 Merge branch 'master' into crazy
+1a27d0e link HTML pages to stylesheet
+019e981 Add CSS stylesheet
+95a36a7 Rename crazy.html to rainbow.html
+e1bc771 add a rainbow to crazy.html
+3553479 Revert "Add a crazzy experiment"
+12e24f0 Add a crazzy experiment
+453c8a4 (tag: v1.0) Add navigation links
+1047951 t Add blue an orange html files
+6a442fc Create index page for the message
+```
+
 # 	* [Configure The Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Start Mary's Day (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create Mary's Bio Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
