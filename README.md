@@ -3668,8 +3668,48 @@ e1bc771 add a rainbow to crazy.html
 1047951 t Add blue an orange html files
 6a442fc Create index page for the message
 ```
-
 # 	* [Configure The Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+First off, Mary needs to configure her repository so that we know who contributed what to the project.
+
+```console
+$ git config user.name "Mary"
+```
+
+```console
+$ git config user.mail mary.example@icloud.com
+```
+
+You may recall from the first module that we used a **--global** flag to set the configuration for the entire Git installation. But since Mary's repository is on the local filesystem, she needs a **local** configuration.
+
+```console
+$ ls .git
+info        hooks       packed-refs HEAD        index
+description objects     refs        logs        config
+```
+
+```console
+$ cat .git/config 
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = /Users/carlossantiagocruz/iOS/RysGitTutorialRepository/
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[user]
+	name = Mary
+	mail = mary.example@icloud.com
+```
+
+Use a text editor to open up the file called *+config** in the **.git** directory of Mary's project (you may  need to enable hidden files to see .git). This is where local configurations are stored, and we see Mary's information at the bottom of the file. Note that this overrides the global configuration that we set in **The basics**
+
 # 	* [Start Mary's Day (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create Mary's Bio Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the Bio Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
