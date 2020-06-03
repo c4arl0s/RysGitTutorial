@@ -1228,7 +1228,7 @@ $ git commit -m "Add CSS stylesheet"
 # 	* [Link the Stylesheet]()
 
 - We still need to tell the HTML pages to use the formatting in style.css.
-- Add the following text on a separate line after the **<title>** element in **index.html**, **blue.html** and **orange.html** (remember that rainbow.html only exist in the crazy branch).
+- Add the following text on a separate line after the **title** element in **index.html**, **blue.html** and **orange.html** (remember that rainbow.html only exist in the crazy branch).
 - You should be able to see the CSS formatting by opening index.html in a web browser.
 
 ```html
@@ -3587,6 +3587,18 @@ $ git log --stat
 Include extra information about altered files in the log output.
 
 # 8. [Remotes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Simply put, a **remote repository*** is one that is not your own. It can be another Git repository that is on your company's network, the internet, or even your local file system, but the point is that it is a repository distinct from your my-git-repository project.
+
+We have already seen how branches can streamline a workflow within a single repository, but they also happen to be Git's mechanism for sharing commits between repositories. **Remote Brances** act just like the local branches that we have been using, only the represent a branch in someone else's repository.
+
+![Screen Shot 2020-06-03 at 12 30 45](https://user-images.githubusercontent.com/24994818/83668761-1721f400-a596-11ea-9f23-26b12b25960e.png)
+
+This means we can adapt our merging and rebasing skills to make Git fantastic collaboration tool. Over the next few modules, we will be exploring various multi-user workflows by pretending to be different developers woking on our example website.
+
+For several parts of this module, we are going to pretend to be Mary, the graphic designer for our website. Mary's actions are clearly denoted by including her name in the heading of each step.
+
+
 # 	* [Clone the Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Configure The Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Start Mary's Day (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
