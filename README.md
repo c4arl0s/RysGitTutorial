@@ -3851,8 +3851,16 @@ origin	/Users/carlossantiagocruz/iOS/RysGitTutorialRepository/ (push)
 
 This shows the full path to our original repository, verifying that **origin** is a remote connection to my git repository. The same path is designated as a **"fetch"** and a **"push"** location. We will see what these means in a moment.
 
-
 # 	* [Return to Your Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+OK, we are done being Mary, and we can return to our own repository:
+
+```console
+$ cd ../RysGitTutorialRepository/
+```
+
+Notice that Mar's bio page is still empty. It is very important to understand that this repository and Mary's repository are completely separate. While she was altering her bio page, we could have been doing all sorts of other things in my git repository. We could have even changed her bio page, which would result in a merge conflict when we try to pull her changes in.
+
 # 	* [Add Mary as a Remote (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Fetch Mary's Branches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Check out a Remote Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
