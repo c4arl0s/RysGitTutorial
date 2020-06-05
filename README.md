@@ -3610,8 +3610,10 @@ cd /Users/carlossantiagocruz/iOS/RysGitTutorialRepository
 cd ..
 ```
 
+- Before we continue, I have to go back to fix the following command to pass the --local flag to do the correct cloning.
+
 ```console
-$ git clone RysGitTutorialRepository/ RysGitTutorialMarysRepository
+$ git --local clone RysGitTutorialRepository/ RysGitTutorialMarysRepository
 Cloning into 'RysGitTutorialMarysRepository'...
 done.
 ```
@@ -3775,6 +3777,60 @@ Date:   Fri Jun 5 11:09:51 2020 -0500
 [Check why the email was not changed]()
 
 # 	* [Publish the Bio Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Now, we can publish the bio page by merging into the **master** branch:
+
+```console
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+Then try to merge
+
+Oh Crap !!!
+
+```console
+merge: bio-page - not something we can merge
+```
+
+I suppose the repository was not created correctly, reading more documentation it suggest to pass the --local flag when you cloning.
+
+So do it again, and configure.
+
+```console
+$ git clone --local RysGitTutorialRepository/ RysGitTutorialMarysRepository
+```
+
+the configure:
+
+```console
+$ git config user.name "Mary"
+```
+
+```console
+$ git config user.mail mary@repository.com
+```
+
+Then merge again
+
+
+```console
+$ git merge bio-page
+Updating d417237..49baa6e
+Fast-forward
+ about/mary.html | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+```
+Woala ! Now it works !!!
+
+Of course, this results in a fast-forward merge. 
+
+![Screen Shot 2020-06-05 at 11 43 05](https://user-images.githubusercontent.com/24994818/83902300-be7f6200-a721-11ea-880d-fb7689c54d45.png)
+
+Notice that both repositories have normal, local branches - we have not had any interaction between the two repositories, so we don't see any remote branches yet. Before we switch back to my git repository, let's examine Mary's remote connections.
+
+
 # 	* [View Remote Repositories (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Return to Your Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add Mary as a Remote (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
