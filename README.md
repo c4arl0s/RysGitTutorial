@@ -3932,6 +3932,39 @@ That is to say, our remote branches are not **direct** links into Mary's reposit
 The above figure shows the state of **our** repository. We have access to Mary's snapshot (represented by sqeares) and her branches, even though we don't have a real-time connection to Mary's repository.
 
 # 	* [Check out a Remote Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Let's check out a remote branch to review Mary's changes.
+
+```console
+Fri Jun 05 ~/iOS/RysGitTutorialRepository 
+$ git checkout mary/master
+Note: switching to 'mary/master'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 49baa6e Add bio page for Mary
+``
+
+This puts us in a **detached** HEAD state, just like we were in when we checked out a dangling commit. This should not be that surprising, considering that our remote branches are **copies** of Mary's branches. Checking out a remote branch takes our HEAD off the tio of a local branch, illustrated by the following diagram.
+
+![Screen Shot 2020-06-05 at 12 39 29](https://user-images.githubusercontent.com/24994818/83906672-a01d6480-a729-11ea-83ee-c616558f6d26.png)
+
+We can't continue developing if we are not on a local branch. To build on **mary/master** we either need to merge it intoour own local **master** or create another branch. We did the latter in Branchs, Part I to build on an old commit and in the previous module to revive a "lost commit, but right now we are just looking at what Mary did, so the **detached** HEAD state does not really affect us.
+
+
 # 	* [Find Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Merge Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push a Dummy Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
