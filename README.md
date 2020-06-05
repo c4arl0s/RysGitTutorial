@@ -114,23 +114,23 @@ Ry's Git Tutorial
  * [Merge in the Revived Branch](https://github.com/c4arl0s/RysGitTutorial#-merge-in-the-revived-branch)
  * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-5)
  * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-3)
-# 8. [Remotes]()
- * [Clone the Repository (Mary)]()
- * [Configure The Repository (Mary)]()
- * [Start Mary's Day (Mary)]()
- * [Create Mary's Bio Page]()
- * [Publish the Bio Page (Mary)]()
- * [View Remote Repositories (Mary)]()
- * [Return to Your Repository (you)]()
- * [Add Mary as a Remote (you)]()
- * [Fetch Mary's Branches (you)]()
- * [Check out a Remote Branch]()
- * [Find Mary's Changes]()
- * [Merge Mary's Changes]()
- * [Push a Dummy Branch]()
- * [Push a New Tag]()
- * [Conclusion]()
- * [Quick Reference]()
+# 8. [Remotes](https://github.com/c4arl0s/RysGitTutorial#8-remotes-1)
+ * [Clone the Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#-clone-the-repository-mary)
+ * [Configure The Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#-configure-the-repository-mary)
+ * [Start Mary's Day (Mary)](https://github.com/c4arl0s/RysGitTutorial#-start-marys-day-mary)
+ * [Create Mary's Bio Page](https://github.com/c4arl0s/RysGitTutorial#-create-marys-bio-page)
+ * [Publish the Bio Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#-publish-the-bio-page-mary)
+ * [View Remote Repositories (Mary)](https://github.com/c4arl0s/RysGitTutorial#-view-remote-repositories-mary)
+ * [Return to Your Repository (you)](https://github.com/c4arl0s/RysGitTutorial#-return-to-your-repository-you)
+ * [Add Mary as a Remote (you)](https://github.com/c4arl0s/RysGitTutorial#-add-mary-as-a-remote-you)
+ * [Fetch Mary's Branches (you)](https://github.com/c4arl0s/RysGitTutorial#-fetch-marys-branches-you)
+ * [Check out a Remote Branch](https://github.com/c4arl0s/RysGitTutorial#-check-out-a-remote-branch)
+ * [Find Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#-find-marys-changes)
+ * [Merge Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#-merge-marys-changes)
+ * [Push a Dummy Branch](https://github.com/c4arl0s/RysGitTutorial#-push-a-dummy-branch)
+ * [Push a New Tag](https://github.com/c4arl0s/RysGitTutorial#-push-a-new-tag)
+ * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-6)
+ * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-4)
 # 9. [Centralized Workflows]()
  * [Create a Bare Repository (Central)]()
  * [Update Remotes (Mary and You)]()
@@ -841,7 +841,7 @@ nothing to commit, working tree clean
 ```
 
 - **Be careful** with **git reset** and **git clean**. Both operate on the working directory, not on the committed snapshots.
-- Unlike **git revert**, they **permanently undo changes, so make sure you really want to trash what you are working on before you use them.
+- Unlike **git revert**, they permanently undo changes, so make sure you really want to trash what you are working on before you use them.
 
 	
 # 	* [Conclusion]()
@@ -1167,7 +1167,7 @@ $ git log --oneline
 6a442fc Create index page for the message
 ```
 
-- After the checkout, crazy.html does not exist in the working directory, and the commits from the last few steps don't appear in the history. These two branches became completely independent development enviroment after they forked.
+- After the checkout, crazy.html does not exist in the working directory, and the commits from the last few steps don't appear in the history. These two branches became completely independent development environment after they forked.
 - You can think of them as separate project folders that you switch between with git checkout.
 - They do, however, share their first four commits.
 
@@ -1401,7 +1401,7 @@ Following these simple guidelines will have a dramatic impact on your programmin
 
 # 	* [Merge the CSS Updates]()
 
-Note that CSS formatting we merged into **master*Ç* is nowhere to be found.
+Note that CSS formatting we merged into **master** is nowhere to be found.
 This presents a bit of a problem if we want to experiment to reflect these updates.
 Conveniently, Git let us merge changes into **any branch** (not just the master branch).
 So, we can pull the updates in with the familiar **git merge** command.
@@ -1432,7 +1432,7 @@ Merge made by the 'recursive' strategy.
 ```
 
 As of Git 1.7.1.0, this will open your editor and prompt you for a message explaining why the commit was necessary.
-You can use the default **Merge** branch **master** into crazy. When you save and close the file, you will notice an extra commit in your project history. Recall that our first merge didn't add any new commits; it is just **"fast-forwarded" the tip of the master branch. This was not the case for our new merge, which is shown below.
+You can use the default **Merge** branch **master** into crazy. When you save and close the file, you will notice an extra commit in your project history. Recall that our first merge didn't add any new commits; it is just **"fast-forwarded"** the tip of the master branch. This was not the case for our new merge, which is shown below.
 
 ![Screen Shot 2020-05-24 at 11 50 02](https://user-images.githubusercontent.com/24994818/82759729-c7cd0e00-9db4-11ea-9b4b-8e97fc80512e.png)
 
@@ -1446,7 +1446,7 @@ As a result, it has two parent commits. The above figure visualizes this with tw
 
 The name comes from the internal method used to create the merge commit. Git looks at **three** commits (numbered in the above figure) to generate the final state of the merge.
 
-This kind of branch interaction is a big part of what makes Git such a powerful development tool. We can not only create independent lines of development, but we can alsosharee information between them by tying together their stories with a 3-way merge.
+This kind of branch interaction is a big part of what makes Git such a powerful development tool. We can not only create independent lines of development, but we can also share information between them by tying together their stories with a 3-way merge.
 
 # 	* [Style the Rainbow Page]()
 
@@ -1500,7 +1500,7 @@ However, be careful not to include unintended files when using the -a flag.
 # 	* [Link to the Rainbow Page]()
 
 We still need to add  navigation link to the home page.
-Change the "Navigation sectio of index.html to the following.
+Change the "Navigation section of index.html to the following.
 
 ```html
 <h2>Navigation</h2>
@@ -3708,7 +3708,7 @@ $ cat .git/config
 	mail = mary.example@icloud.com
 ```
 
-Use a text editor to open up the file called *+config** in the **.git** directory of Mary's project (you may  need to enable hidden files to see .git). This is where local configurations are stored, and we see Mary's information at the bottom of the file. Note that this overrides the global configuration that we set in **The basics**
+Use a text editor to open up the file called **config** in the **.git** directory of Mary's project (you may  need to enable hidden files to see .git). This is where local configurations are stored, and we see Mary's information at the bottom of the file. Note that this overrides the global configuration that we set in **The basics**
 
 # 	* [Start Mary's Day (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
@@ -3721,6 +3721,59 @@ git checkout -b bio-page
 Mary can create and check out branches just like we did in our copy of the project. Her repository is a completely isolated development enviroment, and she can do whatever she wants in her without worrying about what's going on in my git repository. Just as branches are an abstraction for the working directory, the staged snapshot, and a commit history, a repository is an abstraction for branches.
 
 # 	* [Create Mary's Bio Page](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Let's complete Mary's biography page. In mary's repository, change about/mary.html to:
+
+```console
+<html lang="en">
+<head>
+  <title>About Mary</title>
+  <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>About Mary</h1>
+  <p>I'm a graphic designer.</p>
+
+  <h2>Interests</h2>
+  <ul>
+    <li>Oil Painting</li>
+    <li>Web Design</li>
+  </ul>
+
+  <p><a href="index.html">Return to about page</a></p>
+</body>
+</html>
+```
+
+Again, we are developing this in a branch as a best-practice step: our **master** branch is only for stable, tested code. Stage and commit the snapshot, then take a look at the result.
+
+```console
+$ git commit -a -m "Add bio page for mary"
+[bio-pages 0d746d0] Add bio page for mary
+ 1 file changed, 21 insertions(+), 1 deletion(-)
+```
+
+```console
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Fri Jun 5 11:09:51 2020 -0500
+
+    Add bio page for mary
+```
+
+The **Author** field in the log output should reflect the local configurations we made for Mary's name and email. Remember that -n -1 flags limits history output to a single commit.
+
+```console
+$ git log -n 1
+commit 0d746d0a6eb7b983e661e47f9347b196b2967a0d (HEAD -> bio-pages)
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Fri Jun 5 11:09:51 2020 -0500
+
+    Add bio page for mary
+```
+
+[Check why the email was not changed]()
+
 # 	* [Publish the Bio Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [View Remote Repositories (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Return to Your Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
