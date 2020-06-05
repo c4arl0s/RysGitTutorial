@@ -3956,7 +3956,7 @@ Or undo this operation with:
 Turn off this advice by setting config variable advice.detachedHead to false
 
 HEAD is now at 49baa6e Add bio page for Mary
-``
+```
 
 This puts us in a **detached** HEAD state, just like we were in when we checked out a dangling commit. This should not be that surprising, considering that our remote branches are **copies** of Mary's branches. Checking out a remote branch takes our HEAD off the tio of a local branch, illustrated by the following diagram.
 
@@ -3964,8 +3964,34 @@ This puts us in a **detached** HEAD state, just like we were in when we checked 
 
 We can't continue developing if we are not on a local branch. To build on **mary/master** we either need to merge it intoour own local **master** or create another branch. We did the latter in Branchs, Part I to build on an old commit and in the previous module to revive a "lost commit, but right now we are just looking at what Mary did, so the **detached** HEAD state does not really affect us.
 
-
 # 	* [Find Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We can use the same log-filtering syntax from the previous module to view Mary's changes:
+
+```console
+Fri Jun 05 ~/iOS/RysGitTutorialRepository 
+$ git log master..mary/master --stat
+commit 49baa6e81a7ad87714540ec9ce9fceaaa12409c1 (HEAD, mary/master, mary/bio-page)
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Fri Jun 5 11:34:45 2020 -0500
+
+    Add bio page for Mary
+
+ about/mary.html | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+```
+
+This shows us what Mary has added to her master branch, but it is also a good idea to see if we have added any new changes that are not in Mary's repository
+
+```console
+Fri Jun 05 ~/iOS/RysGitTutorialRepository 
+$ git log mary/master..master --stat
+Fri Jun 05 ~/iOS/RysGitTutorialRepository 
+$ 
+```
+
+This will not output anything, since we haven't altered our data-base since Mary cloned it, In other words, our history hasn't **diverged** - **we are just behind by a commit**.
+
 # 	* [Merge Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push a Dummy Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push a New Tag](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
