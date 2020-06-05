@@ -3862,6 +3862,32 @@ $ cd ../RysGitTutorialRepository/
 Notice that Mar's bio page is still empty. It is very important to understand that this repository and Mary's repository are completely separate. While she was altering her bio page, we could have been doing all sorts of other things in my git repository. We could have even changed her bio page, which would result in a merge conflict when we try to pull her changes in.
 
 # 	* [Add Mary as a Remote (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Before we can get ahold of Mar's bio page, we need access to her repository. Let's look at our current list of remotes:
+
+```console
+$ git remote
+```
+
+We don't have any (**origin** was never created because we didn't clone from anywhere). So, let's add Mary as a remote repository
+
+```console
+$ git remote add mary ../RysGitTutorialMarysRepository/
+```
+
+```console
+Fri Jun 05 ~/iOS/RysGitTutorialRepository 
+$ git remote -v
+mary	../RysGitTutorialMarysRepository/ (fetch)
+mary	../RysGitTutorialMarysRepository/ (push)
+```
+
+We can now use **mary** to refer to Mar's repository, which is located at ../RysGitTutorialMarysRepository. The **git remote add** command is used to bookmark another Git repository for easy access, and our connections can be seen in the figure below.
+
+![Screen Shot 2020-06-05 at 12 14 05](https://user-images.githubusercontent.com/24994818/83904777-1cae4400-a726-11ea-992e-9a47fb3bf53e.png)
+
+Now that our remote **repositories are setup, we will spend the rest of the module discussing remote **branches**
+
 # 	* [Fetch Mary's Branches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Check out a Remote Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Find Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
