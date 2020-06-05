@@ -3889,6 +3889,48 @@ We can now use **mary** to refer to Mar's repository, which is located at ../Rys
 Now that our remote **repositories are setup, we will spend the rest of the module discussing remote **branches**
 
 # 	* [Fetch Mary's Branches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+As noted earlier, we can use remote branches to access snapshots from another repository. Let's take a look at our current remote branches with the - flag.
+
+```console
+$ git branch -r
+```
+
+Again, we don't have any. To populate our remote branch listing, we need to **fetch** the branches from Mary's repository:
+
+```console
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (4/4), 604 bytes | 100.00 KiB/s, done.
+From ../RysGitTutorialMarysRepository
+ * [new branch]      bio-page   -> mary/bio-page
+ * [new branch]      master     -> mary/master
+```
+
+```console
+Fri Jun 05 ~/iOS/RysGitTutorialRepository 
+$ git branch -r
+  mary/bio-page
+  mary/master
+```
+
+This will go to the **"fetch"** location shown in **git remote -v** and download all of the branches it finds there into our repository. The resulting branches are shown below.
+
+```console
+  mary/bio-page
+  mary/master
+```
+
+Remote branches are always listed in the form remoteName/branchName so that they will never be mistaken for local branches. The above listing reflects the sate of Mar's repository at the time of the fetch, but they will not be automatically updated if Mary continues developing any of her branches.
+
+That is to say, our remote branches are not **direct** links into Mary's repository -they are read-only copies of her branches, stored in our own repository. This means that we would have to do another fetch to access new updates.
+
+![Screen Shot 2020-06-05 at 12 25 09](https://user-images.githubusercontent.com/24994818/83905628-a1e62880-a727-11ea-944a-77e60c9a6399.png)
+
+The above figure shows the state of **our** repository. We have access to Mary's snapshot (represented by sqeares) and her branches, even though we don't have a real-time connection to Mary's repository.
+
 # 	* [Check out a Remote Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Find Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Merge Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
