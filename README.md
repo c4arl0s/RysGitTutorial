@@ -3830,8 +3830,28 @@ Of course, this results in a fast-forward merge.
 
 Notice that both repositories have normal, local branches - we have not had any interaction between the two repositories, so we don't see any remote branches yet. Before we switch back to my git repository, let's examine Mary's remote connections.
 
-
 # 	* [View Remote Repositories (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Mary can list the connections she has to other repositories using the following command.
+
+```console
+Fri Jun 05 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote
+origin
+```
+
+Apparently, she has a remote called **origin**. When you clone a repository, Git automatically adds an **origin**. When you clone a repository, Git automatically adds an **origin** remote pointing to the original repository, under the assumption that you will probably want to interact with it down to the road. We can request a little bit more information with -v (verbose) flag:
+
+```cosole
+Fri Jun 05 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote -v
+origin	/Users/carlossantiagocruz/iOS/RysGitTutorialRepository/ (fetch)
+origin	/Users/carlossantiagocruz/iOS/RysGitTutorialRepository/ (push)
+```
+
+This shows the full path to our original repository, verifying that **origin** is a remote connection to my git repository. The same path is designated as a **"fetch"** and a **"push"** location. We will see what these means in a moment.
+
+
 # 	* [Return to Your Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add Mary as a Remote (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Fetch Mary's Branches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
