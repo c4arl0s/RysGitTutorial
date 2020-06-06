@@ -3993,6 +3993,29 @@ $
 This will not output anything, since we haven't altered our data-base since Mary cloned it, In other words, our history hasn't **diverged** - **we are just behind by a commit**.
 
 # 	* [Merge Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Let's approve Mary's changes and integrate them into our own **master** branch.
+
+```console
+Sat Jun 06 ~/iOS/RysGitTutorialRepository 
+$ git merge mary/master
+Updating d417237..49baa6e
+Fast-forward
+ about/mary.html | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+Sat Jun 06 ~/iOS/RysGitTutorialRepository 
+```
+
+Even though **mary/master** is a remote branch, this still results in a **fast-forward** merge because there is a linear path from our **master** to the tip of **mary/master**
+
+![Screen Shot 2020-06-06 at 12 44 47](https://user-images.githubusercontent.com/24994818/83950893-86e0ea80-a7f3-11ea-8a1a-aa3b15bfe9ee.png)
+
+After the merge, the snapshots from Mary's remote branch become a part of a our local **master** branch. As a result, our **master** is now synchronized with Mary's:
+
+![Screen Shot 2020-06-06 at 12 46 36](https://user-images.githubusercontent.com/24994818/83950922-c6a7d200-a7f3-11ea-9969-4f0a5bb9d842.png)
+
+Notice that we only interacted with Mary's **master** branch, even though we had access to her **bio-page**. If we hadn't been pretending to be Mary, we wouldn't have known what this feature branch was for it or if it was ready to be merged. But, since we've designated **master** as a stable branch for the project, it was safe to integrate those updates (assuming Mary was also aware of this convention).
+
 # 	* [Push a Dummy Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push a New Tag](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
