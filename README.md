@@ -4113,7 +4113,70 @@ v2.0
 ```
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+In this module, we learned how remote branches can be used to access content in someone else's repository. The remotes listed in **git remote** are merely bookmarks for a full path to another repository. We used a local path, but as we will soon see, Git can use the SSH protocol to access repositories on another computer.
+
+The convention of **master** as a stable branch allowed us to pull changes without consulting Mary, but this doesn't necessarily have to be the case. When implementing your own workflow, Gif offers you a lot of flexibility about when and where you should pull from your team members. As long as you clearly define your project conventions, you can designate a special uses or privileges to **any** branch.
+
+That said, it is important to note that remotes are for **people**, whereas branches are for **topics**. Do **not** create separate branches for each of your developers -give them separate repositories and bookmark them with **git remote add**. Branches should always be for project development, not user management.
+
+Now that we know how Git shares information between repositories, we can add some more structure to our multi-user development environment. The next module will show you how to set up and access a shared central repository.
+
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+$ git -- clone remothePath
+```
+Create a copy of a remote Git repository
+
+```console
+$ git remote
+```
+List remote repositories.
+
+
+```console
+$ git remote add remoteName remotePath
+```
+Add a remote repository
+
+
+```console
+$ git fetch remoteName
+```
+Download remote branch information, but do not merge anything
+
+```console
+$ git merge remoteName/branchName
+```
+Merge a remote branch into the checked-out branch
+
+```console
+git branch -r
+```
+List remote branches
+
+```console
+git push remoteName branchName
+```
+Push a local branch to another repository
+
+```console
+$ git branch -r
+```
+List remote branches.
+
+```console
+$ git push remoteName branchName
+```
+Push a local branch to another repository
+
+```consol
+git push remoteName tagName
+```
+Push a tag to another repository
+
+
 # 9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Bare Repository (Central)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update Remotes (Mary and You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
