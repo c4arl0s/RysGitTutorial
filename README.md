@@ -3682,7 +3682,7 @@ $ git config user.name "Mary"
 $ git config user.mail mary.example@icloud.com
 ```
 
-You may recall from the first module that we used a **--global** flag to set the configuration for the entire Git installation. But since Mary's repository is on the local filesystem, she needs a **local** configuration.
+You may recall from the first module that we used a **--global** flag to set the configuration for the entire Git installation. But since Mary's repository is on the local **filesystem**, she needs a **local** configuration.
 
 ```console
 $ ls .git
@@ -3899,6 +3899,7 @@ $ git branch -r
 Again, we don't have any. To populate our remote branch listing, we need to **fetch** the branches from Mary's repository:
 
 ```console
+$ git fetch mary 
 remote: Enumerating objects: 7, done.
 remote: Counting objects: 100% (7/7), done.
 remote: Compressing objects: 100% (4/4), done.
@@ -3958,11 +3959,11 @@ Turn off this advice by setting config variable advice.detachedHead to false
 HEAD is now at 49baa6e Add bio page for Mary
 ```
 
-This puts us in a **detached** HEAD state, just like we were in when we checked out a dangling commit. This should not be that surprising, considering that our remote branches are **copies** of Mary's branches. Checking out a remote branch takes our HEAD off the tio of a local branch, illustrated by the following diagram.
+This puts us in a **detached** HEAD state, just like we were in when we checked out a dangling commit. This should not be that surprising, considering that our remote branches are **copies** of Mary's branches. Checking out a remote branch takes our HEAD off the tip of a local branch, illustrated by the following diagram.
 
 ![Screen Shot 2020-06-05 at 12 39 29](https://user-images.githubusercontent.com/24994818/83906672-a01d6480-a729-11ea-83ee-c616558f6d26.png)
 
-We can't continue developing if we are not on a local branch. To build on **mary/master** we either need to merge it intoour own local **master** or create another branch. We did the latter in Branchs, Part I to build on an old commit and in the previous module to revive a "lost commit, but right now we are just looking at what Mary did, so the **detached** HEAD state does not really affect us.
+We can't continue developing if we are not on a local branch. To build on **mary/master** we either need to merge it into our own local **master** or create another branch. We did the latter in Branches, Part I to build on an old commit and in the previous module to revive a "lost commit, but right now we are just looking at what Mary did, so the **detached** HEAD state does not really affect us.
 
 # 	* [Find Mary's Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
@@ -4017,7 +4018,100 @@ After the merge, the snapshots from Mary's remote branch become a part of a our 
 Notice that we only interacted with Mary's **master** branch, even though we had access to her **bio-page**. If we hadn't been pretending to be Mary, we wouldn't have known what this feature branch was for it or if it was ready to be merged. But, since we've designated **master** as a stable branch for the project, it was safe to integrate those updates (assuming Mary was also aware of this convention).
 
 # 	* [Push a Dummy Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+To complement our **git fetch** command, we will take a brief look at **pushing**. Fetching and pushing are **almost** opposites, in that fetching imports branches, while pushing exports branches to another repository. Let's take a look:
+
+```console
+$ git branch dummy
+```
+
+This creates a new branch called **dummy**.
+
+```console
+$ git push mary dummy
+Total 0 (delta 0), reused 0 (delta 0)
+To ../RysGitTutorialMarysRepository/
+ * [new branch]      dummy -> dummy
+```
+
+This sends it to Mary. Switch into Mary's repository to see what we did:
+
+```console
+Mon Jun 08 ~/iOS/RysGitTutorialRepository 
+$ cd ../RysGitTutorialMarysRepository/
+```
+
+```console
+$ git branch
+  bio-page
+  dummy
+* master
+```
+
+You should find a new **dummy** branch in her **local** branch listing. I said that **git fetch** and **git push** are **almost** opposites because **pushing creates a new local branch**, while **fetching imports commits into remote branches**.
+
+Now put yourself in Mary's shoes. She was a developing in her own repository when, all of a sudden, a new **dummy** branch appeared out of nowhere. Obviously, pushing branches into other people's repositories can make for a chaotic workflow. So, as a general rule, **you should never push into another developer's repository. But then, why does **git push** even exist?
+
+Over the next few modules, we will see that pushing is a necessary tool for maintaining public repositories. Until then, just remember to never, ever push into one of your friends's repositories. Let's get rid of these dummy branches and return to our repository.
+
+```console
+$ git branch -d dummy
+Deleted branch dummy (was 49baa6e).
+```
+
+Go back to your repository
+
+```console
+Mon Jun 08 ~/iOS/RysGitTutorialMarysRepository 
+$ cd ../RysGitTutorialRepository/
+```
+
+the delete the branch
+
+```console
+$ git branch -d dummy
+Deleted branch dummy (was 49baa6e).
+```
+
 # 	* [Push a New Tag](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+An important property of **git push** is that it does not automatically push tag associated with a particular branch. Let's examine this by creating a new tag.
+
+```cosole
+Wed Jun 10 ~/iOS/RysGitTutorialRepository 
+$ git tag -a v2.0 -m "An even stabler version of the website"
+```
+
+We now have a v2.0 tag in my git repository, which we can see by running the **git tag** command. Now, let's try pushing the branch to Mary's repository.
+
+```
+$ git push mary master
+Everything up-to-date
+```
+
+Git will say her **master** branch is already up-to-date, and her repository will remain unchanged. Instead of pushing the branch that contains the tag. Git requires us to manually push the tag itself:
+
+```console
+$ git push mary v2.0
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 180 bytes | 180.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To ../RysGitTutorialMarysRepository/
+ * [new tag]         v2.0 -> v2.0
+```
+
+You should now be able to see the v2.0 tag in Mary's repository with a quick **git tag**. It is very easy to forget to push new tags, so if it seems like your project has lost a tag or two, it is most likely because you didn't to push them to the remote repository.
+
+```console
+Wed Jun 10 ~/iOS/RysGitTutorialRepository 
+$ cd ../RysGitTutorialMarysRepository/
+Wed Jun 10 ~/iOS/RysGitTutorialMarysRepository 
+$ git tag
+v1.0
+v2.0
+```
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
