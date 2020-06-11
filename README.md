@@ -4189,6 +4189,28 @@ Typically, you would store the central repository on a server to allow internet-
 If you have access to server, feel free to use it to host the central repository that we are about to create. You will have to provide SSH paths to your server repository in place of the paths provided below, but other than that, you can follow this module's instructions as you find them. For everyone else, our network-based Git experience will begin in the next module.
 
 # 	* [Create a Bare Repository (Central)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+First, let's create our central **"Communication Hub"**. Again, make sure to change /path/to/my-git-repo to the actual path to your repository. If you have decided to host the central repository on your server, you should SSH into it an run the **git init** command wherever you would like to store the repository.
+
+The instructions leads you to the container directory of your git repository
+
+```console
+$ cd RysGitTutorialRepository/
+```
+
+```console
+$ cd ..
+```
+
+```console
+$ git init --bare central-repo.git
+Initialized empty Git repository in /Users/carlossantiagocruz/Documents/SWIFT-PROGRAMMING/central-repo.git/
+```
+
+As in the very first module, **git init** creates a new repository. But this time, we used the **bare** flag to tell Git that we don't want a working directory. This will prevent us from developing in the central repository, which eliminates the possibility of messing up another user's environment with **git push**. A central repository is only supposed to act as a **storage facility** - not a development environment.
+
+If you examine the contest of the resulting central-repo.git folder, you will notice that it contains the exact same files as the .git folder in our my-git-repo project. Git has **literally** gotten rid of our working directory. The conventional .git extension in the directory name is a way to convey this property.
+
 # 	* [Update Remotes (Mary and You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push the Master Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add News Update (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
