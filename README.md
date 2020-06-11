@@ -4176,8 +4176,18 @@ git push remoteName tagName
 ```
 Push a tag to another repository
 
-
 # 9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+In the previous module, we shared information directly between two developers repositories: my git repository and mary's repository. This works for very small teams developing simple programs, but larger projects call for a more structured environment. This module Introduces one such environment the **centralized workflow**.
+
+We will use a third Git Repository to act as a central communication hub between us and Mary. Instead of pulling changes into my git repository from mary's repository and vice versa, we will push to an fetch from a **dedicated storage repository**. After this module, our workflow will look like the following.
+
+![Screen Shot 2020-06-11 at 11 16 40](https://user-images.githubusercontent.com/24994818/84412570-106a3100-abd5-11ea-8858-0e6e6d43749b.png)
+
+Typically, you would store the central repository on a server to allow internet-based collaboration. Unfortunately, server configuration can vary among hosting providers, making it hard to write universal step-by-step instructions. So, we will continue exploring remote repositories using our local filesystems, just like in the previous module.
+
+If you have access to server, feel free to use it to host the central repository that we are about to create. You will have to provide SSH paths to your server repository in place of the paths provided below, but other than that, you can follow this module's instructions as you find them. For everyone else, our network-based Git experience will begin in the next module.
+
 # 	* [Create a Bare Repository (Central)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update Remotes (Mary and You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push the Master Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
