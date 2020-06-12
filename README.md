@@ -82,6 +82,7 @@ Ry's Git Tutorial
  * [Publish the Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-publish-the-crazy-experiment)
  * [Resolve the Merge Conflicts](https://github.com/c4arl0s/RysGitTutorial#-resolve-the-merge-conflicts)
  * [Cleanup the feature Branches](https://github.com/c4arl0s/RysGitTutorial#-cleanup-the-feature-branches)
+ * [Rename Branches Local and Remote]()
  * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-3)
  * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-2)
 # 6. [Rebasing](https://github.com/c4arl0s/RysGitTutorial#6-rebasing)	
@@ -1897,6 +1898,64 @@ Because we never merged **crazy-alt** into **master**, it is lost forever. Howev
 ![Screen Shot 2020-05-25 at 19 38 28](https://user-images.githubusercontent.com/24994818/82849830-58901080-9ebf-11ea-9338-d8384871beac.png)
 
 Fast-forward merges are not reflected in the project history. This is the tangible distinction between fast-forward merges and 3-way merges. The next module will discuss the appropiate usage of both and the potential complications of a non-linear history.
+
+
+#   * [Rename Branches Local and Remote]()
+
+This is a new note about how to rename branches. I remember use it when I couldn't rebase a branch over master, so I have to rename my branch as master and master as old-master
+
+Checkout to the desired branch, this apply for local:
+
+```console
+Fri Jun 12 ~/iOS/ToDoListApp 
+$ git checkout withoutStackViews
+Switched to branch 'withoutStackViews'``console
+
+Fri Jun 12 ~/iOS/ToDoListApp 
+$ git branch -m old-master
+```
+
+Then check the list of branches
+```console
+$ git branch
+* old-master
+  withoutStackViews
+```
+
+- now change to the branch that you are going set as master
+
+```console
+$ git checkout withoutStackViews
+Switched to branch 'withoutStackViews'
+
+Fri Jun 12 ~/iOS/ToDoListApp 
+$ git branch -m master
+```
+
+Check the new list of branches:
+
+```console
+$ git branch
+* master
+  old-master
+```
+
+To push this change remotely:
+
+```console
+Fri Jun 12 ~/iOS/ToDoListApp 
+$ git push origin :master old-master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/c4arl0s/ToDoListApp.git
+ - [deleted]         master
+ * [new branch]      old-master -> old-master
+```
+
+As you can see in Git hub, the old-master keeps appearing, the withoutStackViews branch also, Git didn't allow me to delete it from command line
+
+![Screen Shot 2020-06-12 at 12 55 19](https://user-images.githubusercontent.com/24994818/84532552-09622200-acac-11ea-93d6-18cbb079870a.png)
+
+git push origin :old-name new-name
 
 # 	* [Conclusion]()
 
