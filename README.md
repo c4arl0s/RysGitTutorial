@@ -4271,6 +4271,34 @@ As in the very first module, **git init** creates a new repository. But this tim
 If you examine the contest of the resulting central-repo.git folder, you will notice that it contains the exact same files as the .git folder in our my-git-repo project. Git has **literally** gotten rid of our working directory. The conventional .git extension in the directory name is a way to convey this property.
 
 # 	* [Update Remotes (Mary and You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We have successfully set up a central repository that can be used to share updates between us, Mary, and any other developers. Next, we should add it as a remote to both mary's repository and my git repository.
+
+```console
+Fri Jun 12 ~/iOS 
+$ cd RysGitTutorialMarysRepository/
+Fri Jun 12 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote rm origin
+Fri Jun 12 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote add origin ../central-repo.git
+```
+
+Now for our repository
+
+```console
+$ cd ../RysGitTutorial
+Fri Jun 12 ~/iOS/RysGitTutorialMarysRepository 
+$ cd ../RysGitTutorialRepository/
+Fri Jun 12 ~/iOS/RysGitTutorialRepository 
+$ git remote add origin ../central-repo.git/
+Fri Jun 12 ~/iOS/RysGitTutorialRepository 
+$ git remote rm mary
+```
+
+Note that we deleted the remote connections between Mary and our git repository with **git remote rm**. For the rest of this module we will only use **the central repository** to share updates.
+
+If you decided to host the central repository on a **server**, you will need to change the **../centra-repo.git** path to: **ssh://user@example.com/to/central-repo.git** substituting your **SSH username** and **Server location** for **user@example.com** and the central repository's location for **path/to/central-repo.git**
+
 # 	* [Push the Master Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add News Update (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the News Item (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
