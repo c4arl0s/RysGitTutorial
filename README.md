@@ -4484,6 +4484,117 @@ This should output the familiar history listing of the **master branch**
 Recall that **git push** creates **local** branches in the destination repository. We said it was dangerous to push to a friend's repository, as they probably wouln't appreciate new branches appearing at random. However, it is safe to create local branches in **central-repo.git** because it has no working directory, which means it's impossible to disturb anyone's development.
 
 # 	* [Add News Update (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Let's see our new centralized collaboration workflow in action by commiting a few more snapshots.
+
+```console
+Sat Jun 13 ~/iOS/central-repo.git 
+$ cd ../RysGitTutorialRepository/
+```
+
+```console
+at Jun 13 ~/iOS/RysGitTutorialRepository 
+$ git checkout -b news-item
+Switched to a new branch 'news-item'
+```
+
+Create a file called news-3.html in my git repository and add the following HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Middle East's Silent Beast</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #D90">Middle East's Silent Beast</h1>
+  <p>Late yesterday evening, the Middle East's largest
+  design house&mdash;until now, silent on the West's colorful
+  disagreement&mdash;announced the adoption of
+  <span style="color: #D90">Yellow</span> as this year's
+  color of choice.</p>
+    
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+Next, add a link to the "News" section of index.html so that it looks like:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Colorful Website</title>
+	<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #07F">A Colorful Website</h1>
+  <p>This is a website about color!</p>    
+  
+  <h2 style="color: #C00">News</h2>
+  <ul>
+	  <li><a href="news-1.html">Blue Is The New Hue</a></li>
+		<li><a href="rainbow.html">Our New Rainbow</a></li>
+    <li><a href="news-2.html">A Red Rebellion</a></li>
+	  <li><a href="news-3.html">Middle East's Silent Beast</a></li>
+  </ul>
+</body>
+</html>
+<h2>Navigation</h2>
+<ul>
+	<li>
+    <a href="about/index.html">About Us</a>
+  </li>
+  <li style="color: #F90">
+    <a href="orange.html">The Orange Page</a>
+  </li>
+  <li style="color: #00F">
+		<a href="blue.html">The Blue Page</a>
+  </li>
+	<li>
+    <a href="rainbow.html">The Rainbow Page</a>
+  </li>
+	<li style="color: #C00">
+  	<a href="red.html">The Red Page</a>
+	</li>
+	<li style="color: #FF0">
+  	<a href="yellow.html">The Yellow Page</a>
+	</li>
+	<li style="color: #0C0">
+  	<a href="green.html">The Green Page</a>
+	</li>
+</ul>
+```
+
+Stage and commit a snapshot
+
+```console
+Sat Jun 13 ~/iOS/RysGitTutorialRepository 
+$ git add news-3.html index.html 
+```
+
+```console
+Sat Jun 13 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch news-item
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   news-3.html
+```
+
+```console
+Sat Jun 13 ~/iOS/RysGitTutorialRepository 
+$ git commit -m "Add 3rd news item"
+[news-item 450182a] Add 3rd news item
+ 2 files changed, 19 insertions(+)
+ create mode 100644 news-3.html
+```
+
 # 	* [Publish the News Item (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update CSS Styles (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update another CSS Style](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
