@@ -11,7 +11,7 @@ Ry's Git Tutorial
 7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#7-rewriting-history)
 8. [Remotes](https://github.com/c4arl0s/RysGitTutorial/blob/master)
 9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-10. [Distributed Workflows]()
+10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#8-remotes-1)
 11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial/blob/master)
 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial/blob/master)
 13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial/blob/master)
@@ -132,70 +132,72 @@ Ry's Git Tutorial
  * [Push a New Tag](https://github.com/c4arl0s/RysGitTutorial#-push-a-new-tag)
  * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-6)
  * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-4)
-# 9. [Centralized Workflows]()
- * [Create a Bare Repository (Central)]()
- * [Update Remotes (Mary and You)]()
- * [Push the Master Branch]()
- * [Add News Update (You)]()
- * [Publish the News Item (You)]()
- * [Update CSS Styles (Mary)]()
- * [Update another CSS Style]()
- * [Clean up Before Publishing (Mary]()
- * [Publish CSS Changes (Mary]()
- * [Pull in Changes (Mary)]()
- * [Pull in Changes (you)]()
- * [Conclusion]()
-# 10. [Distributed Workflows]()
- * [Create a Bitbucket Account]()
- * [Create a Public Repository (you)]()
- * [Push to a Public Repository (you)]()
- * [Browse the Public Repository (you)]()
- * [Clone the Repository (John]()
- * [Add the Pink Page (John)]()
- * [Publish the Pink Page (John)]()
- * [View John's Contributions (you)]()
- * [Integrate John's Contributions (you)]()
- * [Publish John's Contributions (you)]()
- * [Update Mary's Repository (Mary)]()
- * [Update John's Repository (John)]()
- * [Conclusion]()
-# 11. [Patch Workflows]()
- * [Change the Pink Page (Mary)]()
- * [Create a Patch]()
- * [Add a Pink Block (Mary)]()
- * [Create Patch of Entire Branch (Mary)]()
- * [Mail the Patches (Mary)]()
- * [Apply the Patches (you)]()
- * [Integrate The Patches (you)]()
- * [Update Mary's Repository (Mary)]()
- * [Conclusion]()
- * [Quick Reference]()
-# 12. [Tips and Tricks]()
- * [Archive The repository]()
- * [Bundle the Repository]()
- * [Ignore a File]()
- * [Stash Uncommitted Changes]()
- * [Hook into Git's internals]()
- * [View Diffs Between commits]()
- * [Reset and checkout files]()
- * [Aliases and Other Configurations]()
- * [Conclusion]()
- * [Quick Reference]()
-# 13. [Plumbing]()
- * [Examine Commit Details]()	
- * [Examine a tree]()
- * [Examine a Blob]()
- * [Examine a Tag]()
- * [Inspect Git's Branch Representation]()
- * [Explore the Object Database]()
- * [Collect the Garbage]()
- * [Add Files to the index]()
- * [Store the Index in the Database]()
- * [Create a Commit Object]()
- * [Update HEAD]()
- * [Conclusion]()
- * [Quick Reference]()
+# 9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial#9-centralized-workflows-1)
+ * [Create a Bare Repository (Central)](https://github.com/c4arl0s/RysGitTutorial#-create-a-bare-repository-central)
+ * [Update Remotes (Mary and You)](https://github.com/c4arl0s/RysGitTutorial#-update-remotes-mary-and-you)
+ * [Push the Master Branch](https://github.com/c4arl0s/RysGitTutorial#-push-the-master-branch)
+ * [Add News Update (You)](https://github.com/c4arl0s/RysGitTutorial#-add-news-update-you)
+ * [Publish the News Item (You)](https://github.com/c4arl0s/RysGitTutorial#-publish-the-news-item-you)
+ * [Update CSS Styles (Mary)](https://github.com/c4arl0s/RysGitTutorial#-update-css-styles-mary)
+ * [Update another CSS Style](https://github.com/c4arl0s/RysGitTutorial#-update-another-css-style)
+ * [Clean up Before Publishing (Mary](https://github.com/c4arl0s/RysGitTutorial#-clean-up-before-publishing-mary)
+ * [Publish CSS Changes (Mary](https://github.com/c4arl0s/RysGitTutorial#-publish-css-changes-mary)
+ * [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#-pull-in-changes-mary)
+ * [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#-pull-in-changes-you)
+ * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-7)
+# 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#10-distributed-workflows-1)
+ * [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#-create-a-bitbucket-account)
+ * [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#-create-a-public-repository-you)
+ * [Push to a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#-push-to-a-public-repository-you)
+ * [Browse the Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#-browse-the-public-repository-you)
+ * [Clone the Repository (John](https://github.com/c4arl0s/RysGitTutorial#-clone-the-repository-john)
+ * [Add the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#-add-the-pink-page-john)
+ * [Publish the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#-publish-the-pink-page-john)
+ * [View John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#-view-johns-contributions-you)
+ * [Integrate John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#-integrate-johns-contributions-you)
+ * [Publish John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#-publish-johns-contributions-you)
+ * [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#-update-marys-repository-mary)
+ * [Update John's Repository (John)](https://github.com/c4arl0s/RysGitTutorial#-update-johns-repository-john)
+ * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-8)
+# 11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial#11-patch-workflows-1)
+ * [Change the Pink Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#-change-the-pink-page-mary)
+ * [Create a Patch](https://github.com/c4arl0s/RysGitTutorial#-create-a-patch)
+ * [Add a Pink Block (Mary)](https://github.com/c4arl0s/RysGitTutorial#-add-a-pink-block-mary)
+ * [Create Patch of Entire Branch (Mary)](https://github.com/c4arl0s/RysGitTutorial#-create-patch-of-entire-branch-mary)
+ * [Mail the Patches (Mary)](https://github.com/c4arl0s/RysGitTutorial#-mail-the-patches-mary)
+ * [Apply the Patches (you)](https://github.com/c4arl0s/RysGitTutorial#-apply-the-patches-you)
+ * [Integrate The Patches (you)](https://github.com/c4arl0s/RysGitTutorial#-integrate-the-patches-you)
+ * [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#-update-marys-repository-mary-1)
+ * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-9)
+ * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-5)
+# 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial#12-tips-and-tricks-1)
+ * [Archive The repository](https://github.com/c4arl0s/RysGitTutorial#-archive-the-repository)
+ * [Bundle the Repository](https://github.com/c4arl0s/RysGitTutorial#-bundle-the-repository)
+ * [Ignore a File](https://github.com/c4arl0s/RysGitTutorial#-ignore-a-file)
+ * [Stash Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#-stash-uncommitted-changes)
+ * [Hook into Git's internals](https://github.com/c4arl0s/RysGitTutorial#-hook-into-gits-internals)
+ * [View Diffs Between commits](https://github.com/c4arl0s/RysGitTutorial#-view-diffs-between-commits)
+ * [Reset and checkout files](https://github.com/c4arl0s/RysGitTutorial#-reset-and-checkout-files)
+ * [Aliases and Other Configurations](https://github.com/c4arl0s/RysGitTutorial#-aliases-and-other-configurations)
+ * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-10)
+ * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-6)
+# 13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial#13-plumbing-1)
+ * [Examine Commit Details](https://github.com/c4arl0s/RysGitTutorial#-examine-commit-details)	
+ * [Examine a tree](https://github.com/c4arl0s/RysGitTutorial#-examine-a-tree)
+ * [Examine a Blob](https://github.com/c4arl0s/RysGitTutorial#-examine-a-blob)
+ * [Examine a Tag](https://github.com/c4arl0s/RysGitTutorial#-examine-a-tag)
+ * [Inspect Git's Branch Representation](https://github.com/c4arl0s/RysGitTutorial#-inspect-gits-branch-representation)
+ * [Explore the Object Database](https://github.com/c4arl0s/RysGitTutorial#-explore-the-object-database)
+ * [Collect the Garbage](https://github.com/c4arl0s/RysGitTutorial#-collect-the-garbage)
+ * [Add Files to the index](https://github.com/c4arl0s/RysGitTutorial#-add-files-to-the-index)
+ * [Store the Index in the Database](https://github.com/c4arl0s/RysGitTutorial#-store-the-index-in-the-database)
+ * [Create a Commit Object](https://github.com/c4arl0s/RysGitTutorial#-create-a-commit-object)
+ * [Update HEAD](https://github.com/c4arl0s/RysGitTutorial#-update-head)
+ * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-11)
+ * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-7)
 
+
+Ry's Git Tutorial
 
 # 1. [Introduction](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
@@ -3672,7 +3674,7 @@ cd ..
 - Before we continue, I have to go back to fix the following command to pass the --local flag to do the correct cloning.
 
 ```console
-$ git --local clone RysGitTutorialRepository/ RysGitTutorialMarysRepository
+$ git clone --local RysGitTutorialRepository/ RysGitTutorialMarysRepository
 Cloning into 'RysGitTutorialMarysRepository'...
 done.
 ```
@@ -4300,6 +4302,187 @@ Note that we deleted the remote connections between Mary and our git repository 
 If you decided to host the central repository on a **server**, you will need to change the **../centra-repo.git** path to: **ssh://user@example.com/to/central-repo.git** substituting your **SSH username** and **Server location** for **user@example.com** and the central repository's location for **path/to/central-repo.git**
 
 # 	* [Push the Master Branch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We didn't **clone** the central repository -We just initialized it as a **bare repository**. This means it does not have any of our project history yet. We can fix that using the **git push** command introduced the last module.
+
+```console
+Sat Jun 13 ~/iOS/RysGitTutorialRepository 
+$ git push origin master
+Enumerating objects: 80, done.
+Counting objects: 100% (80/80), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (77/77), done.
+Writing objects: 100% (80/80), 9.48 KiB | 422.00 KiB/s, done.
+Total 80 (delta 35), reused 0 (delta 0)
+To ../central-repo.git/
+ * [new branch]      master -> master
+```
+
+Our central repository now contains our entire **master branch** which can **double-check** with the following
+
+```console
+Sat Jun 13 ~/iOS/central-repo.git 
+$ cd ../central-repo.git/
+```
+
+```console
+commit 49baa6e81a7ad87714540ec9ce9fceaaa12409c1
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Fri Jun 5 11:34:45 2020 -0500
+
+    Add bio page for Mary
+
+commit d41723777cff192f4b4453fe6115a997e3aeb1a5
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 13:19:55 2020 -0500
+
+    Add green page
+
+commit 1b2f067a2b67f40fc8a50b1d21d49469b3ff50d2
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:46:40 2020 -0500
+
+    Add yellow page
+
+commit cb8d72bc066d0a4f60110a9cbd7351421cfe463c
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 30 17:43:00 2020 -0500
+
+    Add red page
+
+commit 20b9d5d6d3bdb09d440f9067bc9b3bbdfa308446
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 18:50:56 2020 -0500
+
+    Add link to about section in home page
+
+commit 71153c2e6ce3bdf5de20145c74a7e03dce3e689a
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 17:52:52 2020 -0500
+
+    Begin creating bio pages (added message to mary)
+    
+    Add empty HTML page for Mary's bio
+
+commit f4bb8c3c896c970fe8eb4a20c1322763bf42ba19
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 11:32:08 2020 -0500
+
+    Create the about page
+    
+    Add contents to about page
+
+commit 74afd9060deceb1ab2c8e66959cb97082aaa7450
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 16:32:13 2020 -0500
+
+    Add article for 2nd news item
+
+commit 514236461070f0cb3416a36985003636b49aa6c5
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Tue May 26 16:20:09 2020 -0500
+
+    Add 2nd news item to index page
+
+commit f79223d618f18d4ef58743e8f48e9abdd8b757cc
+Merge: 049c9d9 ebb4171
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Mon May 25 18:45:20 2020 -0500
+
+    Merge branch 'crazy'
+
+commit ebb417105d308a3aaee55459b180d60b95a1b182
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Mon May 25 17:55:21 2020 -0500
+
+    Add news item for rainbow
+
+commit 049c9d941dfe20fc707fd3aa1eaf2b534a652368
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Mon May 25 09:15:43 2020 -0500
+
+    Add 1st news item
+
+commit 43104541f20a65f00d1c21679236ea0798353f19
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Mon May 25 08:11:35 2020 -0500
+
+    Link index.html to rainbow.html
+
+commit 6a43f42a003090aa434e7ec799c33dc2f29e5095
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sun May 24 12:51:34 2020 -0500
+
+    add CSS stylesheet to rainbow.html
+
+commit b9f2b14a3cd8f7ba33c363d60fedb1392154e46e
+Merge: 95a36a7 1a27d0e
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sun May 24 11:43:32 2020 -0500
+
+    Merge branch 'master' into crazy
+
+commit 1a27d0e627f00920537126b1a7f460c656f993ad
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sun May 24 09:06:08 2020 -0500
+
+    link HTML pages to stylesheet
+
+commit 019e981718d56c5cfb26b335d5c9e935075588e6
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sun May 24 08:50:16 2020 -0500
+
+    Add CSS stylesheet
+
+commit 95a36a77010605d457a9e45b3ba3bba77ef02c6f
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 23 10:52:39 2020 -0500
+
+    Rename crazy.html to rainbow.html
+
+commit e1bc77119319d8b38ff46dbddd968f669cc37a4c
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat May 23 09:01:08 2020 -0500
+
+    add a rainbow to crazy.html
+
+commit 355347981e8da24d922766b60f33d93d96e0a1ba
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 21:07:02 2020 -0500
+
+    Revert "Add a crazzy experiment"
+    
+    This reverts commit 12e24f0c4e03b3c991b287230548d8bdad3882d7.
+
+commit 12e24f0c4e03b3c991b287230548d8bdad3882d7
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 20:34:06 2020 -0500
+
+    Add a crazzy experiment
+
+commit 453c8a4db079c3d235e3470754a79a22ea0f0afd
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 16:53:53 2020 -0500
+
+    Add navigation links
+
+commit 1047951bab2636a3bc90682e48d9fb32644da036
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 13:45:14 2020 -0500
+
+    t Add blue an orange html files
+
+commit 6a442fcc4ab51362713f09ed5eadc7af767db833
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Fri May 22 12:54:21 2020 -0500
+
+    Create index page for the message
+```
+
+This should output the familiar history listing of the **master branch**
+
+Recall that **git push** creates **local** branches in the destination repository. We said it was dangerous to push to a friend's repository, as they probably wouln't appreciate new branches appearing at random. However, it is safe to create local branches in **central-repo.git** because it has no working directory, which means it's impossible to disturb anyone's development.
+
 # 	* [Add News Update (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the News Item (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update CSS Styles (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
