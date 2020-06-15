@@ -4643,6 +4643,48 @@ After merging into **master** as we normally would, **git push** updates the cen
 Note that this accomplishes the exact same thing as going into the central repository and doing a **fetch/fast-forward** merge, except **git push** allows us to do everything from inside my git repository. We will see some other convenient features of this command later in the module.
 
 # 	* [Update CSS Styles (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Next, let's pretend to be Mary again and add some CSS formatting (she is our graphic designer, after all)
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialRepository 
+$ cd ../RysGitTutorialMarysRepository/
+```
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialMarysRepository 
+$ git checkout -b css-edits
+Switched to a new branch 'css-edits'
+```
+
+Add the following to the end of style.css
+
+```html
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+a:link, a:visited {
+  color: #03C;
+}
+```
+
+And, stage ad commit a snapshot.
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialMarysRepository 
+$ git commit -a -m "Add CSS styles for headings and links"
+[css-edits 85d575c] Add CSS styles for headings and links
+ 1 file changed, 12 insertions(+)
+```
+
+
+
+
 # 	* [Update another CSS Style](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clean up Before Publishing (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish CSS Changes (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
