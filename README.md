@@ -4682,10 +4682,26 @@ $ git commit -a -m "Add CSS styles for headings and links"
  1 file changed, 12 insertions(+)
 ```
 
-
-
-
 # 	* [Update another CSS Style](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Opps, Mary forgot to add some formatting. Append the h3 styling to **style.css**:
+
+```html
+h3 {
+  font-size: 18px;
+  margin-left: 20px;
+}
+```
+
+And of course, stage and commit the updates.
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialMarysRepository 
+$ git commit -a -m "Add CSS styles for 3rd level headings"
+[css-edits ecc9090] Add CSS styles for 3rd level headings
+ 1 file changed, 1 insertion(+)
+```
+
 # 	* [Clean up Before Publishing (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish CSS Changes (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
