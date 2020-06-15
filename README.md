@@ -4703,6 +4703,38 @@ $ git commit -a -m "Add CSS styles for 3rd level headings"
 ```
 
 # 	* [Clean up Before Publishing (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Before Mary considers pushing her updates to the central repository, she needs to make sure she has a clean history. This **must** be done by Mary, because it is near-impossible to change history after it has been made public.
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialMarysRepository 
+$ git rebase -i master
+```
+
+```console
+pick 85d575c Add CSS styles for headings and links
+squash ecc9090 Add CSS styles for 3rd level headings
+```
+
+When Git stops to ask for the combined commit message, just use the first commit's message:
+
+```console
+Add CSS styles for 3rd level headings
+```
+
+Consider what would have happened had Mary rebase **after** pushing to the central repository. She would be re-writing commits that other developers may have already pulled into their project. To Git, Mar's re-written commits look like entirely new commits (since they have different ID's). This situation is shown below.
+
+![Screen Shot 2020-06-15 at 11 32 42](https://user-images.githubusercontent.com/24994818/84682923-02315300-aefc-11ea-8947-5748d6cc11e1.png)
+
+The commits labeled 1 and 2 are the public commits that Mary would be rebasing. Afterwards, the public history is still the exact same as Mary's original history, but now her local master branch has diverged from **origina/master** - even though they represent the same snapshot.
+
+So, to publish her rebased master branch to the central repository, Mary would have to merge with origin/master. This cannot be a fast-forward merge, and the resulting merge commit is likely to confuse her collaborators and disrupt their workflow.
+
+This brings us to **the most important rule to remember** while rebasing: **Nerver, ever rebase commits that have been pushed to a shared repository**
+
+If you need to change a public commit, use the **git revert** command that we discussed in [Undoing Changes](). This creates a new commit with the required modifications instead of re-writing old snapshots.
+
+
 # 	* [Publish CSS Changes (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
