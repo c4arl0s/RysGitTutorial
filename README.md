@@ -4596,6 +4596,52 @@ $ git commit -m "Add 3rd news item"
 ```
 
 # 	* [Publish the News Item (You)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Previously **"publishing"** mean merging with the local master branch. But since we are **only** interacting with the central repository, our **master** branch is private again. There is no chance of Mary pulling content directly from our repository.
+
+Instead, everyone accesses updates through the **public** master branch, so **"publishing"** means pushing to the central repository.
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialRepository 
+$ git checkout master
+Switched to branch 'master'
+```
+
+```console
+$ git merge news-item
+Updating 49baa6e..450182a
+Fast-forward
+ index.html  |  1 +
+ news-3.html | 18 ++++++++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 news-3.html
+```
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialRepository 
+$ git branch -d news-item
+Deleted branch news-item (was 450182a).
+```
+
+```console
+Mon Jun 15 ~/iOS/RysGitTutorialRepository 
+$ git push origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 703 bytes | 703.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To ../central-repo.git/
+   49baa6e..450182a  master -> master
+```
+
+After merging into **master** as we normally would, **git push** updates the central repository's master branch to reflect our **local master**. From our perspective, the **push** can be visualized as the following:
+
+![Screen Shot 2020-06-15 at 10 57 16](https://user-images.githubusercontent.com/24994818/84679499-fee79880-aef6-11ea-9d3e-0acd0bc7211e.png)
+
+Note that this accomplishes the exact same thing as going into the central repository and doing a **fetch/fast-forward** merge, except **git push** allows us to do everything from inside my git repository. We will see some other convenient features of this command later in the module.
+
 # 	* [Update CSS Styles (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update another CSS Style](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clean up Before Publishing (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
