@@ -4785,8 +4785,68 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 This will output a verbose rejection message. It seems that Git won't let anyone push to a remote server if it doesn't result in a **fast-forward** merge. This prevents us from losing the **"Add 3rd news"** item commit that would need to be overwritten for **origin/master** to match **mary/master**.
 
-
 # 	* [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Mary can solve this problem by pulling in the central changes before trying to push her CSS changes. First, she needs the most up-to-date version of the **origin/master** branch.
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git fetch origin
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0)
+Unpacking objects: 100% (4/4), 683 bytes | 85.00 KiB/s, done.
+From ../central-repo
+ * [new branch]      master     -> origin/master
+```
+
+Remember that Mary can see what's in **origin/master** and not in the **local master** using the .. syntax:
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git log master..origin/master
+commit 450182ac3baacbcf473d42f100b058d1f64bf1bd (origin/master)
+Author: c4arl0s <c.santiago.cruz@gmail.com>
+Date:   Sat Jun 13 12:30:08 2020 -0500
+
+    Add 3rd news item
+```
+
+And she can also see what's in her **master** that's not in **origin/master**:
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git log origin/master..master
+commit 61377ba417dc0ea0dde974e03ae8b3683f5cb260 (HEAD -> master)
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Mon Jun 15 11:07:51 2020 -0500
+
+    Add CSS styles for headings and links
+    
+    Add CSS styles for 3rd level headings
+```
+
+Since both of these output a commit, we can tell that Mary's history diverged. This should also be clear from the diagram below, which shows the updated **origin/master** branch.
+
+![Screen Shot 2020-06-16 at 10 23 26](https://user-images.githubusercontent.com/24994818/84794080-71ba4780-afbb-11ea-9ac0-3942cb7ffdb5.png)
+
+Mary is now in the familiar position of having to pull in changes from another branch. She can either merge, which **cannot be fast-forwarded**, or she can **rebase for a linear history**.
+
+Typically, you will want to rebase your changes on top of those found in your central repository. This is equivalent of saying, **"I want to add my changes to what everyone else has already done"**
+
+As previously discussed, rebasing also eliminates superfluous merge commits. For these reasons, Mary will opt for a rebase. 
+
+```console
+$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Applying: Add CSS styles for headings and links
+```
+
+After the rebase, Mary's master branch contains everything from the central repository, so she can do a **fast-forward** push to publish her changes.
+
+![Screen Shot 2020-06-16 at 10 30 09](https://user-images.githubusercontent.com/24994818/84794851-60256f80-afbc-11ea-9e21-d746eb4a81c9.png)
+
 # 	* [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
