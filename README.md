@@ -4848,6 +4848,41 @@ After the rebase, Mary's master branch contains everything from the central repo
 ![Screen Shot 2020-06-16 at 10 30 09](https://user-images.githubusercontent.com/24994818/84794851-60256f80-afbc-11ea-9e21-d746eb4a81c9.png)
 
 # 	* [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Finally, we will switch back to our repository and pull in Mary's CSS formatting.
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialRepository 
+$ git fetch origin
+```
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialRepository 
+$ git log master..origin/master --stat
+```
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialRepository 
+$ git log origin/master..master --stat
+```
+
+Of course, the second log command won't output anything, since we haven't added any new commits while Mary was adding her CSS edits. **It is usually a good idea to check this before trying to merge in a remote branch**. 
+
+Otherwise, you might en up with some extra merge commits when you thought you were fast-forwarding your branch.
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialRepository 
+$ git merge origin/master
+Already up to date.
+```
+
+Our repository is now synchronized with the central repository. Note that Mary may have moved on and added some new content that we don't know about, but it does not matter. **The only changes we need to know about are those in central-repo.git. While this does not make a huge difference when we are working with just one another developer, **imagine having to keep track of a dozen different developer's repositories in real-time. This kind of chaos is precisely the problem a centralized collaboration workflow is designed to solve:
+
+![Screen Shot 2020-06-16 at 11 12 30](https://user-images.githubusercontent.com/24994818/84799714-4a1aad80-afc2-11ea-88c5-1bd0d56c7fd8.png)
+
+The presence of a central communication hub condenses all this development into a single repository and ensures that no one overwrites another's content, as we discovered while trying to push Mary's CSS updates.
+
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
