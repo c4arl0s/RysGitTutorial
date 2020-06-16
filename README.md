@@ -9,12 +9,12 @@ Ry's Git Tutorial
 5. [Branches II](https://github.com/c4arl0s/RysGitTutorial#5-branches-ii)
 6. [Rebasing](https://github.com/c4arl0s/RysGitTutorial#6-rebasing)	
 7. [Rewriting History](https://github.com/c4arl0s/RysGitTutorial#7-rewriting-history)
-8. [Remotes](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#8-remotes-1)
-11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial/blob/master)
-13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial/blob/master)
+8. [Remotes](https://github.com/c4arl0s/RysGitTutorial#8-remotes)
+9. [Centralized Workflows](https://github.com/c4arl0s/RysGitTutorial#9-centralized-workflows)
+10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#10-distributed-workflows)
+11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial#11-patch-workflows)
+12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial#12-tips-and-tricks)
+13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial#13-plumbing)
 
 Ry's Git Tutorial
 
@@ -4736,6 +4736,56 @@ If you need to change a public commit, use the **git revert** command that we di
 
 
 # 	* [Publish CSS Changes (Mary](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Now that her history is cleaned up, Mary can publish the changes.
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git checkout master
+Switched to branch 'master'
+```
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git merge css-edits
+Updating 49baa6e..61377ba
+Fast-forward
+ style.css | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+```
+
+then:
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git branch -d css-edits
+Deleted branch css-edits (was 61377ba).
+```
+
+She shouldn't push the css-edits branch to the server, since it is no longer under development, and other collaborators wouldn't know what it contains. However, if we had all decided to develop the CSS edits together and wanted an isolated environment to do so, it would make sense to publish it as an independent branch.
+
+Mary still needs to push the changes to he central repository. But first, let's take a look at the state of everyone's project.
+
+![Screen Shot 2020-06-16 at 9 34 51](https://user-images.githubusercontent.com/24994818/84788346-a8409400-afb4-11ea-8f41-5ccbf2fe44cf.png)
+
+You might be wondering how Mary can push her **local maser** up to the central repository, since it has progressed since Mary last fetch from it. This is common situation when many people developers are working on a project simultaneously. Let's see how Git handles it:
+
+```console
+Tue Jun 16 ~/iOS/RysGitTutorialMarysRepository 
+$ git push origin master
+To ../central-repo.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to '../central-repo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+This will output a verbose rejection message. It seems that Git won't let anyone push to a remote server if it doesn't result in a **fast-forward** merge. This prevents us from losing the **"Add 3rd news"** item commit that would need to be overwritten for **origin/master** to match **mary/master**.
+
+
 # 	* [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
