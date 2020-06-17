@@ -145,6 +145,7 @@ Ry's Git Tutorial
  * [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#-pull-in-changes-mary)
  * [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#-pull-in-changes-you)
  * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-7)
+ * [Quick Reference]()
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#10-distributed-workflows-1)
  * [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#-create-a-bitbucket-account)
  * [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#-create-a-public-repository-you)
@@ -4884,11 +4885,23 @@ The presence of a central communication hub condenses all this development into 
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
-In this module, we introduced another remote repository to serve as the **central storage** facility for our project. We also discovered **bare repositories**, which are just like ordinary repositories -minus the working directory. Bare repositories provide **"safe"** location to push branches to, as long as you remember not to rebase the commits that it already contains.
+In this module, we introduced another remote repository to serve as the **central storage** facility for our project. We also discovered **bare repositories**, which are just like ordinary repositories -**minus the working directory**. Bare repositories provide **"safe"** location to push branches to, as long as you remember not to rebase the commits that it already contains.
 
 We hosted the central repository on our local filesystem, right next to both ours and Mary's projects. However, **most real-world central repositories reside on a remote server with internet access**. This lets any developer fetch from or push to the repository over the internet, making Git a very powerful multi-user development platform. Having the central repository on a remote server is also an affordable, convenient way to back up a project.
 
 Next up, we will configure a network-based repository using a service called GitHub. In addition to introducing network access for Git repositories, this will open the door for another collaboration standard: the integrator workflow.
+
+#   * [Quick Reference]()
+
+```console
+$ git init --bare repositoryName
+```
+Create a Git repository, but omit the working directory
+
+```console
+git remote rm remoteName
+```
+Remove the specified remote from your book-marked connections.
 
 
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
