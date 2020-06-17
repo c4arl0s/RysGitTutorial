@@ -145,7 +145,7 @@ Ry's Git Tutorial
  * [Pull in Changes (Mary)](https://github.com/c4arl0s/RysGitTutorial#-pull-in-changes-mary)
  * [Pull in Changes (you)](https://github.com/c4arl0s/RysGitTutorial#-pull-in-changes-you)
  * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-7)
- * [Quick Reference]()
+ * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#-quick-reference-5)
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#10-distributed-workflows-1)
  * [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#-create-a-bitbucket-account)
  * [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#-create-a-public-repository-you)
@@ -4891,7 +4891,7 @@ We hosted the central repository on our local filesystem, right next to both our
 
 Next up, we will configure a network-based repository using a service called GitHub. In addition to introducing network access for Git repositories, this will open the door for another collaboration standard: the integrator workflow.
 
-#   * [Quick Reference]()
+#   * [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#9-centralized-workflows)
 
 ```console
 $ git init --bare repositoryName
@@ -4899,12 +4899,24 @@ $ git init --bare repositoryName
 Create a Git repository, but omit the working directory
 
 ```console
-git remote rm remoteName
+$ git remote rm remoteName
 ```
 Remove the specified remote from your book-marked connections.
 
 
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Now that we know how to share information via a centralized workflow, we can appreciate some of the drawbacks of this collaboration model. While it may be convenient, allowing everyone to push to an **"official"** repository raises some legitimate security concerns. It means that for everyone to contribute content, they need access to the **entire project**.
+
+This is fine if you re only interacting with a small team, but imagine a scenario where you are working on an open-source software project and a stranger found a bug, fixed it, and wants to incorporate the update into the main project. You probably don't want to give them push-access to your central repository, since they could start pushing all sorts of random snapshots, and you would effectively lose control of the project.
+
+But, what you can do is tell the contributor to push the changes to **their own** public repository. Then you can pull their bug fix into your private repository to ensure it does not contain any undeclared code. If you approve their contributions, all you have to do is merge them into a local branch and push it to the main repository, just like we did in the previous model. You have become an **integrator**, in addition to an ordinary developer.
+
+![Screen Shot 2020-06-17 at 10 46 40](https://user-images.githubusercontent.com/24994818/84919664-d9d65f80-b087-11ea-9d7f-24901176d75b.png)
+
+In this module, we will experience all of this first-hand by creating a free public repository on Bit-bucket.org and incorporating a contribution from an anonymous developer named John. Bitbucket is a DVCS hosting provider that makes it very easy to set up a Git repository and start collaborating with a team of developers.
+
+
 # 	* [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push to a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
