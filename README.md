@@ -4882,8 +4882,15 @@ Our repository is now synchronized with the central repository. Note that Mary m
 
 The presence of a central communication hub condenses all this development into a single repository and ensures that no one overwrites another's content, as we discovered while trying to push Mary's CSS updates.
 
-
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+In this module, we introduced another remote repository to serve as the **central storage** facility for our project. We also discovered **bare repositories**, which are just like ordinary repositories -minus the working directory. Bare repositories provide **"safe"** location to push branches to, as long as you remember not to rebase the commits that it already contains.
+
+We hosted the central repository on our local filesystem, right next to both ours and Mary's projects. However, **most real-world central repositories reside on a remote server with internet access**. This lets any developer fetch from or push to the repository over the internet, making Git a very powerful multi-user development platform. Having the central repository on a remote server is also an affordable, convenient way to back up a project.
+
+Next up, we will configure a network-based repository using a service called GitHub. In addition to introducing network access for Git repositories, this will open the door for another collaboration standard: the integrator workflow.
+
+
 # 10. [Distributed Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
