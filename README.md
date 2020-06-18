@@ -4916,8 +4916,11 @@ But, what you can do is tell the contributor to push the changes to **their own*
 
 In this module, we will experience all of this first-hand by creating a free public repository on Bit-bucket.org and incorporating a contribution from an anonymous developer named John. Bitbucket is a DVCS hosting provider that makes it very easy to set up a Git repository and start collaborating with a team of developers.
 
-
 # 	* [Create a Bitbucket Account](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+You can choose any username for your account, but the email address should match the one you assigned to your git installation with **git config** in [The basics](). If you need to change your email, you can run another **git config --global user.mail yoy@example.com** command.
+
+
 # 	* [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Push to a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Browse the Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
