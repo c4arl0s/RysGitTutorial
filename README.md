@@ -4920,8 +4920,21 @@ In this module, we will experience all of this first-hand by creating a free pub
 
 You can choose any username for your account, but the email address should match the one you assigned to your git installation with **git config** in [The basics](). If you need to change your email, you can run another **git config --global user.mail yoy@example.com** command.
 
-
 # 	* [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+To create our first nerworked Git repository, log into your Bitbucket account, and navigate to **Repositories - Create repository**. 
+
+![Screen Shot 2020-06-18 at 10 21 51](https://user-images.githubusercontent.com/24994818/85039654-90504800-b14d-11ea-8cbd-cdfc61d51c02.png)
+
+Use my git repository as the **RepositoryName**, and anything you like for the **description** field. Since this is just an example project, go ahead and uncheck the **This is a private repository** field. Select HTML/CSS for the **Language field**, then go ahead and click **Create repository**.
+
+Essentially, we just ran **git init --bare** on a Bitbucket server. We can now push to and fetch from this repository as we did with **central-repo.git** in the previous module.
+
+After initialization, Bitbucket offers some helpful instructions, but don't follow them just yet - we will through importing an existing repository in the next section,
+
+![Screen Shot 2020-06-18 at 10 29 52](https://user-images.githubusercontent.com/24994818/85040678-aa3e5a80-b14e-11ea-8c4e-e5d5f691a99a.png)
+
+
 # 	* [Push to a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Browse the Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clone the Repository (John](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
