@@ -4920,6 +4920,11 @@ In this module, we will experience all of this first-hand by creating a free pub
 
 You can choose any username for your account, but the email address should match the one you assigned to your git installation with **git config** in [The basics](). If you need to change your email, you can run another **git config --global user.mail yoy@example.com** command.
 
+```console
+Thu Jun 18 ~/iOS/RysGitTutorialRepository/.git 
+$ git config --global user.email c.santiago.cruz@icloud.com
+```
+
 # 	* [Create a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 To create our first nerworked Git repository, log into your Bitbucket account, and navigate to **Repositories - Create repository**. 
@@ -4934,8 +4939,57 @@ After initialization, Bitbucket offers some helpful instructions, but don't foll
 
 ![Screen Shot 2020-06-18 at 10 29 52](https://user-images.githubusercontent.com/24994818/85040678-aa3e5a80-b14e-11ea-8c4e-e5d5f691a99a.png)
 
-
 # 	* [Push to a Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Before populating this new repository with our existing my git repository project, we firs need to point our **origin remote** to the Bitbucket repository. Be sure to change the userName portion to your actual Bitbucket userName.
+
+```console
+Thu Jun 18 ~/iOS/RysGitTutorial_Carlos 
+$ cd ../RysGitTutorialRepository/
+```
+
+```console
+Thu Jun 18 ~/iOS/RysGitTutorialRepository 
+$ git remote rm origin
+```
+
+```console
+Thu Jun 18 ~/iOS/RysGitTutorialRepository 
+$ git remote add origin https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+```
+
+The utility of remotes should be more apparent than in previous modules, as typing the full path to this repository every time we needed to interact with it would be rather tedious.
+
+To populate the remote repository with our existing code, we can use the same push mechanism as with a centralized workflow. When prompted for a password, use the one that you signed up with.
+
+```console
+Thu Jun 18 ~/iOS/RysGitTutorialRepository/.git 
+$ git push origin master
+To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+As you can see, and if you remember the creation a README file, the origin and the local is not the same, to overwrite what you have in you local repository pass the -f flag to pussh to force the push command.
+
+```console
+Thu Jun 18 ~/iOS/RysGitTutorialRepository/.git 
+$ git push -f origin master
+Enumerating objects: 84, done.
+Counting objects: 100% (84/84), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (81/81), done.
+Writing objects: 100% (84/84), 10.08 KiB | 449.00 KiB/s, done.
+Total 84 (delta 37), reused 0 (delta 0)
+To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+ + bfa132d...450182a master -> master (forced update)
+```
+
 # 	* [Browse the Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Clone the Repository (John](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
