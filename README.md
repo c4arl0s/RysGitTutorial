@@ -4991,6 +4991,15 @@ To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
 ```
 
 # 	* [Browse the Public Repository (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We should now be able to see our project on the bitBucket site. The **Source** tab displays all of the files in the project, and the **commits** tab contains the entire commit history. Note that the branch structure of the repository is also visualized to the left of each commit.
+
+![Screen Shot 2020-06-18 at 11 18 23](https://user-images.githubusercontent.com/24994818/85046031-74e93b00-b155-11ea-81ed-83a45126a70a.png)
+
+This repository now serves as the **"official"** copy our example website. We will tell everyone else to download from this repository, and we will push all the changes from our local my-git-repository to it. However, It is important to note that this **"official"** status is merely a convention. As the **master branch** is just another branch, our Bitbucket repository is just another repository according to Git.
+
+Having both a public and a private repository for each developer makes it easy to incorporate contributions from third-parties, even if you have never met them before.
+
 # 	* [Clone the Repository (John](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
