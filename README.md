@@ -5001,6 +5001,49 @@ This repository now serves as the **"official"** copy our example website. We wi
 Having both a public and a private repository for each developer makes it easy to incorporate contributions from third-parties, even if you have never met them before.
 
 # 	* [Clone the Repository (John](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Next we are going to pretend to be John, a third-party contributor to our website. John noticed that we didn't have a pink page and, being the friendly developer that he is, wants to create one for us. We would like to let him contribute, but **we don't want to give him push-access** to our entire repository - this would allow him to re-write or even delete all of our hard word.
+
+Fortunately, John knows how to exploit Bitbucket's collaboration potential. He will start by cloning a copy of our public repository:
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialRepository 
+$ cd ../RysGitTutorialRepository/
+```
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialRepository 
+$ cd ../
+```
+
+I am going to follow the same pattern name used for all contributors, like RysGitTutorialMarysRepository and RysGitTutorialRepository, giving the name RysGitTutorialJohnsRepository
+
+```console
+Fri Jun 19 ~/iOS 
+$ git clone https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git RysGitTutorialJohnsRepository
+Cloning into 'RysGitTutorialJohnsRepository'...
+remote: Counting objects: 84, done.
+remote: Compressing objects: 100% (81/81), done.
+remote: Total 84 (delta 37), reused 0 (delta 0)
+Unpacking objects: 100% (84/84), 10.08 KiB | 43.00 KiB/s, done.
+```
+
+```console
+Fri Jun 19 ~/iOS 
+$ cd RysGitTutorialJohnsRepository/
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ 
+```
+
+You should now have another copy of our repository called RysGitTutorialJohnsRepositor in the same folder as RysGitTutorialRepository. This is John's private  repository - a completely isolated environment where he can safely develop the pink page. Let's quickly configure his name and email
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git config user.name "John"
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git config user.email john.developer@icloud.com
+```
+ 
 # 	* [Add the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [View John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
