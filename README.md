@@ -5110,6 +5110,55 @@ $ git commit -m "Add pink page"
 ```
 
 # 	* [Publish the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Now, John needs to publish this contributions to a public repository. Remember that we don't want him to push or **our** public repository, which is stored in his **origin remote**, which is stored in his **origin remote**. In fact, **he can't push** to origin for reasons we will discuss in a moment.
+
+Instead, he will create his own Bitbucket repository that we can pull contributions from. In the real world, John would have his own Bitbucket account, but for convenience, we will just store his public repository under our existing account. 
+
+Once again, navigate to your Bitbucket home page and click Repositories then Create Repository to create Johns public repository. For the **Name** field, use RysGitTutorialJohnsRepositor 
+
+![Screen Shot 2020-06-19 at 16 34 55](https://user-images.githubusercontent.com/24994818/85181183-e656e580-b24a-11ea-9468-0887dd082ffc.png)
+
+Back in John's private repository, we will need to add this as a remote. Remember to copy the link that Bitbucket provides you, and name it john-public
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git remote add john-public https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialjohnsrepositor.git
+```
+
+This is where John will publish the pink page for us to access. Since he is pushing with HTTPS, he will need to enter the password for his bitbucket account (which is actually the password for your account).
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git push john-public pink-page
+Enumerating objects: 88, done.
+Counting objects: 100% (88/88), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (85/85), done.
+Writing objects: 100% (88/88), 10.48 KiB | 536.00 KiB/s, done.
+Total 88 (delta 40), reused 0 (delta 0)
+remote: 
+remote: Create pull request for pink-page:
+remote:   https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialjohnsrepositor/pull-requests/new?source=pink-page&t=1
+remote: 
+To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialjohnsrepositor.git
+ * [new branch]      pink-page -> pink-page
+```
+
+![Screen Shot 2020-06-19 at 16 47 32](https://user-images.githubusercontent.com/24994818/85181842-96791e00-b24c-11ea-905f-d540bec06580.png)
+
+All John needs to do now is tell us the name of the feature branch and send us a link to his repository, which will be:
+
+```html
+https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialjohnsrepositor.git
+```
+
+Note that John used a different path for pushing to his public repository than the one he gave us for fetching from it. The most important distinction is the transport protocol: the former used https:// while the latter used http://. Accessing a repository over HTTPS (or SSH) lets you fetch or push, but as we saw, requires a password. This prevents unknown developers from overwriting commits.
+
+On the other hand, fetching over HTTP requires no username or password, but pushing is not possible. This lets anyone fetch from a repository without compromising its security, In the integrator workflow, other developers access your repository via HTTP, while you publish changes via HTTPS. This is also the reason why John can't push to his origin remote.
+
+Of course, if you are working on a private project, anonymous HTTP access would be disable for that repository.
+
 # 	* [View John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Integrate John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
