@@ -5045,6 +5045,70 @@ $ git config user.email john.developer@icloud.com
 ```
  
 # 	* [Add the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Of course, John should be developing his contributions in a dedicated feature branch.
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git checkout -b pink-page
+Switched to a new branch 'pink-page'
+```
+
+In addition to being a best practice, this makes it easy for the integrator to see what commits to include. When John's done, he will tell us where to find his repository and what branch the new features resides in. Then, we will be able merge his content with minimal effort.
+
+Create the file pink.html and add the following code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Pink Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1 style="color: #F0F">The Pink Page</h1>
+  <p>Pink is <span style="color: #F0F">girly,
+  flirty and fun</span>!</p>
+
+  <p><a href="index.html">Return to home page</a></p>
+</body>
+</html>
+```
+
+Add the pink page to the "Navigation" section in index.html
+
+```html
+<li style="color: #F0F">
+  <a href="pink.html">The Pink Page</a>
+</li>
+```
+
+Then, stage and commit the snapshot as normal.
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git add pink.html index.html 
+```
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git status
+On branch pink-page
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   pink.html
+```
+
+```console
+Fri Jun 19 ~/iOS/RysGitTutorialJohnsRepository 
+$ git commit -m "Add pink page"
+[pink-page 51f9d9e] Add pink page
+ 2 files changed, 18 insertions(+)
+ create mode 100644 pink.html
+```
+
 # 	* [Publish the Pink Page (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [View John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Integrate John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
