@@ -5237,6 +5237,31 @@ HEAD is now at 51f9d9e Add pink page
 Open up the pink.html file to see if it is ok, remember that John is not a trusted collaborator, and we would normally have no idea what this file might contain. With that in mind, It is incredibly important to verify its contents. **Never blindly merge content from a third-party contributor.
 
 # 	* [Integrate John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Assuming we approve John's updates, we are now ready to merge it into the project.
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+git checkout master
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+$ git merge john/pink-page
+Updating 450182a..51f9d9e
+Fast-forward
+ index.html |  3 +++
+ pink.html  | 15 +++++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 pink.html
+```
+
+Notice that is the exact same way we incorporated Mary's changes in the centralized workflow, except now we are pulling from and pushing to different locations.
+
+![Screen Shot 2020-06-20 at 18 43 42](https://user-images.githubusercontent.com/24994818/85213586-fdb6d100-b325-11ea-9778-1b2f0d9bdaf1.png)
+
+Furthermore, John's workflow is just like ours: develop in a local, private repository, then push changes to the public one. The integrator workflow is merely a standardized way of organizing the collaboration effort - nothing has changed about how we develop locally, and we are using the same Git commands as we have been for the las few modules.
+
 # 	* [Publish John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update John's Repository (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
