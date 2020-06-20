@@ -5160,6 +5160,82 @@ On the other hand, fetching over HTTP requires no username or password, but push
 Of course, if you are working on a private project, anonymous HTTP access would be disable for that repository.
 
 # 	* [View John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Ok, we are done being John and we are ready to integrate his code into the official project. Let's start by switching back into our repository and adding John's public repository as a remote.
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialJohnsRepository 
+$ cd ../RysGitTutorialRepository/
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+$ git remote add john https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialjohnsrepositor.git
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+$ git fetch john
+remote: Counting objects: 7, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 2), reused 0 (delta 0)
+Unpacking objects: 100% (7/7), 1.86 KiB | 118.00 KiB/s, done.
+From https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialjohnsrepositor
+ * [new branch]      master     -> john/master
+ * [new branch]      pink-page  -> john/pink-page
+```
+
+```console
+$ git branch -r
+  john/master
+  john/pink-page
+  origin/master
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+$ git log master..john/pink-page --stat
+commit 51f9d9e84c2e10e5ac859f2c8a6c4ac66ed39b17 (john/pink-page)
+Author: John <john.developer@icloud.com>
+Date:   Fri Jun 19 16:17:28 2020 -0500
+
+    Add pink page
+
+ index.html |  3 +++
+ pink.html  | 15 +++++++++++++++
+ 2 files changed, 18 insertions(+)
+```
+
+You can visualize this history information as the following:
+
+![Screen Shot 2020-06-20 at 16 49 02](https://user-images.githubusercontent.com/24994818/85212191-f8518a80-b315-11ea-9bdd-9600c565fbe7.png)
+
+Let's take a look at his actual changes:
+
+```console
+git checkout john/pink-page
+Note: switching to 'john/pink-page'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 51f9d9e Add pink page
+```
+
+Open up the pink.html file to see if it is ok, remember that John is not a trusted collaborator, and we would normally have no idea what this file might contain. With that in mind, It is incredibly important to verify its contents. **Never blindly merge content from a third-party contributor.
+
 # 	* [Integrate John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Publish John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
