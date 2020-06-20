@@ -5263,6 +5263,27 @@ Notice that is the exact same way we incorporated Mary's changes in the centrali
 Furthermore, John's workflow is just like ours: develop in a local, private repository, then push changes to the public one. The integrator workflow is merely a standardized way of organizing the collaboration effort - nothing has changed about how we develop locally, and we are using the same Git commands as we have been for the las few modules.
 
 # 	* [Publish John's Contributions (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We have integrated John's contribution into our local git repository, but no one else knows what we have done, It is time to publish our master branch again.
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+$ git push origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 611 bytes | 305.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+   450182a..51f9d9e  master -> master
+```
+
+![Screen Shot 2020-06-20 at 18 54 56](https://user-images.githubusercontent.com/24994818/85213704-8d10b400-b327-11ea-999d-647f7c9f1a50.png)
+
+Since we designated our public Bitbucket repository as the "official" source for our project, everyone (Mary and John) will now be able to synchronize with it.
+
+
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update John's Repository (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
