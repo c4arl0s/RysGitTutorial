@@ -5374,6 +5374,13 @@ If John had updated **master** directly from his local pink-page, it could have 
 ![Screen Shot 2020-06-20 at 19 23 27](https://user-images.githubusercontent.com/24994818/85214018-97cd4800-b32b-11ea-91b8-35491a0ab6e6.png)
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Using the integrator workflow, our private development process largely remains the same **(Develop a feature branch, merge it into master, and publish it). But, we have addedan additional task: incorporating changes from third-party contributors. Luckily, this does not required any new skills - just access to a few more remotes repositories.
+
+While this setup forces us to keep track of more remotes, it also makes it much, much easier to work with a large number of developers. You will never have to worry about security using an integrator workflow because you will still be the only one with access to the "official" repository.
+
+There is also an interesting side-effect to this kind of security. By giving each developer their own public repository, the navigator workflow creates a more stable deelopment environment for open source software projects. Should the lead developer stop maintaning the "official" repository, any of the other participants could take over by simply designating ther public repository as the new "official" project. This is part of what makes Git **distributed** version control system: **There is no single central repository that Git forces everyone to rely upon.
+
 # 11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Change the Pink Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Patch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
