@@ -5285,6 +5285,53 @@ Since we designated our public Bitbucket repository as the "official" source for
 
 
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Mary should now be pulling changes from our Bitbucket repository instead of the central one from the previous module. This should be fairly easy to her to configure.
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialRepository 
+$ cd ../RysGitTutorialMarysRepository/
+Sat Jun 20 ~/iOS/RysGitTutorialMarysRepository 
+$
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote rm origin
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote add origin https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+```
+
+Again, remember to change userName to your bitbucket account's name. For the sake brevity. we will do a blind merge to add John's updates to Mary's repository (normally, Mary should check what she is integrating before doing so).
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialMarysRepository 
+$ git checkout master
+Already on 'master'
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialMarysRepository 
+$ git fetch origin 
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0)
+Unpacking objects: 100% (4/4), 591 bytes | 7.00 KiB/s, done.
+From https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository
+ * [new branch]      master     -> origin/master
+```
+
+```console
+$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Applying: Add CSS styles for headings and links
+```
+
+For Mary, it does not really matter that the updates came from John. All she has to know is that the "Official" master branch moved forward, prompting her to synchronize her private repository.
+
 # 	* [Update John's Repository (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
