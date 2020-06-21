@@ -5333,6 +5333,46 @@ Applying: Add CSS styles for headings and links
 For Mary, it does not really matter that the updates came from John. All she has to know is that the "Official" master branch moved forward, prompting her to synchronize her private repository.
 
 # 	* [Update John's Repository (John)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+John still needs to incorporate the pink page into **his master** branch. He should **not** merge directly from his pink-page topic branch because we could have edited his contribution before publishing it or included other contributions along with it. Instead, **he will pull from the "official" master**:
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialMarysRepository 
+$ cd ../RysGitTutorialJohnsRepository/
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialJohnsRepository 
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialJohnsRepository 
+$ git fetch origin
+From https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository
+   450182a..51f9d9e  master     -> origin/master
+```
+
+```console
+$ git branch -r
+  john-public/pink-page
+  origin/HEAD -> origin/master
+  origin/master
+```
+
+```console
+Sat Jun 20 ~/iOS/RysGitTutorialJohnsRepository 
+$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to origin/master.
+```
+
+If John had updated **master** directly from his local pink-page, it could have wound up out-of-sync from the main project. For this reason, the integrator workflow requires that everyone **pull** from a single, official repository, while they all **push** to their own public repositories.
+
+![Screen Shot 2020-06-20 at 19 23 27](https://user-images.githubusercontent.com/24994818/85214018-97cd4800-b32b-11ea-91b8-35491a0ab6e6.png)
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Change the Pink Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
