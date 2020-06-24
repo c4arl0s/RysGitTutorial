@@ -5394,6 +5394,12 @@ Thus, far, all of the collaboration workflows we have seen rely heavily on branc
 Integrating on the commit level will also give us a deeper understanding of how a Git repository records project history.
 
 ```console
+Wed Jun 24 ~/iOS/RysGitTutorialRepository 
+$ git remote add origin https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+fatal: remote origin already exists.
+```
+
+```console
 Wed Jun 24 ~/iOS/RysGitTutorialMarysRepository 
 $ git remote add origin https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
 fatal: remote origin already exists.
@@ -5440,6 +5446,106 @@ $ git commit -a -m "Change pink to a manly color"
 Note that Mary's local development process does not change at all. **Patches** - like the centralized and integrator workflow - are merely a way to share changes amongst developers. It has little effect on the core Git concepts introduced in the first portion of this tutorial.
 
 # 	* [Create a Patch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Mary can create a patch from the new commit using the **git format-patch** command.
+
+```console
+Wed Jun 24 ~/iOS/RysGitTutorialMarysRepository 
+$ git format-patch master
+0001-Change-pink-to-a-manly-color.patch
+```
+
+This creates a file called 0001-Change-pink-to-a-manly-color.patch that contains enough information to recreate the commit from the last step. The master parameter tells Git to generate patches for every commit in the current branch that is missing from **master**.
+
+Open up the patch file in a text editor. As shown by the address in the top of the file, it is actually a complete email. This makes it incredible easy to send patches to other developer. Further down, you should see the following.
+
+```console
+Wed Jun 24 ~/iOS/RysGitTutorialMarysRepository 
+$ cat 0001-Change-pink-to-a-manly-color.patch 
+From 58b51cbb457cf6fe142cd8bc5f11c2caec9b0212 Mon Sep 17 00:00:00 2001
+From: Mary <c.santiago.cruz@gmail.com>
+Date: Wed, 24 Jun 2020 13:16:13 -0500
+Subject: [PATCH] Change pink to a manly color
+
+---
+ pink.html | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/pink.html b/pink.html
+index 47ea234..c349233 100644
+--- a/pink.html
++++ b/pink.html
+@@ -7,9 +7,7 @@
+ </head>
+ <body>
+   <h1 style="color: #F0F">The Pink Page</h1>
+-  <p>Pink is <span style="color: #F0F">girly,
+-  flirty and fun</span>!</p>
+-
++  <p>Only <span style="color: #F0F">real men</span> wear pink!</p>
+   <p><a href="index.html">Return to home page</a></p>
+ </body>
+ </html>
+-- 
+2.25.0
+```
+
+now with vim syntax
+
+```vim
+From 58b51cbb457cf6fe142cd8bc5f11c2caec9b0212 Mon Sep 17 00:00:00 2001
+From: Mary <c.santiago.cruz@gmail.com>
+Date: Wed, 24 Jun 2020 13:16:13 -0500
+Subject: [PATCH] Change pink to a manly color
+
+---
+ pink.html | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/pink.html b/pink.html
+index 47ea234..c349233 100644
+--- a/pink.html
++++ b/pink.html
+@@ -7,9 +7,7 @@
+ </head>
+ <body>
+   <h1 style="color: #F0F">The Pink Page</h1>
+-  <p>Pink is <span style="color: #F0F">girly,
+-  flirty and fun</span>!</p>
+-
++  <p>Only <span style="color: #F0F">real men</span> wear pink!</p>
+   <p><a href="index.html">Return to home page</a></p>
+ </body>
+ </html>
+-- 
+2.25.0
+```
+
+now the following:
+
+```vim
+index 47ea234..c349233 100644
+--- a/pink.html
++++ b/pink.html
+@@ -7,9 +7,7 @@
+ </head>
+ <body>
+   <h1 style="color: #F0F">The Pink Page</h1>
+-  <p>Pink is <span style="color: #F0F">girly,
+-  flirty and fun</span>!</p>
+-
++  <p>Only <span style="color: #F0F">real men</span> wear pink!</p>
+   <p><a href="index.html">Return to home page</a></p>
+ </body>
+ </html>
+```
+
+This unique formatting is called a **diff**, because it shows the difference between two versions of a file. In our case, it tells us what happened to the **pink.html** file between the 47ea234 and c349233 commits (your patch will contain different commt ID's). The @@ -7,9 +7,7 @@ portion describes the lines affected in the respective versions of the file, and the rest of the text shows us the content that has been changed. The lines beginning with - have been deleted in the new version, and the line starting with + has beed added.
+
+While you don't have to know the ins-add-outs of diffs to make use of patches, you do need to understand that a single patch file represents a complete commit. And, since it is a normal file (and also an email), it is much easier to pass around than a Git branch.
+
+Delete the patch file for now (we will re-create it later).
+
 # 	* [Add a Pink Block (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create Patch of Entire Branch (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Mail the Patches (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
