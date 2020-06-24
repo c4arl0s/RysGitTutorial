@@ -5379,13 +5379,28 @@ If John had updated **master** directly from his local pink-page, it could have 
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
-Using the integrator workflow, our private development process largely remains the same **(Develop a feature branch, merge it into master, and publish it). But, we have addedan additional task: incorporating changes from third-party contributors. Luckily, this does not required any new skills - just access to a few more remotes repositories.
+Using the integrator workflow, our private development process largely remains the same **(Develop a feature branch, merge it into master, and publish it)**. But, we have addedan additional task: incorporating changes from third-party contributors. Luckily, this does not required any new skills - just access to a few more remotes repositories.
 
-While this setup forces us to keep track of more remotes, it also makes it much, much easier to work with a large number of developers. You will never have to worry about security using an integrator workflow because you will still be the only one with access to the "official" repository.
+While this setup forces us to keep track of more remotes, it also makes it much, much easier to work with a large number of developers. You will never have to worry about security using an integrator workflow because you will still be the only one with access to the **"official"i** repository.
 
-There is also an interesting side-effect to this kind of security. By giving each developer their own public repository, the navigator workflow creates a more stable deelopment environment for open source software projects. Should the lead developer stop maintaning the "official" repository, any of the other participants could take over by simply designating ther public repository as the new "official" project. This is part of what makes Git **distributed** version control system: **There is no single central repository that Git forces everyone to rely upon.
+There is also an interesting side-effect to this kind of security. By giving each developer their own public repository, the navigator workflow creates a more stable development environment for open source software projects. Should the lead developer **stop maintaining the "official" repository**, **any of the other participants could take over by simply designating their public repository as the new "official" project**. This is part of what makes Git **distributed** version control system: **There is no single central repository that Git forces everyone to rely upon.
 
 # 11. [Patch Workflows](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Thus, far, all of the collaboration workflows we have seen rely heavily on branches. For example, in the last module, a contributor had to publish an entire **branch** for us to merge into our project. However, it is also a possible to communicate directly on the **commit** level using a **patch**.
+
+**A patch file represents a single set of changes (i.e. a commit) that can be applied to any branch, in any order. In this sense, the patch workflow is akin to interactive rebasing, except you can easily share patches with other developers. This kind of communication lessens the importance of a project's branch structure and gives complete control to the project maintainer (at least with regards to incorporating contributions).
+
+Integrating on the commit level will also give us a deeper understanding of how a Git repository records project history.
+
+```console
+Wed Jun 24 ~/iOS/RysGitTutorialMarysRepository 
+$ git remote add origin https://C4rl0sS4nt14g0@bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+fatal: remote origin already exists.
+```
+
+Both exist, reverse if needed.
+
 # 	* [Change the Pink Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create a Patch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add a Pink Block (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
