@@ -1342,7 +1342,11 @@ $ git branch
 
 # 	* [Conclusion]()
 
-Creating a new branch is really just a way to keep this high-level overview in mind during your every day development.
+This module used two branches to experiment with new additions. In both cases, branches gave us an environment that was completely isolated from the **"Stable"** version of our website (the master branch). One of our experiments is waiting for us in the next module, while our CSS changes have been merged into the stable project, and its branch is thus obsolete. Using branches to develop small features like these is one of the hall-marks of Git-based software management.
+
+While this module relied heavily on branch diagrams to show the complete state of the repository, you don't need to keep this high-level overview in mind during your every day development. Creating a new branch is really just a way to request an independent working directory, staging snapshot, and history. You can think of branches as a way to multiply functionality presented in the first two module.
+
+Next, we will practice our branch management skills by examining the typical workflow of veteran Git users. We will also discover more complicated merges than the **fast-forward merge** introduced above.
 
 # 	* [Quick Reference]()
 
