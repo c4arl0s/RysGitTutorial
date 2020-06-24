@@ -5402,6 +5402,43 @@ fatal: remote origin already exists.
 Both exist, reverse if needed.
 
 # 	* [Change the Pink Page (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We will begin by pretending to be Mary again. Mary didn't like the pink page that John contributed and wants to change it.
+
+```console
+Wed Jun 24 ~/iOS/RysGitTutorialRepository 
+$ cd ../RysGitTutorialMarysRepository/
+```
+
+```console
+Wed Jun 24 ~/iOS/RysGitTutorialMarysRepository 
+$ git checkout -b pink-page
+Switched to a new branch 'pink-page'
+```
+
+Developing in a new branch not only gives Mary an isolated environment, it also makes it easier to create a series of patches once she is done editing the pink page. Find these lines in **pink.html**
+
+```html
+<p>Pink is <span style="color: #F0F">girly,
+flirty and fun</span>!</p>
+```
+
+and change them to the following:
+
+```console
+<p>Only <span style="color: #F0F">real men</span> wear pink!</p>
+```
+Stage and commit the update as normal.
+
+```console
+Wed Jun 24 ~/iOS/RysGitTutorialMarysRepository 
+$ git commit -a -m "Change pink to a manly color"
+[pink-page 58b51cb] Change pink to a manly color
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+```
+
+Note that Mary's local development process does not change at all. **Patches** - like the centralized and integrator workflow - are merely a way to share changes amongst developers. It has little effect on the core Git concepts introduced in the first portion of this tutorial.
+
 # 	* [Create a Patch](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Add a Pink Block (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Create Patch of Entire Branch (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
