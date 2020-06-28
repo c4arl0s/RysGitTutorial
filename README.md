@@ -5389,7 +5389,7 @@ There is also an interesting side-effect to this kind of security. By giving eac
 
 Thus, far, all of the collaboration workflows we have seen rely heavily on branches. For example, in the last module, a contributor had to publish an entire **branch** for us to merge into our project. However, it is also a possible to communicate directly on the **commit** level using a **patch**.
 
-**A patch file represents a single set of changes (i.e. a commit) that can be applied to any branch, in any order. In this sense, the patch workflow is akin to interactive rebasing, except you can easily share patches with other developers. This kind of communication lessens the importance of a project's branch structure and gives complete control to the project maintainer (at least with regards to incorporating contributions).
+**A patch file represents a single set of changes (i.e. a commit) that can be applied to any branch, in any order**. In this sense, the patch workflow is akin ii(parecido) to interactive rebasing, except **you can easily share patches with other developers**. This kind of communication lessens (aminora) the importance of a project's branch structure and gives complete control to the project maintainer (at least with regards to incorporating contributions).
 
 Integrating on the commit level will also give us a deeper understanding of how a Git repository records project history.
 
@@ -5547,6 +5547,40 @@ While you don't have to know the ins-add-outs of diffs to make use of patches, y
 Delete the patch file for now (we will re-create it later).
 
 # 	* [Add a Pink Block (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Before learning how to turn patches back into commits, Mary will add one more snapshot.
+
+In **pink.html**, add the following on the line after meta tag.
+
+```html
+<style>
+  div {
+    width: 300px;
+    height: 50px;
+  }
+</style>
+```
+
+And, add the next line of HTML after only real men wear pink!:
+
+```html
+<div style="background-color: #F0F"></div>
+```
+
+stage and commit the snapshot.
+
+```console
+Sun Jun 28 ~/iOS/RysGitTutorialMarysRepository 
+$ git commit -a -m "Add a pink block of color"
+[pink-page da81d4a] Add a pink block of color
+ 1 file changed, 7 insertions(+)
+```
+
+Mary's repository now contains two commits after the tip of master:
+
+![Screen Shot 2020-06-28 at 8 37 35](https://user-images.githubusercontent.com/24994818/85949161-c1cdce00-b91a-11ea-850c-043ddb0faad5.png)
+
+
 # 	* [Create Patch of Entire Branch (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Mail the Patches (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Apply the Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
