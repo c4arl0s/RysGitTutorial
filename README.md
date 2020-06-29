@@ -3956,7 +3956,7 @@ Now that our remote **repositories are setup, we will spend the rest of the modu
 
 # 	* [Fetch Mary's Branches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
-As noted earlier, we can use remote branches to access snapshots from another repository. Let's take a look at our current remote branches with the - flag.
+As noted earlier, we can use remote branches to access snapshots from another repository. Let's take a look at our current remote branches with the - flag.]()
 
 ```console
 $ git branch -r
@@ -5580,8 +5580,48 @@ Mary's repository now contains two commits after the tip of master:
 
 ![Screen Shot 2020-06-28 at 8 37 35](https://user-images.githubusercontent.com/24994818/85949161-c1cdce00-b91a-11ea-850c-043ddb0faad5.png)
 
-
 # 	* [Create Patch of Entire Branch (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Mary can use the same command as before to generate patches for all commits in her pink-branch.
+
+```console
+Mon Jun 29 ~/iOS/RysGitTutorialMarysRepository 
+$ git format-patch master
+0001-Change-pink-to-a-manly-color.patch
+0002-Add-a-pink-block-of-color.patch
+```
+
+The first patch is the exact same as we previously examined, but we also have a new one called 0002-Add-a-pink-block-of-color.patch. Note that the first line of the commit message will always be used to make a descriptive filename for the patch. You should find the following **diff** in the second patch.
+
+```console
+index c349233..431492b 100644
+--- a/pink.html
++++ b/pink.html
+@@ -4,10 +4,17 @@
+   <title>The Pink Page</title>
+   <link rel="stylesheet" href="style.css" />
+   <meta charset="utf-8" />
++  <style>
++  div {
++    width: 300px;
++    height: 50px;
++  }
++  </style>
+ </head>
+ <body>
+   <h1 style="color: #F0F">The Pink Page</h1>
+   <p>Only <span style="color: #F0F">real men</span> wear pink!</p>
++  <div style="background-color: #F0F"></div>
+   <p><a href="index.html">Return to home page</a></p>
+ </body>
+ </html>
+-- 
+2.25.0
+```
+
+This is the same formatting as the first patch, except its lack of - lines indicate that we only added HTML during the second commit. As you can see, this patch is really just a **machine-readable** summary of our actions from the previous section.
+
+
 # 	* [Mail the Patches (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Apply the Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Integrate The Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
