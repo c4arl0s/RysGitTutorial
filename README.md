@@ -5623,6 +5623,15 @@ This is the same formatting as the first patch, except its lack of - lines indic
 
 
 # 	* [Mail the Patches (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Now that Mary has prepared a series of patches, she can send them to the program maintainer (us). In the typical patch workflow, she would send them via email using one of the following methods:
+
+* Copying and pasting the contents of the patch files into an email client. If she uses this method, Mary would have to make sure that her email application does not change the whitespace in the patch upon email.
+* Sending the patch file as an attachment to a normal email.
+* Using the convenient **git send-email** command and specifying a file or a directory of files to send. For example, **git send-email**, will send all the patches in the current directory. Git also requires some special configurations for this command. Please consult the official Git documentation for details.
+
+The point is, the **.patch** files need to find their way into the Git repository of whoever wants to add it to their project. For our example, all we need to do is copy the patches into my-git-repo directory that represents our local version of the project.
+
 # 	* [Apply the Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Integrate The Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
