@@ -5633,6 +5633,75 @@ Now that Mary has prepared a series of patches, she can send them to the program
 The point is, the **.patch** files need to find their way into the Git repository of whoever wants to add it to their project. For our example, all we need to do is copy the patches into my-git-repo directory that represents our local version of the project.
 
 # 	* [Apply the Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Copy the two patches files from RysGitTutorialMaryRepository into RysGitTutorialRepository. Using the new **git am** command, we can use these patches to add Mary's commits to our repository.
+
+```console
+Wed Jul 01 ~/iOS/RysGitTutorialMarysRepository 
+$ cd ../RysGitTutorialRepository/
+```
+
+```console
+Wed Jul 01 ~/iOS/RysGitTutorialRepository 
+$ git checkout -b patch-integration
+Switched to a new branch 'patch-integration'
+```
+
+```console
+Wed Jul 01 ~/iOS/RysGitTutorialRepository 
+$ git am < 0001-Change-pink-to-a-manly-color.patch 
+Applying: Change pink to a manly color
+```
+
+```console
+Wed Jul 01 ~/iOS/RysGitTutorialRepository 
+$ git log master..HEAD --stat
+commit 958cd59173a387d6b9c3d3a78aa6370dce0318ca (HEAD -> patch-integration)
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Wed Jun 24 13:16:13 2020 -0500
+
+    Change pink to a manly color
+
+ pink.html | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+```
+
+First, notice that we are doing our integrating in a new topic branch. Again, this ensures that we won't destroy our existing functionality and gives us a chance to approve changes. Second, the **git am** command takes a patch file and creates a new commit from it. The log output shows us that our integration branch contains Mary's update, along with her author information.
+
+Let's repeat the process for the second commit.
+
+```console
+Wed Jul 01 ~/iOS/RysGitTutorialRepository 
+$ git am < 0002-Add-a-pink-block-of-color.patch 
+Applying: Add a pink block of color
+```
+
+```console
+Wed Jul 01 ~/iOS/RysGitTutorialRepository 
+$ git log master..HEAD --stat
+commit 56599780e162975562da46742664c1132a24b78e (HEAD -> patch-integration)
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Sun Jun 28 08:36:02 2020 -0500
+
+    Add a pink block of color
+
+ pink.html | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 958cd59173a387d6b9c3d3a78aa6370dce0318ca
+Author: Mary <c.santiago.cruz@gmail.com>
+Date:   Wed Jun 24 13:16:13 2020 -0500
+
+    Change pink to a manly color
+
+ pink.html | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+```
+
+The **git am** command is configured to read from something called **"Standard input"**, and the **"< character"** we can turn file's contents into standard input. As it is really more of an operating system topic, you can just think of this syntax as a quick of the **git am** command.
+
+After applying this patch, our integration branch now looks exactly like Mary's pink-page branch. We applied Mary's patches in the same order she did, but that didn't necessarlily have to be the case. The whole idea begind patches is that **let you isolate a commit and move it around as you please**.
+
 # 	* [Integrate The Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
