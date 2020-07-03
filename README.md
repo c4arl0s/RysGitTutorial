@@ -5750,6 +5750,57 @@ To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
 Mary's updates are now completely integrated into our local repository, so we ca get rid of the patch files with **git clean**. This was also appropiate time to push changes to the public repository so other developers can access the most up-to-date version of the project.
 
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Mary might be tempted to merge her pink-page branch directly into her master branch, but this would be a mistake. Her master branch **must** track the **"official"** repository's master, as discussed in the previous module.
+
+```console
+Fri Jul 03 ~/iOS 
+$ cd RysGitTutorialMarysRepository/
+```
+
+```console
+Fri Jul 03 ~/iOS/RysGitTutorialMarysRepository 
+$ git checkout master
+Switched to branch 'master'
+```
+
+```console
+Fri Jul 03 ~/iOS/RysGitTutorialMarysRepository 
+$ git fetch origin
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 3), reused 0 (delta 0)
+Unpacking objects: 100% (6/6), 814 bytes | 67.00 KiB/s, done.
+From https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository
+   51f9d9e..5659978  master     -> origin/master
+```
+
+```console
+Fri Jul 03 ~/iOS/RysGitTutorialMarysRepository 
+$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Applying: Add CSS styles for headings and links
+```
+
+```console
+Fri Jul 03 ~/iOS/RysGitTutorialMarysRepository 
+$ git branch -D pink-page
+Deleted branch pink-page (was da81d4a).
+```
+
+```console
+Fri Jul 03 ~/iOS/RysGitTutorialMarysRepository 
+$ git clean -f
+Removing 0001-Change-pink-to-a-manly-color.patch
+Removing 0002-Add-a-pink-block-of-color.patch
+```
+
+Patches are a convenient way to share commits amongst developers, but the patch workflow still requires an **"official"** repository that contains **everybody's changes**. What would happen if Mary was not the only one sending patches to us ?. We may very well have applied several different patches or applied Mary's contributions in a different order. Using Mary's **pink-page** to update her master branch would completely ignore all these updates.
+
+Taking this into consideration, our final patch workflow resembles the following.
+
+![Screen Shot 2020-07-03 at 18 38 37](https://user-images.githubusercontent.com/24994818/86501205-6d807f00-bd5c-11ea-83a9-73fdb2fd21f1.png)
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
