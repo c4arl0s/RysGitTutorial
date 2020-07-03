@@ -5703,6 +5703,52 @@ The **git am** command is configured to read from something called **"Standard i
 After applying this patch, our integration branch now looks exactly like Mary's pink-page branch. We applied Mary's patches in the same order she did, but that didn't necessarlily have to be the case. The whole idea begind patches is that **let you isolate a commit and move it around as you please**.
 
 # 	* [Integrate The Patches (you)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Once again, we are in the familiar situation of integrating a topic branch into the stable master branch.
+
+```console
+Thu Jul 02 ~/iOS/RysGitTutorialRepository 
+$ git checkout master
+Switched to branch 'master'
+```
+
+```console
+Thu Jul 02 ~/iOS/RysGitTutorialRepository 
+$ git merge patch-integration
+Updating 51f9d9e..5659978
+Fast-forward
+ pink.html | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+```
+
+```console
+Thu Jul 02 ~/iOS/RysGitTutorialRepository 
+$ git branch -d patch-integration
+Deleted branch patch-integration (was 5659978).
+```
+
+```console
+Thu Jul 02 ~/iOS/RysGitTutorialRepository 
+$ git clean -f
+Removing 0001-Change-pink-to-a-manly-color.patch
+Removing 0002-Add-a-pink-block-of-color.patch
+```
+
+```console
+Thu Jul 02 ~/iOS/RysGitTutorialRepository 
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 834 bytes | 278.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+To https://bitbucket.org/C4rl0sS4nt14g0/rysgittutorialrepository.git
+   51f9d9e..5659978  master -> master
+```
+
+Mary's updates are now completely integrated into our local repository, so we ca get rid of the patch files with **git clean**. This was also appropiate time to push changes to the public repository so other developers can access the most up-to-date version of the project.
+
 # 	* [Update Mary's Repository (Mary)](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
