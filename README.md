@@ -5807,8 +5807,22 @@ Whereas **remote repositories** are a way to share entire **branches**, **patche
 
 In many ways, **patches are a simpler way** to accept contributions than the integrator workflow from the previous module. Only the project maintainer needs a public repository, and he will never have to peek at anyone else's repository. Form the maintainer's perspective, patches also provide the same security as the integrator workflow: **he still won't have to give anyone access to his "official" repository**. But now he won't have to keep track of everybody's remote repositories, either.
 
+As a programmer,yoy are most likely to use patches **when you want to fix a bug in someone else's project**. After fixing it, you can send them a patch of the resulting commit. For this kind of one-time-fix, it's much more convenient for you to generate a patch than to set up a public Git repository.
+
+This module concludes our discussion of the standard Git workflows. Hopefully you have a good idea of how Git can better manage your personal and professional software projects using a centralized, integrator, or patch workfloow. In then next module, we will switch gears and introduce a variaty of practical Git commands.
 
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+$ git format-patch branchName
+```
+Create a patch for each commit contained in the current branch but not in branchName. You can also specify a commit ID instead of branchName
+
+```console
+git am < patchFile
+```
+Apply a patch to the current branch
+
 # 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Archive The repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Bundle the Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
