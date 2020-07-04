@@ -1625,9 +1625,9 @@ The resulting project history is show below, with the first four commits ommitte
 
 Our boss called in with some breaking news ! He needs us to update the site immediately, but what do we do with our rainbow.html developments? Well, the beauty of Git branches is that we can just leave them where they are and add the breaking news to master.
 
-We will use what is called a **hotfix branch** to create and test the news updates. In contrast to our relatively long-running feature branch (crazy), hotfix branches are used to quickly patch a production release.
+We will use what is called a **hotfix branch** to create and test the news updates. In contrast to our relatively long-running feature **branch (crazy)**, **hotfix** branches are used to quickly patch a production release.
 
-For example: you would use a hotfix branch to fix a time-sensitive bug in a public software project. This distinction is useful for demostrating when it is appropiate to create a new branch, but it is purely conceptual **- a branch is a branch according to Git**
+For example: you would use a **hotfix branch** to fix a time-sensitive bug in a public software project. This distinction is useful for demonstrating when it is appropiate to create a new branch, but it is purely conceptual **- a branch is a branch according to Git**
 
 ```console
 $ git checkout master
@@ -1696,7 +1696,7 @@ $ git commit -m "Add 1st news item"
  create mode 100644 news-1.html
 ```
 
-Text these additions in a browser to make sure that the links work, it is typo free, etc. Ifeverything looks good, we can "publish" the changes by merging them into the stable master branch. Isolating this in a separate branch is not really necessary for our trivial example, but in the real world, this would give you the opportunity to run build tests without touching your stable project.
+Text these additions in a browser to make sure that the links work, it is typo free, etc. If everything looks good, we can "publish" the changes by merging them into the stable master branch. Isolating this in a separate branch is not really necessary for our trivial example, but in the real world, this would give you the opportunity to run build tests without touching your stable project.
 
 # 	* [Publish the News Hotfix]()
 
@@ -5804,6 +5804,8 @@ Taking this into consideration, our final patch workflow resembles the following
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 
 Whereas **remote repositories** are a way to share entire **branches**, **patches** are a way to send **individual commits** to another developer. Keep in mind that patches are usually only sent to a project maintainer, who then integrates them into the **"official"** project for all to see. It would be impossible for everyone to communicate using only patches, as no one would be applying them in the same order. Eventually, everyone's project history would look entirely different.
+
+In many ways, **patches are a simpler way** to accept contributions than the integrator workflow from the previous module. Only the project maintainer needs a public repository, and he will never have to peek at anyone else's repository. Form the maintainer's perspective, patches also provide the same security as the integrator workflow: **he still won't have to give anyone access to his "official" repository**. But now he won't have to keep track of everybody's remote repositories, either.
 
 
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
