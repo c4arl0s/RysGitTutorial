@@ -5802,6 +5802,10 @@ Taking this into consideration, our final patch workflow resembles the following
 ![Screen Shot 2020-07-03 at 18 38 37](https://user-images.githubusercontent.com/24994818/86501205-6d807f00-bd5c-11ea-83a9-73fdb2fd21f1.png)
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Whereas **remote repositories** are a way to share entire **branches**, **patches** are a way to send **individual commits** to another developer. Keep in mind that patches are usually only sent to a project maintainer, who then integrates them into the **"official"** project for all to see. It would be impossible for everyone to communicate using only patches, as no one would be applying them in the same order. Eventually, everyone's project history would look entirely different.
+
+
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Archive The repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
