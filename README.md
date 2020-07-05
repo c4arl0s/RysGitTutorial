@@ -5828,6 +5828,25 @@ Apply a patch to the current branch
 This module presents a broad survey of useful Git utilities. We will take a step back from the theoretical aspects of Git and focus on common tasks like preparing a project for release and backing up a repository. While working through this module, your goal shouldn't be to understand why they were created and when they might come in handy.
 
 # 	* [Archive The repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+First, let's export our repository into a ZIP archive. Run the following command in your local copy of my git repository, in this case RysGitTutorialRepository.
+
+```console
+Sun Jul 05 ~/iOS/RysGitTutorialRepository 
+$ git archive master --format=zip --output=../website-Jul-05-2020.zip
+```
+
+or, for Unix users that would prefer a tarball:
+
+```console
+Sun Jul 05 ~/iOS/RysGitTutorialRepository 
+$ git archive master --format=tar --output=../website-Jul-05-2020.tar
+```
+
+This takes the current **master** branch and places all of its files into a ZIP archive (or tarball), ommitting the .git directory. **Removing the .git directory removes all version control information, and you are left with a single snapshot of your project**.
+
+You can send the resulting archive to a client for review, even if they don't have Git installed on their machine. This is also an easy way to create Git-independent backups of important revisions, which is always a good idea.
+
 # 	* [Bundle the Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Ignore a File](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Stash Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
