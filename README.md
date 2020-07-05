@@ -5824,6 +5824,9 @@ git am < patchFile
 Apply a patch to the current branch
 
 # 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+This module presents a broad survey of useful Git utilities. We will take a step back from the theoretical aspects of Git and focus on common tasks like preparing a project for release and backing up a repository. While working through this module, your goal shouldn't be to understand why they were created and when they might come in handy.
+
 # 	* [Archive The repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Bundle the Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Ignore a File](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
