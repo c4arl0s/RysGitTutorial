@@ -5848,6 +5848,52 @@ This takes the current **master** branch and places all of its files into a ZIP 
 You can send the resulting archive to a client for review, even if they don't have Git installed on their machine. This is also an easy way to create Git-independent backups of important revisions, which is always a good idea.
 
 # 	* [Bundle the Repository](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Similar to the **git archive** command, **git bundle** turns a repository into a single file. However, in this case, the file retains the versioning information of the entire project. Try running the following command.
+
+```console
+Mon Jul 06 ~/iOS/RysGitTutorialRepository 
+$ git bundle create ../repo.bundle master
+Enumerating objects: 94, done.
+Counting objects: 100% (94/94), done.
+Compressing objects: 100% (91/91), done.
+Total 94 (delta 44), reused 0 (delta 0)
+```
+
+It's like we just pushed our master branch to a remote, except it's contained in a file instead of a remote repository. We can even clone it using the same **git clone** command.
+
+```console
+Mon Jul 06 ~/iOS/RysGitTutorialRepository 
+$ cd ..
+Mon Jul 06 ~/iOS 
+$ git clone repo.bundle repo-bundle-copy -b master
+Cloning into 'repo-bundle-copy'...
+Receiving objects: 100% (94/94), 11.16 KiB | 2.23 MiB/s, done.
+Resolving deltas: 100% (44/44), done.
+```
+
+```console
+$ ls repo*
+repo.bundle
+
+repo-bundle-copy:
+about        index.html   news-3.html  rainbow.html yellow.html
+blue.html    news-1.html  orange.html  red.html
+green.html   news-2.html  pink.html    style.css
+```
+
+```console
+Mon Jul 06 ~/iOS/repo-bundle-copy 
+$ git log
+```
+
+The log output should show you the entire history of our **master branch**, and **repo.bundle+* is also the **origin remote** for the new repository. This is the exact behavior we encountered when cloning a **"normal"** Git repository.
+
+Bundles are a great way to backup entire Git repositoies (not just an isolated snapshot like **git archive**). They also let you share changes without a network connection. For example, if you didn't want to configure the SSH accounts for a private Git Server, you could bundle up the repository, put it on a jump drive, and walk it over to your co-worker's computer. Of course, this could become a bit tiresome for active projects.
+
+We will not be needing the repo.bundle file and repo-copy folder, so go ahead and delete them now.
+
+
 # 	* [Ignore a File](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Stash Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Hook into Git's internals](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
