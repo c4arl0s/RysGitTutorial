@@ -5895,6 +5895,67 @@ We will not be needing the repo.bundle file and repo-copy folder, so go ahead an
 
 
 # 	* [Ignore a File](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Remember that Git does not automatically track files because we don't want to record generarted files llike C binaris or compiled Phyton modules. But, seeing these files under the **"Untracked files"** list in **git status** can get confusing for large projects, so Git lets us ignore content using a special text file called **.gitignore**. Each file or directory stored in **.gitignore** will be invisible to Git.
+
+Let's see how this works by creating a file called **notes.txt** to store some personal (private) comments about the project. Add some text to it and save it, then run the following.
+
+```console
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ vim notes.txt
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	notes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+```
+
+As expected, this will show you **notes.txt** in the **"Untracked files"** section. Next, create a fie called **.gitignore** in the repository directory and add the following text to it. Windows users can create a file that starts with a period by executing the **touch .gitignore** command in Git bash (you should also make sure hidden files are visible in your file browser).
+
+```console
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ touch .gitignore
+```
+
+Run another git status and you will see that the notes file no longer appears under **"Untracked files"**, but **.gitignore** does. This is a common file for Git-based projects, so let's add it to the repository.
+
+```console
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+```console
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ git add .
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ git commit -m "Add .gitignore file"
+[master da3867e] Add .gitignore file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+Wed Jul 08 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+You can also specify entire directories in **.gitignore** or use the * wildcard to ignore files with a particular extension. For example, the following is a typical **.gitignore** file for a simple C project. It tells Git to overlook all **., .out, and .exe** files in the repository
+
+```vim
+*.o
+*.out
+*.exe
+```
+
 # 	* [Stash Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Hook into Git's internals](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [View Diffs Between commits](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
