@@ -5957,6 +5957,75 @@ You can also specify entire directories in **.gitignore** or use the * wildcard 
 ```
 
 # 	* [Stash Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Next, we will take a brief look at **stashing**, which conveniently **"Staches"** away uncommitted changes. Open up **style.css** and change the h1 element to:
+
+```html
+h1 {
+ font-size: 32px;
+ “font-family: "Times New Roman", serif;
+}
+```
+
+Now let's say we had to make an emergency fix to our project. We don't want to commit an unfinished feature, and we also don't want to lose our current CSS addition. The solution is to temporarily remove these changes with the **git stash** command.
+
+```console
+Thu Jul 09 ~/iOS/RysGitTutorialRepository 
+$ vim style.css 
+```
+```console
+Thu Jul 09 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```console
+Thu Jul 09 ~/iOS/RysGitTutorialRepository 
+$ git stash
+Saved working directory and index state WIP on master: da3867e Add .gitignore file
+```
+
+```console
+Thu Jul 09 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+Before the stash, style.css was listed as **"Change by not updated"**. The **git stash** command hid these changes, giving us a clean working directory. We are now able to switch to a new **hotfix** branch to make our important updates - without having to commit a meaningless snapshot just to save our current state.
+
+Let's pretend we have completed our emergency update and we are ready to continue working on our CSS changes. **We can retrieve our stahed content** with the following command.
+
+```console
+Thu Jul 09 ~/iOS/RysGitTutorialRepository 
+$ git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+The **style.css** file now looks the same as it did before the stash, and we can continue development as if we were never interrupted. Whereas patches represent a committed snapshot, a stash represents a set of uncommitted changes. It takes the uncommitted modifications, stores them internally, ten does a **git reset --hard** to give us a clean working directory. This also means that stashes can be applied to **any** branch, not just the one from which it was created.
+
+In addition to temporarily storing uncommitted changes, this makes stashing a simple way to transfer modifications between branches. So, for example, if you ever found yourself developing on the wrong branch, you could stash all your changes, checkout the correct branch, then run a **git stash apply**.
+
+Let's undo these CSS updates before moving on.
+
+```console
+Thu Jul 09 ~/iOS/RysGitTutorialRepository 
+$ git reset --hard
+HEAD is now at da3867e Add .gitignore file
+```
+
 # 	* [Hook into Git's internals](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [View Diffs Between commits](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Reset and checkout files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
