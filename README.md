@@ -6027,6 +6027,82 @@ HEAD is now at da3867e Add .gitignore file
 ```
 
 # 	* [Hook into Git's internals](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Arguably, Git's most useful configuration options are its **hooks*. A hook is a script that Git executes every time a particular event occurs in a repository. In this section, we will take a **hands-on** look at Git hooks by automatically publishing our website every time someone pushes to the central-repo.git repository.
+
+```console
+Fri Jul 10 ~/iOS 
+$ cd central-repo.git/
+Fri Jul 10 ~/iOS/central-repo.git 
+$ ls
+description HEAD        config      info        refs        hooks       objects
+Fri Jul 10 ~/iOS/central-repo.git 
+$ cd hooks/
+Fri Jul 10 ~/iOS/central-repo.git/hooks 
+$ ls
+commit-msg.sample         fsmonitor-watchman.sample pre-merge-commit.sample
+pre-rebase.sample         pre-receive.sample        pre-applypatch.sample
+pre-commit.sample         prepare-commit-msg.sample pre-push.sample
+applypatch-msg.sample     post-update.sample        update.sample
+```
+
+In the centra-repo.git directory, open the **hooks** directory and rename the file **post-update.sample** to **post-update**. After removing the **.sample** extension, this script will be executed whenever **any** branch gets pushed to **central-repo.git**. Replace the default contents of **post-update** with the following.
+
+
+```console
+Fri Jul 10 ~/iOS/central-repo.git/hooks 
+$ mv post-update.sample post-update
+```
+
+```vim
+#!/bin/sh
+
+echo "Publishing master branch!" >&2
+
+# remove the old `my-website` directory (if necessary)
+rm -rf ../my-website
+
+# create a new `RysGitTutorialMyWebsitem` directory
+mkdir ../RysGitTutorialMyWebsite
+
+#Archive the `master` branch
+git archive master --format=tar --output=../RysGitTutorialMyWebsite.tar
+
+#Uncompress the archive into the `RysGitTutorialMyWebsite` directory
+tar -xf ../RysGitTutorialMyWebsite.tar -C ..RysGitTutorialMyWebsite
+```
+
+While shell scripts are outside the scope of this tutorial, the majority of commands in the above code listing should be familiar to you. In short, this new **post-update** script creates an archive of the **master** branch, then exports it into a directory called **RysGitTutorialMyWebsite** repository.
+
+We can see the script in action by pushing a branch to the central-repo.git repository.
+
+```console
+Fri Jul 10 ~/iOS/RysGitTutorialRepository 
+$ git push ../central-repo.git master
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 1.43 KiB | 366.00 KiB/s, done.
+Total 13 (delta 7), reused 0 (delta 0)
+remote: Publishing master branch!
+To ../central-repo.git
+   450182a..da3867e  master -> master
+```
+
+```console
+.
+.
+central-repo.git
+RysGitTutorialMyWebsite.tar
+RysGitTutorialMyWebsite
+Fri Jul 10 ~/iOS 
+```
+
+after the central repository receives the new master branch, our **post-update** script is executed. You should see the **Publishing master branch!** message echoed from the script, along with RysGitTutorialMyWebsite folder in the same directory as **RysGitTutorialRepository**. You can open **index.html** in a web browser to verify that it contains all the files from our **master branch**, and you can also see the **intermediate.tar** archive produces by the hook.
+
+This is a simple unoptimized example, but **Git hooks** are infinitely versatile. Each of the **.sample** scripts in the hooks directory represents different event that you can listen for, an each of them can do anything from automatically creating and publishing releases to enforcing a commit policy,  making sure a project compiles, and of course, publishing websites (that means no more cluncy FTP uploads). Hooks are even configured on a per-repository basis, which means you can run different scripts in your local repository than your central repository.
+
 # 	* [View Diffs Between commits](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Reset and checkout files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Aliases and Other Configurations](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
