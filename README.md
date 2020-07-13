@@ -6214,6 +6214,55 @@ index 370563f..14728e6 100644
 A plain old **git diff** will not output anything after the **blue.html** is added to the staging area, but the changes are now visible through the **--cached** flag. These are the three main configurations of the **git diff** command.
 
 # 	* [Reset and checkout files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+We have used **git reset** and **git checkout** many times throughout this tutorial; however, we have only seen them work with **branches/commits**. You can also reset and checkout individual files, which slightly alters the behavior of both commands.
+
+The **git reset** we are accustomed to moves the current branch to a new commit and optionally updates the working directory to match. But when we pass a file path, **git reset** updates the *+staging area** to match the given commit instead of the working directory, and it does not move the current branch pointer. This means we can remove **blue.html** from the staged snapshot with the following command.
+
+```console
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git reset HEAD blue.html 
+Unstaged changes after reset:
+M	blue.html
+```
+
+```console
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   blue.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+This makes the **blue.html** in the staging area match the version stored in HEAD, but it leaves the working directory and current branch alone. The result is a stagging area that matches the most recent commit and a working directory that contains the modified **blue.html** file. In other words, this type of **git reset** can be used to unstage a file.
+
+![Screen Shot 2020-07-13 at 2 23 45](https://user-images.githubusercontent.com/24994818/87311099-6e47ac80-c4e4-11ea-8abc-947a4879a100.png)
+
+Let's take this one step further with **git checkout**. The **git checkout** we have been using updates the working directory and switches branches. If we add a file path to **git checkout**, it narrows its focus to only the specified file and does **not** update the branch pointer. This means that we can **"check out"** the most recent version of **blue.html** with the following command.
+
+```console
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git checkout HEAD blue.html 
+Updated 1 path from c5ba33c
+```
+
+```console
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+Our **blue.html** file now looks exactly like the version stored in **HEAD**, and we thus have a clean working directory. Passing a file path to **git checkout** reverts that file to the specified commit.
+
+![Screen Shot 2020-07-13 at 2 36 03](https://user-images.githubusercontent.com/24994818/87311154-7dc6f580-c4e4-11ea-9ffe-ead0f1934c4e.png)
+
+To summarize the file-path behavior of **git reset** and **git checkout**, both take a committed snapshot as an reference point and make a file in the stagging area or the working directory match that reference, respectively.
+
+
 # 	* [Aliases and Other Configurations](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
