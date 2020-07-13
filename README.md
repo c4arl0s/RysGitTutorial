@@ -6104,6 +6104,115 @@ after the central repository receives the new master branch, our **post-update**
 This is a simple unoptimized example, but **Git hooks** are infinitely versatile. Each of the **.sample** scripts in the hooks directory represents different event that you can listen for, an each of them can do anything from automatically creating and publishing releases to enforcing a commit policy,  making sure a project compiles, and of course, publishing websites (that means no more cluncy FTP uploads). Hooks are even configured on a per-repository basis, which means you can run different scripts in your local repository than your central repository.
 
 # 	* [View Diffs Between commits](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Up until now, we have been using **git log --stat** to view the changes introduced by new commits. However, this does not show us which lines have been change in any given file. For this level of detail, we need the **git diff** command. Let's take a look at the updates from the **"Add a pink block of color"** commit
+
+This will output the diff between the "Add a pink block of color" commit (HEAD~1) and the one before it (HEAD~2):
+
+```console
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git diff HEAD~2..HEAD~1
+diff --git a/pink.html b/pink.html
+index c349233..431492b 100644
+--- a/pink.html
++++ b/pink.html
+@@ -4,10 +4,17 @@
+   <title>The Pink Page</title>
+   <link rel="stylesheet" href="style.css" />
+   <meta charset="utf-8" />
++  <style>
++  div {
++    width: 300px;
++    height: 50px;
++  }
++  </style>
+ </head>
+ <body>
+   <h1 style="color: #F0F">The Pink Page</h1>
+   <p>Only <span style="color: #F0F">real men</span> wear pink!</p>
++  <div style="background-color: #F0F"></div>
+   <p><a href="index.html">Return to home page</a></p>
+ </body>
+ </html>
+```
+
+This diff looks nearly identical to the patches we created in the previous module, and it shows exactly what was added to get from HEAD~2 to HEAD~1. The **git diff** command is incredibly useful for pinpointing contributions from other developers. For example, we could have used the following to view the differences between John's pink-page branch and our master before merging it into the project in Distributed Workflows.
+
+```console
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+index 99ed0d4..0000000
+--- a/.gitignore
++++ /dev/null
+@@ -1 +0,0 @@
+-notes.txt
+diff --git a/pink.html b/pink.html
+index 431492b..47ea234 100644
+--- a/pink.html
++++ b/pink.html
+@@ -4,17 +4,12 @@
+   <title>The Pink Page</title>
+   <link rel="stylesheet" href="style.css" />
+   <meta charset="utf-8" />
+-  <style>
+-  div {
+-    width: 300px;
+-    height: 50px;
+-  }
+-  </style>
+ </head>
+ <body>
+   <h1 style="color: #F0F">The Pink Page</h1>
+-  <p>Only <span style="color: #F0F">real men</span> wear pink!</p>
+-  <div style="background-color: #F0F"></div>
++  <p>Pink is <span style="color: #F0F">girly,
++  flirty and fun</span>!</p>
++
+   <p><a href="index.html">Return to home page</a></p>
+ </body>
+ </html>
+```
+
+This flexible command can also generate a detailed view of our uncommitted changes. open up **blue.html**, make any kind of change, and save the file. Then run **git diff** without any arguments:
+
+```console
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ vim blue.html 
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git diff
+diff --git a/blue.html b/blue.html
+index 370563f..14728e6 100644
+--- a/blue.html
++++ b/blue.html
+@@ -10,3 +10,5 @@
+   <p>Blue is the color of the sky.</p>
+ </body>
+ </html>
++<!-- You will not be able to see this text. -->
++
+```
+
+And, just in case we forgot what was added to the staging area, we can use the **--cahed** flag to generate a diff between the staged snapshot and the most recent commit:
+
+```console
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git add blue.html 
+Mon Jul 13 ~/iOS/RysGitTutorialRepository 
+$ git diff --cached
+diff --git a/blue.html b/blue.html
+index 370563f..14728e6 100644
+--- a/blue.html
++++ b/blue.html
+@@ -10,3 +10,5 @@
+   <p>Blue is the color of the sky.</p>
+ </body>
+ </html>
++<!-- You will not be able to see this text. -->
++
+```
+
+A plain old **git diff** will not output anything after the **blue.html** is added to the staging area, but the changes are now visible through the **--cached** flag. These are the three main configurations of the **git diff** command.
+
 # 	* [Reset and checkout files](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Aliases and Other Configurations](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
