@@ -6323,7 +6323,65 @@ This makes sure Git colorized the output of **git status** and that it uses the 
 Git includes a long list of configuration options, all of which can be found in the official manual. Note that storing your global configuration n a plaintext file makes it incredibly easy to transfer your settings to a new Git installation: just copy ~/.gitconfig onto your new machine.
 
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+In this module, we learned how to export snapshots, backup repositories, ignore files, stash temporary changes, hook into Git's internals, generate diffs, reset individual files, and create shorter aliases for common commands. While it is impossible to cover all of Git's supporting features in hands-on guide such as this, I hope that you now have a clearer picture of Git's numerous capabilities.
+
+With all of these convenient features, it is easy to get so caught up in designing the perfect workflow that you lose sight of Git's underlying purpose. As you add new commands to your repertoire, remember that Git should always make it **easier** to develop a software project - never harder. If you ever find that Git is causing more harm than good, don't be scared to drop some of the advance features and go back to the basics.
+
+The final module will go a long way towards helping you realize the full potential of Git's version control model. We will explore Git's internal database by manually inspecting and creating snapshots. Equipped with this low-level knowledge, you will be more that ready to venture out into the reality of Git-base project management.
+
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+```console
+$ git archive branchName --format=zip --output=fileName
+```
+Export a single snapshot to a ZIP archive called fileName
+
+```console
+git bundle create fileNam branchName
+```
+Export an entire branch, complete with history, to  the specified fileName
+
+```console
+git clone repo.bundle repoDirectory -b branchName
+```
+Re-create a project from a bundle repository and checkout branchName
+
+```console
+git stash
+```
+Temporarily stash change to create a clean working directory
+
+```console
+git stash apply
+```
+Re-apply stashed changes to the working directory
+
+```console
+git diff commitID..anotherCommitID
+```
+View the difference between two commits
+
+```console
+git diff
+```
+View the difference between the working directory and the stagging area.
+
+```console
+git reset HEAD fileName
+```
+Unstage a file, but don't alter the working directory or move the current branch
+
+```console
+git checkout commitID fileName
+```
+Revert and individual file to match the specified commit without switching branches
+
+```console
+git config --global alias.aliasName gitCommand
+```
+Create a shortcut for a command and store it in the global configuration file
+
 # 13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Examine Commit Details](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)	
 # 	* [Examine a tree](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
