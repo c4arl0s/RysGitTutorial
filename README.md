@@ -6262,8 +6262,66 @@ Our **blue.html** file now looks exactly like the version stored in **HEAD**, an
 
 To summarize the file-path behavior of **git reset** and **git checkout**, both take a committed snapshot as an reference point and make a file in the stagging area or the working directory match that reference, respectively.
 
-
 # 	* [Aliases and Other Configurations](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+
+Typing **git checkout** every time you wanted to see a new branch over the last ten modules has been a bit verbose. Fortunately, **Git** lets you create **aliases**, which are shortcuts to other commands. Let's create a few aliases for our most common commands:
+
+```console
+Tue Jul 14 ~/iOS/RysGitTutorialRepository 
+$ git config --global alias.check checkout
+Tue Jul 14 ~/iOS/RysGitTutorialRepository 
+$ git config --global alias.ci commit
+Tue Jul 14 ~/iOS/RysGitTutorialRepository 
+$ git config --global alias.br branch
+```
+
+Now, we can use **git check** instead **git checkout, etc.
+
+```console
+Tue Jul 14 ~/iOS/RysGitTutorialRepository 
+$ git check -b test
+Switched to a new branch 'test'
+```
+
+Git stores these aliases in a global config file, similar to the **local config** file we looked at in Mary's repository (.git/config). By default, global configurations reside in ~/.gitconfig, where the ~ character represents your home directory. This file should resemble the following.
+
+```console
+Tue Jul 14 ~/iOS/RysGitTutorialRepository 
+$ cat ~/.gitconfig 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = c4arl0s
+	email = c.santiago.cruz@gmail.com
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+[core]
+	excludesfile = /Users/carlossantiagocruz/.gitignore_global
+[alias]
+	check = checkout
+	ci = commit
+	br = branch
+```
+
+Of course, your settings should reflect the name and email you entered in The Basics. As you can see, all of our new aliases are also stored in .gitconfig. Let's add a few more useful configurations by modifying this file directly. Append the following to .gitconfig
+
+```console
+[color]
+  status = always
+[core]
+  editor = gvim
+```
+
+This makes sure Git colorized the output of **git status** and that it uses the gVim text editor for creating commit messages. To use different editor,  simply change gvim to the command that opens your editor. For example, Emacs users would use emacs, and Notepad users would use notepad.exe.
+
+Git includes a long list of configuration options, all of which can be found in the official manual. Note that storing your global configuration n a plaintext file makes it incredibly easy to transfer your settings to a new Git installation: just copy ~/.gitconfig onto your new machine.
+
 # 	* [Conclusion](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 	* [Quick Reference](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
 # 13. [Plumbing](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
