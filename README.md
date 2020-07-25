@@ -13,6 +13,6 @@ Ry's Git Tutorial
 9. [Centralized Workflows](https://github.com/c4arl0s/9CentralizedWorkflowsRysGitTutorial#9-centralized-workflows)
 10. [Distributed Workflows](https://github.com/c4arl0s/10DistributedWorkflowsRysGitTutorial#10-distributed-workflows)
 11. [Patch Workflows](https://github.com/c4arl0s/11PatchWorkflowsRysGitTutorial#11-patch-workflows)
-12. [Tips and Tricks](https://github.com/c4arl0s/#12TipsAndTricksRysGitTutorial#12-Tips-and-Tricks)
+12. [Tips and Tricks](https://github.com/c4arl0s/12TipsAndTricksRysGitTutorial#12-tips-and-tricks---content)
 13. [Plumbing](https://github.com/c4arl0s/13PlumbingRysGitTutorial#13-plumbing)
 
