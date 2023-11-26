@@ -16,4 +16,6 @@
 12. [Tips and Tricks](https://github.com/c4arl0s/RysGitTutorialContentIndex#12-tips-and-tricks)
 13. [Plumbing](https://github.com/c4arl0s/RysGitTutorialContentIndex#13-plumbing)
 
+[Summary of git commands](https://github.com/c4arl0s/Summary-git-commands#summary-git-commands)
+
 ![git workflow](https://user-images.githubusercontent.com/24994818/122565427-170f5d80-d00c-11eb-9677-dea7f1be9868.png)
