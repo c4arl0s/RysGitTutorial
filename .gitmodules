@@ -1,0 +1,39 @@
+[submodule "1IntroductionRysGitTutorial"]
+	path = 1IntroductionRysGitTutorial
+	url = git@github.com:c4arl0s/1IntroductionRysGitTutorial.git
+[submodule "2TheBasicsRysGitTutorial"]
+	path = 2TheBasicsRysGitTutorial
+	url = git@github.com:c4arl0s/2TheBasicsRysGitTutorial.git
+[submodule "3UndoingChangesRysGitTutorial"]
+	path = 3UndoingChangesRysGitTutorial
+	url = git@github.com:c4arl0s/3UndoingChangesRysGitTutorial.git
+[submodule "4BranchesIRysGitTutorial"]
+	path = 4BranchesIRysGitTutorial
+	url = git@github.com:c4arl0s/4BranchesIRysGitTutorial.git
+[submodule "5BranchesII"]
+	path = 5BranchesII
+	url = git@github.com:c4arl0s/5BranchesII.git
+[submodule "6Rebasing"]
+	path = 6Rebasing
+	url = git@github.com:c4arl0s/6Rebasing.git
+[submodule "7RewritingHistory"]
+	path = 7RewritingHistory
+	url = git@github.com:c4arl0s/7RewritingHistory.git
+[submodule "8Remotes"]
+	path = 8Remotes
+	url = git@github.com:c4arl0s/8Remotes.git
+[submodule "9CentralizedWorkflows"]
+	path = 9CentralizedWorkflows
+	url = git@github.com:c4arl0s/9CentralizedWorkflows.git
+[submodule "10DistributedWorkflows"]
+	path = 10DistributedWorkflows
+	url = git@github.com:c4arl0s/10DistributedWorkflows.git
+[submodule "11PatchWorkflows"]
+	path = 11PatchWorkflows
+	url = git@github.com:c4arl0s/11PatchWorkflows.git
+[submodule "12TipsAndTricks"]
+	path = 12TipsAndTricks
+	url = git@github.com:c4arl0s/12TipsAndTricks.git
+[submodule "13Plumbing"]
+	path = 13Plumbing
+	url = git@github.com:c4arl0s/13Plumbing.git
