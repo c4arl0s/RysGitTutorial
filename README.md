@@ -1,5 +1,11 @@
 # [go back to overview](https://github.com/c4arl0s#main-projects)
 
+In order to update an existing Git submodule execute (You migh need permissions from Owner)
+
+```console
+ git submodule update --remote --merge
+```
+
 # [Ry's Git Tutorial](https://github.com/c4arl0s/RysGitTutorial#go-back-to-overview)
 
 1. [Introduction](https://github.com/c4arl0s/RysGitTutorialContentIndex#1-introduction)
