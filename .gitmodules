@@ -37,3 +37,6 @@
 [submodule "13Plumbing"]
 	path = 13Plumbing
 	url = git@github.com:c4arl0s/13Plumbing.git
+[submodule "Summary-git-commands"]
+	path = Summary-git-commands
+	url = git@github.com:c4arl0s/Summary-git-commands.git
